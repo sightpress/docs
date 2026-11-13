@@ -1,0 +1,4 @@
+# Docs build dependencies. Install with: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+zensical==0.1.1
+# mike fork maintained by the Zensical team (not on PyPI); needs git to install.
+mike @ git+https://github.com/squidfunk/mike.git@2.2.0+zensical-0.1.0

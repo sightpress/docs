@@ -1,0 +1,19 @@
+# Built site
+/site/
+
+# Python virtual environment and caches
+/.venv/
+__pycache__/
+.cache/
+
+# Local environment
+.env
+
+# Private planning (never committed)
+/PLAN.md
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
