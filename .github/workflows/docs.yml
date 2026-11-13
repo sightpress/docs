@@ -1,0 +1,73 @@
+# Builds the docs with --strict on every pull request (broken links and missing pages fail the build) and
+# publishes `main` to GitHub Pages with mike as the "dev" version. Releases are published by release-please.yml.
+name: Docs
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    name: zensical build --strict
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install the build tools
+        run: pip install -r requirements.txt
+
+      - name: Build
+        run: zensical build --strict
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: docs-deploy
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install the build tools
+        run: pip install -r requirements.txt
+
+      - name: Set the git identity for the gh-pages commits
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin gh-pages --depth=1 || true
+
+      - name: Deploy main as "dev"
+        run: |
+          mike deploy --push --title 'Development' dev
+          # Until the first release there is no "latest", so the site root opens "dev".
+          if ! mike list latest > /dev/null 2>&1; then
+            mike set-default --push dev
+          fi
+

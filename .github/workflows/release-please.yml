@@ -1,0 +1,63 @@
+# Keeps a release pull request open from the conventional commits on main. Merging it tags the release, updates
+# CHANGELOG.md and publishes that version of the docs as "<major>.<minor>" with the "latest" alias.
+# (A release made with the workflow token starts no other workflow, so the deploy runs here.)
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@v5
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  deploy-release:
+    name: Deploy the release to GitHub Pages
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: docs-deploy
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.release-please.outputs.tag_name }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install the build tools
+        run: pip install -r requirements.txt
+
+      - name: Deploy as "<major>.<minor>" with the "latest" alias
+        env:
+          TAG: ${{ needs.release-please.outputs.tag_name }}
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin gh-pages --depth=1 || true
+          version=$(echo "${TAG#v}" | cut -d. -f1,2)
+          mike deploy --push --update-aliases "$version" latest
+          mike set-default --push latest
