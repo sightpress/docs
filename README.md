@@ -24,6 +24,10 @@ check. Each push to `main` publishes the docs to GitHub Pages as the `dev` versi
 from release-please is merged, that release is published as `<major>.<minor>` with the `latest` alias. Commit
 messages follow [Conventional Commits](https://www.conventionalcommits.org/).
 
+`main` is protected by the ruleset in `.github/rulesets/main.json`. Changes reach it only through a pull request that
+passes the `zensical build --strict` check and has one approval. Pull requests are squash-merged. Admins can bypass the
+ruleset.
+
 ## Licence
 
 GNU General Public License v3.0 or later. See [LICENSE](LICENSE).
