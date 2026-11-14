@@ -3,4 +3,28 @@
       <url>
         <loc>https://sightpress.github.io/docs/dev/</loc>
       </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/getting-started/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/change-the-ports/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/open-the-file-storage-console/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/open-the-test-email-inbox/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/run-in-the-background/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/start-a-database/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/try-the-command-line-tool/</loc>
+      </url>
 </urlset>
