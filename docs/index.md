@@ -15,4 +15,5 @@ SightPress is in early development. There is no release yet, and these pages wil
 ## Where to go next
 
 - The source code lives on GitHub in the [SightPress organisation](https://github.com/sightpress).
-- Guides for getting started will appear here before the first release.
+- To run SightPress on your own computer, follow [Getting started](getting-started.md).
+- The [how-to guides](how-to/index.md) show you how to do one task at a time.

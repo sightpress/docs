@@ -17,6 +17,16 @@ adr/
 
 nav = [
   { "Home" = "index.md" },
+  { "Getting started" = "getting-started.md" },
+  { "How-to guides" = [
+    "how-to/index.md",
+    { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
+    { "Change the ports" = "how-to/change-the-ports.md" },
+    { "Start a database server" = "how-to/start-a-database.md" },
+    { "Open the test e-mail inbox" = "how-to/open-the-test-email-inbox.md" },
+    { "Open the file storage console" = "how-to/open-the-file-storage-console.md" },
+    { "Try the command line tool" = "how-to/try-the-command-line-tool.md" },
+  ] },
 ]
 
 [project.validation]
