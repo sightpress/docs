@@ -156,7 +156,8 @@ The copied file also turns on the test e-mail inbox, which catches every e-mail 
 ## Step 7: create your first website
 
 1. In the second terminal window, type this command on one line. Change the e-mail address and the names to your
-   own if you like:
+   own if you like. (You can also type just `docker compose run --rm --no-deps php bin/sightpress site:create` and
+   answer one question at a time: see [Create a website](how-to/create-a-site.md).)
 
     ```sh
     docker compose run --rm --no-deps php bin/sightpress site:create demo --domain=localhost --db=sqlite:////app/sites/demo.sqlite --url=http://localhost:8080 --owner-type=organization --locale=en-GB --name="Riverside Library" --admin-email=ada@example.org --admin-first-name=Ada --admin-last-name=Lovelace

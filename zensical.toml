@@ -17,6 +17,7 @@ adr/
 
 nav = [
   { "Home" = "index.md" },
+  { "What you can build" = "what-you-can-build.md" },
   { "Getting started" = "getting-started.md" },
   { "How-to guides" = [
     "how-to/index.md",

@@ -7,26 +7,53 @@ part of the command means.
 Before you start, follow [Getting started](../getting-started.md) up to step 6, so that SightPress runs and has a
 secret key.
 
-## Create the website
+## Create the website, answering questions
+
+The easiest way is to let the command ask you everything, one question at a time.
 
 1. Open a terminal and go to the `skeleton` folder.
-2. Type the command on one line. This example creates a website called "Riverside Library" for an organisation:
+2. Type:
 
     ```sh
-    docker compose run --rm --no-deps php bin/sightpress site:create demo --domain=localhost --db=sqlite:////app/sites/demo.sqlite --url=http://localhost:8080 --owner-type=organization --locale=en-GB --name="Riverside Library" --admin-email=ada@example.org --admin-first-name=Ada --admin-last-name=Lovelace
+    docker compose run --rm --no-deps php bin/sightpress site:create
     ```
 
-3. You should see one sentence for each thing SightPress did, ending with: `The site "demo" is ready at
-   http://localhost:8080.`
-4. One of the sentences gives the **setup code** for the first admin, for example: "Give the setup code 388 641 to
+3. Answer each question and press Enter. Each question says what to type. When it ends with "Press Enter for"
+   and a value, pressing Enter without typing takes that value. When it lists choices, such as "Type person or
+   organization", type one of them; capital letters don't matter.
+4. For the database, the command first asks which engine to use. Press Enter for **SQLite**: it keeps the
+   website in one file and needs nothing else. Press Enter again to keep the file in the `sites` folder. If you
+   choose MySQL, MariaDB or PostgreSQL instead, the command asks for the server, port, database name, user name and
+   password one by one, each with a usual value you can keep with Enter. The password isn't shown as you type it,
+   and you type it twice so a typing mistake is caught.
+5. For the main language, type a code such as `en-GB` or `pt-BR`. Capital letters don't matter and you can use
+   `_` instead of `-`. The command says the language in words, for example "That is Brazilian Portuguese (pt-BR).
+   Is that right?". Type `yes` or press Enter if it is, or `no` to type it again.
+6. If an answer isn't right, for example an e-mail address without the part after `@`, the command says what is
+   wrong and asks again. After 3 wrong answers in a row it stops and creates nothing; just start again.
+7. At the end, the command lists all your answers, one per line, and asks "Is all of this right?". Press Enter
+   to create the website. Type `no` to go through the questions again: your answers are kept, so press Enter for
+   each one that was right and type only what you want to change.
+8. You should see one sentence for each thing SightPress did, ending with: `The site "demo" is ready at
+   https://localhost.` On your own computer, the address to open is <http://localhost:8080>: answer
+   `http://localhost:8080` to the question "Address the site is opened at".
+9. One of the sentences gives the **setup code** for the first admin, for example: "Give the setup code 388 641 to
    ada@example.org." Give the code to that person in a way you trust, such as in person or by phone. SightPress
    doesn't e-mail it.
-5. The first admin goes to the address in that sentence (for example <http://localhost:8080/login/setup>), types
-   their e-mail address and the code, and chooses a password. Step 8 of [Getting started](../getting-started.md)
-   shows each screen.
+10. The first admin goes to the address in that sentence (for example <http://localhost:8080/login/setup>), types
+    their e-mail address and the code, and chooses a password. Step 8 of [Getting started](../getting-started.md)
+    shows each screen.
 
-If you leave out a part the command needs, it asks you for it, one question at a time. If something is wrong, it
-says what, and creates nothing.
+## Create the website with one command
+
+If you already know every answer, for example in a script, give them all on one line. The command then asks
+nothing. This example creates a website called "Riverside Library" for an organisation:
+
+```sh
+docker compose run --rm --no-deps php bin/sightpress site:create demo --domain=localhost --db-engine=sqlite --url=http://localhost:8080 --owner-type=organization --locale=en-GB --name="Riverside Library" --admin-email=ada@example.org --admin-first-name=Ada --admin-last-name=Lovelace
+```
+
+If something is wrong, the command says what, and creates nothing.
 
 ## What each part means
 
@@ -34,9 +61,12 @@ says what, and creates nothing.
 | --- | --- | --- |
 | `demo` | A short name for the website: lower-case letters, digits and hyphens. You use it in other commands. | `library` |
 | `--domain` | The web addresses of the website, without `https://`, separated by commas. Each address belongs to one website only. On your own computer, use `localhost`. | `library.example.org,www.library.example.org` |
-| `--db` | Where the website's database is. On your own computer, a file in the `sites` folder is simplest. See [Start a database server](start-a-database.md) for the others. | `sqlite:////app/sites/library.sqlite` |
-| `--owner-type` | Who runs the website: `organization` or `person`. The ready-made pages say "we" for an organisation and "I" for a person. | `person` |
-| `--locale` | The website's main language. | `en-GB`, `pt-PT`, `fr-FR` |
+| `--db-engine` | The database engine: `sqlite`, `mysql`, `mariadb` or `postgresql`. On your own computer, SQLite is simplest. See [Start a database server](start-a-database.md) for the others. | `sqlite` |
+| `--db-path` | For SQLite: the file. Optional: without it, a file named after the short name in the `sites` folder. | `library.sqlite` |
+| `--db-host`, `--db-port`, `--db-name`, `--db-user`, `--db-password` | For the other engines: the server, its port, the database, and the user name and password. Without them, `localhost`, the engine's usual port, `sightpress_` and the short name, `sightpress` and no password. | `--db-host=db --db-user=library` |
+| `--db` | Instead of the parts above: the whole database address in one go. | `sqlite:////app/sites/library.sqlite` |
+| `--owner-type` | Who runs the website: `organization` or `person`, in capitals or not. The ready-made pages say "we" for an organisation and "I" for a person. | `person` |
+| `--locale` | The website's main language. Capital letters don't matter, and `_` works as well as `-`. | `en-GB`, `pt_br`, `fr-FR` |
 | `--name` | The name visitors see. Optional: without it, the short name is used. | `"Riverside Library"` |
 | `--admin-email`, `--admin-first-name`, `--admin-last-name` | The first admin of the website. | `ada@example.org` |
 | `--timezone` | Optional. The time zone for dates on the website. | `Europe/London` |

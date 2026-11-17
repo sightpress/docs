@@ -19,8 +19,25 @@ docker compose run --rm --no-deps php bin/sightpress list
 You should see every command with one line about what it does. For the details of one command, type
 `bin/sightpress help` and its name, for example `bin/sightpress help site:create`.
 
-Most commands need `APP_SECRET` to be set (see step 6 of [Getting started](../getting-started.md)). If you leave out
-something a command needs, it asks for it.
+Most commands need `APP_SECRET` to be set (see step 6 of [Getting started](../getting-started.md)).
+
+## How commands ask questions
+
+If you leave out something a command needs, it asks for it, one question at a time, and also asks the optional
+questions that have a usual answer. Every command asks the same way:
+
+- a question that ends with "Press Enter for" and a value takes that value when you just press Enter;
+- a question that lists choices accepts one of them, in capitals or not;
+- a password is not shown as you type it, and is never printed; you type it twice, and if the two are not the same
+  you are asked for it again;
+- some answers are read back in words for you to confirm, for example a language code;
+- a wrong answer is explained and asked again; after 3 wrong answers in a row the command stops and changes
+  nothing;
+- at the end, the command lists your answers and asks "Is all of this right?". Answer `no` to go through the
+  questions again, with your answers kept: press Enter for each one that was right.
+
+If you give everything on the command line, nothing is asked. Add `--no-interaction` (or `-n`) to never be asked:
+then a missing or wrong value stops the command with a sentence that says what is wrong.
 
 `<slug>` below is the short name of a website, the one you gave `site:create`, such as `demo`.
 
@@ -29,8 +46,9 @@ something a command needs, it asks for it.
 ### site:create
 
 ```text
-site:create <slug> --domain= --db= --owner-type= --locale= --admin-email= --admin-first-name= --admin-last-name=
-                   [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content]
+site:create [<slug>] [--domain=] [--db= | --db-engine= --db-path= | --db-host= --db-port= --db-name= --db-user= --db-password=]
+            [--owner-type=] [--locale=] [--admin-email=] [--admin-first-name=] [--admin-last-name=]
+            [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content]
 ```
 
 Creates a website: its database tables, its roles, its first admin, six starter pages, its menus and its logo, icon
@@ -65,7 +83,7 @@ Every change is written to the installation's log.
 | --- | --- |
 | `site:list` | Lists the websites: status, domains, language, time zone and database (engine, host and name only). |
 | `site:migrate <slug>` or `site:migrate --all` | Updates a website's database tables after an update of SightPress. `--all` updates every website that isn't deleted; one failure doesn't stop the others. |
-| `site:db:change <slug> --db= [--migrate]` | Points a **disabled** website at another database. **Nothing is copied**: move the data first. The new database must be up to date, or add `--migrate`. If anything fails, the website keeps its old database. |
+| `site:db:change <slug> [--db= or the --db-… parts] [--migrate]` | Points a **disabled** website at another database, asked for in parts like in `site:create`. **Nothing is copied**: move the data first. The new database must be up to date, or add `--migrate`. If anything fails, the website keeps its old database. |
 | `site:seo:check <slug>` | Checks what search engines will find: titles longer than 60 characters, missing or too long descriptions, pages left out of search and why. Ends with an error when two pages have the same title. See [Search and AI visibility](search-and-ai.md). |
 
 To move a website to another database:

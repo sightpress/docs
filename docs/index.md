@@ -16,6 +16,7 @@ site settings and an audit log. Every page is ready for search engines and AI re
 
 ## Where to go next
 
+- To see what SightPress can do, with ideas for websites, read [What you can build](what-you-can-build.md).
 - The source code lives on GitHub in the [SightPress organisation](https://github.com/sightpress).
 - To run SightPress on your own computer, follow [Getting started](getting-started.md).
 - The [how-to guides](how-to/index.md) show you how to do one task at a time, such as
