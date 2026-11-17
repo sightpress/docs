@@ -20,6 +20,8 @@ nav = [
   { "Getting started" = "getting-started.md" },
   { "How-to guides" = [
     "how-to/index.md",
+    { "Create a website" = "how-to/create-a-site.md" },
+    { "Write and publish a page" = "how-to/write-and-publish-a-page.md" },
     { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
     { "Change the ports" = "how-to/change-the-ports.md" },
     { "Start a database server" = "how-to/start-a-database.md" },
@@ -27,6 +29,12 @@ nav = [
     { "Open the file storage console" = "how-to/open-the-file-storage-console.md" },
     { "Try the command line tool" = "how-to/try-the-command-line-tool.md" },
     { "Codes we send you" = "how-to/codes-we-send-you.md" },
+  ] },
+  { "Reference" = [
+    { "Roles and permissions" = "reference/roles-and-permissions.md" },
+    { "Blocks" = "reference/blocks.md" },
+    { "Search and AI visibility" = "reference/search-and-ai.md" },
+    { "Command line" = "reference/command-line.md" },
   ] },
 ]
 

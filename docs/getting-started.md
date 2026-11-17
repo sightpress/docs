@@ -1,12 +1,14 @@
 # Getting started
 
-This guide shows you how to run SightPress on your own computer, so that you can try it out. You don't need to know
-how to program. It takes about 20 minutes, most of which is waiting for downloads.
+This guide shows you how to run SightPress on your own computer, create your first website and sign in to its admin
+panel, so that you can try it out. You don't need to know how to program. It takes about 30 minutes, most of which is
+waiting for downloads.
 
 !!! note "What you can try today"
 
-    SightPress is in early development. At this stage it starts up and shows a page that says no site is set up
-    yet. You can't create a website yet. These guides will grow as features are built.
+    This is the first version of SightPress. You can create a website with ready-made pages, write and publish pages,
+    upload pictures and other files, invite people and change the site's settings. Running SightPress on a public
+    server is not covered yet.
 
 ## What you need
 
@@ -116,21 +118,107 @@ Leave this terminal window open. SightPress stops when you close it.
    no site is set up for this address yet. If you look after this server, create a site and link this address to
    it." The browser tab is called "No site configured - SightPress".
 
-This is the right result. It means SightPress is running. Every address shows this page until you create a site,
-which a later version will let you do.
-
-The page follows your computer's light or dark setting. It has one heading and one main area, so a screen reader
-can find the message straight away.
+This is the right result. It means SightPress is running, but has no website yet. You create one in the next steps.
 
 If the browser shows **502 Bad Gateway**, SightPress is still finishing its first start. Wait a minute, then
 reload the page.
 
-## Step 6: stop SightPress
+## Step 6: make a settings file with a secret key
+
+SightPress keeps its settings in a file called `.env` in the `skeleton` folder. One setting, the secret key, protects
+the address of each website's database. You make it once.
+
+1. Open a second terminal window and go to the `skeleton` folder, as in step 3. Leave the first window running.
+2. Copy the example settings file:
+
+    ```sh
+    cp .env.example .env
+    ```
+
+3. Make a secret key:
+
+    ```sh
+    docker compose run --rm --no-deps php php -r 'echo bin2hex(random_bytes(32)), PHP_EOL;'
+    ```
+
+    You should see one line of 64 letters and digits, such as `3f9a…`. Yours will be different.
+
+4. Open the `.env` file in a text editor, such as Notepad on Windows or TextEdit on macOS. Find the line
+   `APP_SECRET=` and paste your key straight after the `=` sign, with no spaces. Save the file.
+5. Keep a copy of the key somewhere safe, such as a password manager. Without it, SightPress can't open your
+   websites' databases.
+6. Go back to the first terminal window and press <kbd>Ctrl</kbd>+<kbd>C</kbd> to stop SightPress. Then start it
+   again with `docker compose up`, so that it reads the new settings.
+
+The copied file also turns on the test e-mail inbox, which catches every e-mail SightPress sends. See
+[Open the test e-mail inbox](how-to/open-the-test-email-inbox.md).
+
+## Step 7: create your first website
+
+1. In the second terminal window, type this command on one line. Change the e-mail address and the names to your
+   own if you like:
+
+    ```sh
+    docker compose run --rm --no-deps php bin/sightpress site:create demo --domain=localhost --db=sqlite:////app/sites/demo.sqlite --url=http://localhost:8080 --owner-type=organization --locale=en-GB --name="Riverside Library" --admin-email=ada@example.org --admin-first-name=Ada --admin-last-name=Lovelace
+    ```
+
+2. After a few seconds, you should see lines like these:
+
+    ```text
+    Getting the SQLite file /app/sites/demo.sqlite ready…
+    Ran 13 database migrations.
+    Created the account of the first admin, Ada Lovelace (ada@example.org).
+    Set up the roles admin, editor, contributor and member.
+    Gave the first admin the admin role.
+    Give the setup code 388 641 to ada@example.org. They go to http://localhost:8080/login/setup, type their email address and the code, and choose their password. The code works once, for 7 days.
+    Made the site's icons, wordmark and share image from its name; replace them with site:branding:set.
+    Published the starter pages: Welcome to Riverside Library, About us, Contact us, Privacy notice, Terms of use, Accessibility statement.
+    Added 5 starter pages to the main and footer menus.
+    The site "demo" is ready at http://localhost:8080.
+    ```
+
+3. Write down the **setup code**, the six digits after "Give the setup code". Yours will be different. You need it
+   in the next step.
+
+[Create a website](how-to/create-a-site.md) explains every part of the command.
+
+## Step 8: choose your password and sign in
+
+1. In your browser, go to <http://localhost:8080/login/setup>. You should see the heading **Set up your account**.
+2. In **Email address**, type the address you used, for example `ada@example.org`.
+3. In **6-digit code**, type the setup code. You can type it with or without the space.
+4. Choose **Continue**. You should see the heading **Choose your password**.
+5. In **New password**, type a password of at least 12 characters. A few unrelated words make a strong password
+   that is easy to remember.
+6. Choose **Set password**. You should see the sign-in page with the message "Your password has been set. Sign in
+   with it now."
+7. Type your e-mail address and your new password, then choose **Sign in**.
+8. You should see the admin panel's **Dashboard**. The browser tab says "Dashboard - Admin - Riverside Library".
+   The admin menu has the links Dashboard, Pages, Media, Menus, People, Invite someone, Site settings, Branding and
+   Audit log.
+
+SightPress never sends links to sign in or to set a password. It always gives you a code to type on the website
+instead. See [Codes we send you](how-to/codes-we-send-you.md).
+
+## Step 9: look at your website
+
+1. Go to <http://localhost:8080>.
+2. You should see the home page, with the heading **Welcome to Riverside Library**, a main menu with About us and
+   Contact us, and a footer menu with the privacy notice, the terms of use and the accessibility statement.
+
+Every new website starts with these six pages, already published. Change them in the admin panel under **Pages**.
+See [Write and publish a page](how-to/write-and-publish-a-page.md).
+
+The pages follow your computer's light or dark setting, and every page works with a keyboard alone and with a
+screen reader. While SightPress runs on your computer, every page asks search engines not to list it.
+
+## Step 10: stop SightPress
 
 1. Go back to the terminal window where SightPress is running.
 2. Press <kbd>Ctrl</kbd>+<kbd>C</kbd>. You should see lines that end with `Stopped`.
 
-To start SightPress again later, go to the `skeleton` folder and type `docker compose up` again.
+To start SightPress again later, go to the `skeleton` folder and type `docker compose up` again. Your website and
+your account are kept.
 
 ## If something goes wrong
 
@@ -146,7 +234,19 @@ To start SightPress again later, go to the `skeleton` folder and type `docker co
 :   Check that the terminal still shows SightPress running, and that the address is exactly
     `http://localhost:8080`, with `http`, not `https`.
 
+**"APP_SECRET is not set" when you create the site**
+:   The secret key is missing from `.env`. Go back to [step 6](#step-6-make-a-settings-file-with-a-secret-key).
+
+**The website shows an error page after you created it**
+:   SightPress was not restarted after you added the secret key. Stop it with <kbd>Ctrl</kbd>+<kbd>C</kbd> and
+    start it again with `docker compose up`.
+
+**"This code doesn't work" on the setup page**
+:   Check the e-mail address and the six digits. A setup code works once, for 7 days. To get a new one, see
+    [Create a website](how-to/create-a-site.md#give-someone-a-new-setup-code).
+
 ## What to do next
 
-The [how-to guides](how-to/index.md) show you how to run SightPress in the background, start a database, open the
-test e-mail inbox and file storage, and try the command line tool.
+The [how-to guides](how-to/index.md) show you how to write and publish pages, invite people and run SightPress in the
+background. The reference pages explain [roles](reference/roles-and-permissions.md), [blocks](reference/blocks.md),
+[search and AI visibility](reference/search-and-ai.md) and the [command line tool](reference/command-line.md).

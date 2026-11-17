@@ -10,10 +10,15 @@ Guidelines (WCAG) 2.2 at level AA. Every task works with a keyboard alone and wi
 
 ## Status
 
-SightPress is in early development. There is no release yet, and these pages will grow as features are built.
+This is the first version of SightPress (0.1). You can create websites from the command line, and each website has
+ready-made pages, an admin panel to write and publish pages through review, a media library, menus, invitations,
+site settings and an audit log. Every page is ready for search engines and AI readers.
 
 ## Where to go next
 
 - The source code lives on GitHub in the [SightPress organisation](https://github.com/sightpress).
 - To run SightPress on your own computer, follow [Getting started](getting-started.md).
-- The [how-to guides](how-to/index.md) show you how to do one task at a time.
+- The [how-to guides](how-to/index.md) show you how to do one task at a time, such as
+  [creating a website](how-to/create-a-site.md) or [writing and publishing a page](how-to/write-and-publish-a-page.md).
+- The reference pages explain [roles and permissions](reference/roles-and-permissions.md), [blocks](reference/blocks.md),
+  [search and AI visibility](reference/search-and-ai.md) and the [command line tool](reference/command-line.md).
