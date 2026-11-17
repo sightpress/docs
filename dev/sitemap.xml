@@ -13,6 +13,12 @@
         <loc>https://sightpress.github.io/docs/dev/how-to/change-the-ports/</loc>
       </url>
       <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/codes-we-send-you/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/create-a-site/</loc>
+      </url>
+      <url>
         <loc>https://sightpress.github.io/docs/dev/how-to/open-the-file-storage-console/</loc>
       </url>
       <url>
@@ -26,5 +32,20 @@
       </url>
       <url>
         <loc>https://sightpress.github.io/docs/dev/how-to/try-the-command-line-tool/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/how-to/write-and-publish-a-page/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/reference/blocks/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/reference/command-line/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/reference/roles-and-permissions/</loc>
+      </url>
+      <url>
+        <loc>https://sightpress.github.io/docs/dev/reference/search-and-ai/</loc>
       </url>
 </urlset>
