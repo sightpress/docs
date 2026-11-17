@@ -268,6 +268,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../../what-you-can-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What you can build
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../getting-started/" class="md-nav__link">
         
   
@@ -333,7 +359,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -354,15 +380,15 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
         
-          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-            <label class="md-nav__title" for="__nav_3">
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
               
   
@@ -439,10 +465,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-the-website" class="md-nav__link">
+  <a href="#create-the-website-answering-questions" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Create the website
+        Create the website, answering questions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-website-with-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Create the website with one command
       </span>
     </span>
   </a>
@@ -767,10 +804,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -788,8 +825,8 @@
           </label>
         
         
-          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-            <label class="md-nav__title" for="__nav_4">
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
               
   
@@ -955,10 +992,21 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-the-website" class="md-nav__link">
+  <a href="#create-the-website-answering-questions" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Create the website
+        Create the website, answering questions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-website-with-one-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Create the website with one command
       </span>
     </span>
   </a>
@@ -1046,27 +1094,49 @@ kept in its own database. This guide shows you how to create a website with the 
 part of the command means.</p>
 <p>Before you start, follow <a href="../../getting-started/">Getting started</a> up to step 6, so that SightPress runs and has a
 secret key.</p>
-<h2 id="create-the-website">Create the website<a class="headerlink" href="#create-the-website" title="Link to this section">&para;</a></h2>
+<h2 id="create-the-website-answering-questions">Create the website, answering questions<a class="headerlink" href="#create-the-website-answering-questions" title="Link to this section">&para;</a></h2>
+<p>The easiest way is to let the command ask you everything, one question at a time.</p>
 <ol>
 <li>Open a terminal and go to the <code>skeleton</code> folder.</li>
 <li>
-<p>Type the command on one line. This example creates a website called "Riverside Library" for an organisation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:create<span class="w"> </span>demo<span class="w"> </span>--domain<span class="o">=</span>localhost<span class="w"> </span>--db<span class="o">=</span>sqlite:////app/sites/demo.sqlite<span class="w"> </span>--url<span class="o">=</span>http://localhost:8080<span class="w"> </span>--owner-type<span class="o">=</span>organization<span class="w"> </span>--locale<span class="o">=</span>en-GB<span class="w"> </span>--name<span class="o">=</span><span class="s2">"Riverside Library"</span><span class="w"> </span>--admin-email<span class="o">=</span>ada@example.org<span class="w"> </span>--admin-first-name<span class="o">=</span>Ada<span class="w"> </span>--admin-last-name<span class="o">=</span>Lovelace
+<p>Type:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:create
 </code></pre></div>
 </li>
 <li>
-<p>You should see one sentence for each thing SightPress did, ending with: <code>The site "demo" is ready at
-   http://localhost:8080.</code></p>
+<p>Answer each question and press Enter. Each question says what to type. When it ends with "Press Enter for"
+   and a value, pressing Enter without typing takes that value. When it lists choices, such as "Type person or
+   organization", type one of them; capital letters don't matter.</p>
 </li>
+<li>For the database, the command first asks which engine to use. Press Enter for <strong>SQLite</strong>: it keeps the
+   website in one file and needs nothing else. Press Enter again to keep the file in the <code>sites</code> folder. If you
+   choose MySQL, MariaDB or PostgreSQL instead, the command asks for the server, port, database name, user name and
+   password one by one, each with a usual value you can keep with Enter. The password isn't shown as you type it,
+   and you type it twice so a typing mistake is caught.</li>
+<li>For the main language, type a code such as <code>en-GB</code> or <code>pt-BR</code>. Capital letters don't matter and you can use
+   <code>_</code> instead of <code>-</code>. The command says the language in words, for example "That is Brazilian Portuguese (pt-BR).
+   Is that right?". Type <code>yes</code> or press Enter if it is, or <code>no</code> to type it again.</li>
+<li>If an answer isn't right, for example an e-mail address without the part after <code>@</code>, the command says what is
+   wrong and asks again. After 3 wrong answers in a row it stops and creates nothing; just start again.</li>
+<li>At the end, the command lists all your answers, one per line, and asks "Is all of this right?". Press Enter
+   to create the website. Type <code>no</code> to go through the questions again: your answers are kept, so press Enter for
+   each one that was right and type only what you want to change.</li>
+<li>You should see one sentence for each thing SightPress did, ending with: <code>The site "demo" is ready at
+   https://localhost.</code> On your own computer, the address to open is <a href="http://localhost:8080">http://localhost:8080</a>: answer
+   <code>http://localhost:8080</code> to the question "Address the site is opened at".</li>
 <li>One of the sentences gives the <strong>setup code</strong> for the first admin, for example: "Give the setup code 388 641 to
    ada@example.org." Give the code to that person in a way you trust, such as in person or by phone. SightPress
    doesn't e-mail it.</li>
 <li>The first admin goes to the address in that sentence (for example <a href="http://localhost:8080/login/setup">http://localhost:8080/login/setup</a>), types
-   their e-mail address and the code, and chooses a password. Step 8 of <a href="../../getting-started/">Getting started</a>
-   shows each screen.</li>
+    their e-mail address and the code, and chooses a password. Step 8 of <a href="../../getting-started/">Getting started</a>
+    shows each screen.</li>
 </ol>
-<p>If you leave out a part the command needs, it asks you for it, one question at a time. If something is wrong, it
-says what, and creates nothing.</p>
+<h2 id="create-the-website-with-one-command">Create the website with one command<a class="headerlink" href="#create-the-website-with-one-command" title="Link to this section">&para;</a></h2>
+<p>If you already know every answer, for example in a script, give them all on one line. The command then asks
+nothing. This example creates a website called "Riverside Library" for an organisation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:create<span class="w"> </span>demo<span class="w"> </span>--domain<span class="o">=</span>localhost<span class="w"> </span>--db-engine<span class="o">=</span>sqlite<span class="w"> </span>--url<span class="o">=</span>http://localhost:8080<span class="w"> </span>--owner-type<span class="o">=</span>organization<span class="w"> </span>--locale<span class="o">=</span>en-GB<span class="w"> </span>--name<span class="o">=</span><span class="s2">"Riverside Library"</span><span class="w"> </span>--admin-email<span class="o">=</span>ada@example.org<span class="w"> </span>--admin-first-name<span class="o">=</span>Ada<span class="w"> </span>--admin-last-name<span class="o">=</span>Lovelace
+</code></pre></div>
+<p>If something is wrong, the command says what, and creates nothing.</p>
 <h2 id="what-each-part-means">What each part means<a class="headerlink" href="#what-each-part-means" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
@@ -1088,19 +1158,34 @@ says what, and creates nothing.</p>
 <td><code>library.example.org,www.library.example.org</code></td>
 </tr>
 <tr>
+<td><code>--db-engine</code></td>
+<td>The database engine: <code>sqlite</code>, <code>mysql</code>, <code>mariadb</code> or <code>postgresql</code>. On your own computer, SQLite is simplest. See <a href="../start-a-database/">Start a database server</a> for the others.</td>
+<td><code>sqlite</code></td>
+</tr>
+<tr>
+<td><code>--db-path</code></td>
+<td>For SQLite: the file. Optional: without it, a file named after the short name in the <code>sites</code> folder.</td>
+<td><code>library.sqlite</code></td>
+</tr>
+<tr>
+<td><code>--db-host</code>, <code>--db-port</code>, <code>--db-name</code>, <code>--db-user</code>, <code>--db-password</code></td>
+<td>For the other engines: the server, its port, the database, and the user name and password. Without them, <code>localhost</code>, the engine's usual port, <code>sightpress_</code> and the short name, <code>sightpress</code> and no password.</td>
+<td><code>--db-host=db --db-user=library</code></td>
+</tr>
+<tr>
 <td><code>--db</code></td>
-<td>Where the website's database is. On your own computer, a file in the <code>sites</code> folder is simplest. See <a href="../start-a-database/">Start a database server</a> for the others.</td>
+<td>Instead of the parts above: the whole database address in one go.</td>
 <td><code>sqlite:////app/sites/library.sqlite</code></td>
 </tr>
 <tr>
 <td><code>--owner-type</code></td>
-<td>Who runs the website: <code>organization</code> or <code>person</code>. The ready-made pages say "we" for an organisation and "I" for a person.</td>
+<td>Who runs the website: <code>organization</code> or <code>person</code>, in capitals or not. The ready-made pages say "we" for an organisation and "I" for a person.</td>
 <td><code>person</code></td>
 </tr>
 <tr>
 <td><code>--locale</code></td>
-<td>The website's main language.</td>
-<td><code>en-GB</code>, <code>pt-PT</code>, <code>fr-FR</code></td>
+<td>The website's main language. Capital letters don't matter, and <code>_</code> works as well as <code>-</code>.</td>
+<td><code>en-GB</code>, <code>pt_br</code>, <code>fr-FR</code></td>
 </tr>
 <tr>
 <td><code>--name</code></td>
@@ -1157,7 +1242,7 @@ says what, and creates nothing.</p>
 to whoever tries the website out.</p>
 <h2 id="give-someone-a-new-setup-code">Give someone a new setup code<a class="headerlink" href="#give-someone-a-new-setup-code" title="Link to this section">&para;</a></h2>
 <p>A setup code works once, for 7 days. To make a new one for an admin who hasn't chosen a password yet, type:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:user:create-admin<span class="w"> </span>demo<span class="w"> </span>--email<span class="o">=</span>ada@example.org<span class="w"> </span>--first-name<span class="o">=</span>Ada<span class="w"> </span>--last-name<span class="o">=</span>Lovelace<span class="w"> </span>--url<span class="o">=</span>http://localhost:8080
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:user:create-admin<span class="w"> </span>demo<span class="w"> </span>--email<span class="o">=</span>ada@example.org<span class="w"> </span>--first-name<span class="o">=</span>Ada<span class="w"> </span>--last-name<span class="o">=</span>Lovelace<span class="w"> </span>--url<span class="o">=</span>http://localhost:8080
 </code></pre></div>
 <p>You should see a new setup code. The old one stops working. The same command adds another admin when you give a new
 e-mail address. Someone who already has a password uses <strong>Forgot your password?</strong> on the sign-in page instead.</p>

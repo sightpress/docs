@@ -266,6 +266,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../../what-you-can-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What you can build
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../getting-started/" class="md-nav__link">
         
   
@@ -329,7 +355,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <div class="md-nav__link md-nav__container">
@@ -350,15 +376,15 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
         
-          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-            <label class="md-nav__title" for="__nav_3">
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
               
   
@@ -652,10 +678,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -673,8 +699,8 @@
           </label>
         
         
-          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-            <label class="md-nav__title" for="__nav_4">
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_5">
               <span class="md-nav__icon md-icon"></span>
               
   
@@ -834,6 +860,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         How to run it
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-commands-ask-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How commands ask questions
       </span>
     </span>
   </a>
@@ -1031,6 +1068,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#how-commands-ask-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How commands ask questions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#create-websites-and-admins" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1185,13 +1233,29 @@ never shows a database password.</p>
 </code></pre></div>
 <p>You should see every command with one line about what it does. For the details of one command, type
 <code>bin/sightpress help</code> and its name, for example <code>bin/sightpress help site:create</code>.</p>
-<p>Most commands need <code>APP_SECRET</code> to be set (see step 6 of <a href="../../getting-started/">Getting started</a>). If you leave out
-something a command needs, it asks for it.</p>
+<p>Most commands need <code>APP_SECRET</code> to be set (see step 6 of <a href="../../getting-started/">Getting started</a>).</p>
+<h2 id="how-commands-ask-questions">How commands ask questions<a class="headerlink" href="#how-commands-ask-questions" title="Link to this section">&para;</a></h2>
+<p>If you leave out something a command needs, it asks for it, one question at a time, and also asks the optional
+questions that have a usual answer. Every command asks the same way:</p>
+<ul>
+<li>a question that ends with "Press Enter for" and a value takes that value when you just press Enter;</li>
+<li>a question that lists choices accepts one of them, in capitals or not;</li>
+<li>a password is not shown as you type it, and is never printed; you type it twice, and if the two are not the same
+  you are asked for it again;</li>
+<li>some answers are read back in words for you to confirm, for example a language code;</li>
+<li>a wrong answer is explained and asked again; after 3 wrong answers in a row the command stops and changes
+  nothing;</li>
+<li>at the end, the command lists your answers and asks "Is all of this right?". Answer <code>no</code> to go through the
+  questions again, with your answers kept: press Enter for each one that was right.</li>
+</ul>
+<p>If you give everything on the command line, nothing is asked. Add <code>--no-interaction</code> (or <code>-n</code>) to never be asked:
+then a missing or wrong value stops the command with a sentence that says what is wrong.</p>
 <p><code>&lt;slug&gt;</code> below is the short name of a website, the one you gave <code>site:create</code>, such as <code>demo</code>.</p>
 <h2 id="create-websites-and-admins">Create websites and admins<a class="headerlink" href="#create-websites-and-admins" title="Link to this section">&para;</a></h2>
 <h3 id="sitecreate">site:create<a class="headerlink" href="#sitecreate" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>site:create &lt;slug&gt; --domain= --db= --owner-type= --locale= --admin-email= --admin-first-name= --admin-last-name=
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                   [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>site:create [&lt;slug&gt;] [--domain=] [--db= | --db-engine= --db-path= | --db-host= --db-port= --db-name= --db-user= --db-password=]
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>            [--owner-type=] [--locale=] [--admin-email=] [--admin-first-name=] [--admin-last-name=]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content]
 </code></pre></div>
 <p>Creates a website: its database tables, its roles, its first admin, six starter pages, its menus and its logo, icon
 and share image. It prints the first admin's setup code. Nothing is created if something is wrong.
@@ -1258,8 +1322,8 @@ refused: they use "Forgot your password?" instead.</p>
 <td>Updates a website's database tables after an update of SightPress. <code>--all</code> updates every website that isn't deleted; one failure doesn't stop the others.</td>
 </tr>
 <tr>
-<td><code>site:db:change &lt;slug&gt; --db= [--migrate]</code></td>
-<td>Points a <strong>disabled</strong> website at another database. <strong>Nothing is copied</strong>: move the data first. The new database must be up to date, or add <code>--migrate</code>. If anything fails, the website keeps its old database.</td>
+<td><code>site:db:change &lt;slug&gt; [--db= or the --db-… parts] [--migrate]</code></td>
+<td>Points a <strong>disabled</strong> website at another database, asked for in parts like in <code>site:create</code>. <strong>Nothing is copied</strong>: move the data first. The new database must be up to date, or add <code>--migrate</code>. If anything fails, the website keeps its old database.</td>
 </tr>
 <tr>
 <td><code>site:seo:check &lt;slug&gt;</code></td>
