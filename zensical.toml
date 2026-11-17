@@ -26,6 +26,7 @@ nav = [
     { "Open the test e-mail inbox" = "how-to/open-the-test-email-inbox.md" },
     { "Open the file storage console" = "how-to/open-the-file-storage-console.md" },
     { "Try the command line tool" = "how-to/try-the-command-line-tool.md" },
+    { "Codes we send you" = "how-to/codes-we-send-you.md" },
   ] },
 ]
 

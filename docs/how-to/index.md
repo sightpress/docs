@@ -15,6 +15,10 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Open the file storage console](open-the-file-storage-console.md), where uploaded files will be kept.
 - [Try the command line tool](try-the-command-line-tool.md).
 
+## Signing in
+
+- [Codes we send you](codes-we-send-you.md): why SightPress never sends links, and how to type a 6-digit code.
+
 ## Coming later
 
 SightPress is in early development. You can't create a website or put SightPress on a public server yet. Guides
