@@ -60,11 +60,8 @@ Git downloads the SightPress files from GitHub, where they are published.
 
 ## Step 3: download SightPress
 
-SightPress comes in three parts, which must sit side by side in the same folder:
-
-- `skeleton`, the project you start;
-- `core`, which holds the features;
-- `module-interface`, which describes how add-ons talk to SightPress.
+You only download the `skeleton`, the project you start. The other parts of SightPress are fetched for you
+automatically the first time you start it, in step 4.
 
 1. Make a folder for SightPress and go into it:
 
@@ -73,15 +70,13 @@ SightPress comes in three parts, which must sit side by side in the same folder:
     cd sightpress
     ```
 
-2. Download the three parts:
+2. Download the skeleton:
 
     ```sh
     git clone https://github.com/sightpress/skeleton.git
-    git clone https://github.com/sightpress/core.git
-    git clone https://github.com/sightpress/module-interface.git
     ```
 
-    After each command, you should see a few lines that end with `done.`
+    You should see a few lines that end with `done.`
 
 3. Go into the `skeleton` folder:
 
