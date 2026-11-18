@@ -1,0 +1,264 @@
+/*
+ * SightPress brand for the docs site.
+ *
+ * Loads after brand/fonts/fonts.css and brand/tokens/tokens.css (copied from the brand guide) and maps the
+ * semantic --sp-* tokens onto the theme's --md-* variables. The theme switches colour scheme with
+ * data-md-color-scheme on <body> (its own light/dark toggle), so the semantic tokens are set again here for each
+ * scheme instead of relying on the media query in tokens.css. Logical properties only.
+ */
+
+/* Semantic colours: light ("default" scheme) */
+[data-md-color-scheme="default"] {
+  color-scheme: light;
+  --sp-color-bg: var(--sp-ink-50);
+  --sp-color-surface: var(--sp-ink-0);
+  --sp-color-surface-sunken: var(--sp-ink-100);
+  --sp-color-text: var(--sp-ink-950);
+  --sp-color-text-muted: var(--sp-ink-600);
+  --sp-color-border: var(--sp-ink-200);
+  --sp-color-border-strong: var(--sp-ink-500);
+  --sp-color-accent: var(--sp-iris-700);
+  --sp-color-accent-hover: var(--sp-iris-800);
+  --sp-color-accent-subtle: var(--sp-iris-50);
+  --sp-color-on-accent: var(--sp-ink-0);
+  --sp-color-link: var(--sp-iris-700);
+  --sp-color-link-visited: var(--sp-lagoon-700);
+  --sp-color-highlight: var(--sp-lumen-400);
+  --sp-color-on-highlight: var(--sp-ink-950);
+  --sp-color-focus: var(--sp-ink-950);
+  --sp-color-focus-halo: var(--sp-lumen-300);
+}
+
+/* Semantic colours: dark ("slate" scheme) */
+[data-md-color-scheme="slate"] {
+  color-scheme: dark;
+  --sp-color-bg: var(--sp-ink-950);
+  --sp-color-surface: var(--sp-ink-900);
+  --sp-color-surface-sunken: var(--sp-ink-1000);
+  --sp-color-text: var(--sp-ink-100);
+  --sp-color-text-muted: var(--sp-ink-300);
+  --sp-color-border: var(--sp-ink-700);
+  --sp-color-border-strong: var(--sp-ink-400);
+  --sp-color-accent: var(--sp-iris-300);
+  --sp-color-accent-hover: var(--sp-iris-200);
+  --sp-color-accent-subtle: var(--sp-iris-950);
+  --sp-color-on-accent: var(--sp-ink-950);
+  --sp-color-link: var(--sp-iris-300);
+  --sp-color-link-visited: var(--sp-lagoon-300);
+  --sp-color-highlight: var(--sp-lumen-400);
+  --sp-color-on-highlight: var(--sp-ink-950);
+  --sp-color-focus: var(--sp-lumen-300);
+  --sp-color-focus-halo: var(--sp-ink-950);
+}
+
+/* More contrast: muted text and borders become full-strength (as in tokens.css). */
+@media (prefers-contrast: more) {
+  [data-md-color-scheme] {
+    --sp-color-text-muted: var(--sp-color-text);
+    --sp-color-border: var(--sp-color-border-strong);
+  }
+}
+
+@media (forced-colors: active) {
+  [data-md-color-scheme] { --sp-color-focus: Highlight; --sp-color-focus-halo: Canvas; }
+}
+
+/* Theme variables from the brand tokens (both schemes; the selectors outrank the theme's own palettes). */
+body[data-md-color-scheme] {
+  --md-text-font-family: var(--sp-font-text);
+  --md-code-font-family: var(--sp-font-mono);
+
+  --md-primary-fg-color: var(--sp-color-accent);
+  --md-primary-fg-color--light: var(--sp-color-accent-hover);
+  --md-primary-fg-color--dark: var(--sp-color-accent-hover);
+  --md-primary-bg-color: var(--sp-color-on-accent);
+  --md-primary-bg-color--light: var(--sp-color-on-accent);
+  --md-accent-fg-color: var(--sp-color-accent-hover);
+  --md-accent-fg-color--transparent: color-mix(in srgb, var(--sp-color-accent) 10%, transparent);
+  --md-accent-bg-color: var(--sp-color-on-accent);
+  --md-accent-bg-color--light: var(--sp-color-on-accent);
+
+  --md-default-fg-color: var(--sp-color-text);
+  --md-default-fg-color--light: var(--sp-color-text-muted);
+  --md-default-fg-color--lighter: var(--sp-color-border-strong);
+  --md-default-fg-color--lightest: var(--sp-color-border);
+  --md-default-bg-color: var(--sp-color-bg);
+  --md-default-bg-color--light: color-mix(in srgb, var(--sp-color-surface) 85%, transparent);
+  --md-default-bg-color--lighter: color-mix(in srgb, var(--sp-color-surface) 30%, transparent);
+  --md-default-bg-color--lightest: color-mix(in srgb, var(--sp-color-surface) 12%, transparent);
+
+  --md-code-fg-color: var(--sp-color-text);
+  --md-code-bg-color: var(--sp-color-surface-sunken);
+  --md-code-bg-color--light: color-mix(in srgb, var(--sp-color-surface-sunken) 70%, transparent);
+  --md-code-bg-color--lighter: color-mix(in srgb, var(--sp-color-surface-sunken) 30%, transparent);
+
+  --md-typeset-color: var(--sp-color-text);
+  --md-typeset-a-color: var(--sp-color-link);
+  --md-typeset-mark-color: var(--sp-color-highlight);
+  --md-typeset-table-color: var(--sp-color-border);
+  --md-typeset-table-color--light: var(--sp-color-surface-sunken);
+
+  --md-footer-fg-color: var(--sp-color-text);
+  --md-footer-fg-color--light: var(--sp-color-text-muted);
+  --md-footer-fg-color--lighter: var(--sp-color-text-muted);
+  --md-footer-bg-color: var(--sp-color-surface);
+  --md-footer-bg-color--dark: var(--sp-color-surface-sunken);
+
+  --md-shadow-z1: var(--sp-shadow-1);
+  --md-shadow-z2: var(--sp-shadow-2);
+  --md-shadow-z3: var(--sp-shadow-3);
+
+  background-color: var(--sp-color-bg);
+  color: var(--sp-color-text);
+  font-family: var(--sp-font-text);
+}
+
+body, input, button { font-family: var(--sp-font-text); }
+code, kbd, pre { font-family: var(--sp-font-mono); }
+
+/* Logo: the light version on light pages, the dark version on dark pages. At least 120 px wide, as the guide asks. */
+.md-logo img.sp-logo { block-size: 2rem; inline-size: auto; }
+[data-md-color-scheme="default"] .md-logo img.sp-logo--dark,
+[data-md-color-scheme="slate"] .md-logo img.sp-logo--light { display: none; }
+.md-header__button.md-logo { margin-inline-end: var(--sp-space-2); }
+
+/* Header and the drawer title: a plain surface with a hairline, as on sightpress.org */
+.md-header {
+  background-color: var(--md-default-bg-color--light);
+  color: var(--sp-color-text);
+  border-block-end: 1px solid var(--sp-color-border);
+}
+.md-header__topic:first-child { font-weight: var(--sp-font-weight-semibold); }
+.md-nav--primary .md-nav__title[for="__drawer"] {
+  background-color: var(--sp-color-surface);
+  color: var(--sp-color-text);
+  border-block-end: 1px solid var(--sp-color-border);
+}
+.md-nav--primary .md-nav__title[for="__drawer"] .md-logo img.sp-logo { block-size: 2.25rem; }
+
+/* Body type: 18 px Atkinson Hyperlegible Next on the brand measure */
+.md-typeset {
+  font-size: 0.9rem;
+  line-height: var(--sp-line-height-body);
+}
+.md-typeset p,
+.md-typeset ul,
+.md-typeset ol,
+.md-typeset dl,
+.md-typeset blockquote { max-inline-size: var(--sp-measure); }
+
+/* Headings: Fraunces (soft cut) from 28 px up, Atkinson below */
+.md-typeset h1,
+.md-typeset h2 {
+  font-family: var(--sp-font-display);
+  font-weight: var(--sp-font-weight-display);
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  line-height: var(--sp-line-height-tight);
+  letter-spacing: normal;
+  color: var(--sp-color-text);
+  text-wrap: balance;
+}
+.md-typeset h1 { font-size: 2.25em; margin-block-end: 0.75em; }
+.md-typeset h2 { font-size: 1.6em; }
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: var(--sp-font-text);
+  font-weight: var(--sp-font-weight-bold);
+  line-height: var(--sp-line-height-snug);
+  letter-spacing: normal;
+  color: var(--sp-color-text);
+}
+.md-typeset h3 { font-size: 1.3em; }
+:lang(ar) .md-typeset :is(h1, h2) { line-height: var(--sp-line-height-snug); }
+:lang(ar) .md-typeset { letter-spacing: normal; }
+
+/* Links: always underlined, visited links in lagoon */
+.md-typeset a {
+  color: var(--sp-color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.2em;
+}
+.md-typeset a:visited { color: var(--sp-color-link-visited); }
+.md-typeset a:hover,
+.md-typeset a:focus { color: var(--sp-color-accent-hover); text-decoration-thickness: 0.16em; }
+.md-typeset .headerlink,
+.md-typeset .headerlink:visited { color: var(--sp-color-text-muted); text-decoration: none; }
+.md-typeset .headerlink:hover,
+.md-typeset .headerlink:focus { color: var(--sp-color-link); }
+
+/* Navigation: the current page in iris */
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active { color: var(--sp-color-link); font-weight: var(--sp-font-weight-semibold); }
+.md-nav__link:hover,
+.md-nav__link:focus { color: var(--sp-color-accent-hover); }
+
+/* Focus: the brand ring with its lumen halo, everywhere */
+:focus-visible,
+.md-typeset :focus-visible,
+.md-nav__link:focus-visible,
+.md-header__button:focus-visible {
+  outline: var(--sp-focus-width) solid var(--sp-color-focus);
+  outline-offset: var(--sp-focus-offset);
+  box-shadow: 0 0 0 calc(var(--sp-focus-offset) + var(--sp-focus-width)) var(--sp-color-focus-halo);
+  border-radius: var(--sp-radius-sm);
+}
+
+/* Code */
+.md-typeset code {
+  border-radius: var(--sp-radius-sm);
+  font-size: 0.9em;
+}
+.md-typeset pre > code { border-radius: var(--sp-radius-md); }
+.md-typeset pre { border: 1px solid var(--sp-color-border); border-radius: var(--sp-radius-md); }
+
+/* Highlights (including search matches): lumen with ink text in both schemes */
+.md-typeset mark { background-color: var(--sp-color-highlight); color: var(--sp-color-on-highlight); }
+
+/* Admonitions and details: brand radius, info in iris */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--sp-radius-lg);
+  font-size: 0.9rem;
+  box-shadow: var(--sp-shadow-1);
+}
+.md-typeset .admonition-title,
+.md-typeset summary { font-weight: var(--sp-font-weight-bold); }
+
+/* Tables */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--sp-color-border);
+  border-radius: var(--sp-radius-md);
+  font-size: 0.85rem;
+}
+.md-typeset table:not([class]) th {
+  background-color: var(--sp-color-surface-sunken);
+  color: var(--sp-color-text);
+  font-weight: var(--sp-font-weight-bold);
+}
+
+/* Footer: a plain surface with a hairline, like the header */
+.md-footer { border-block-start: 1px solid var(--sp-color-border); }
+.md-footer__link { color: var(--sp-color-text); }
+.md-footer__link:hover,
+.md-footer__link:focus { color: var(--sp-color-link); }
+.md-footer-meta { color: var(--sp-color-text-muted); }
+.md-footer-meta a, .md-copyright a { color: var(--sp-color-link); }
+
+/* Search */
+.md-search__form { border-radius: var(--sp-radius-pill); }
+
+/* Touch targets: at least 44 px for the header buttons */
+.md-header__button { min-block-size: var(--sp-target-min); min-inline-size: var(--sp-target-min); }
+
+[dir="rtl"] .icon-mirror { transform: scaleX(-1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+@media (forced-colors: active) {
+  .md-header, .md-footer, .md-typeset pre, .md-typeset table:not([class]) { border-color: CanvasText; }
+}
