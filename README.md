@@ -20,8 +20,10 @@ Then open `http://127.0.0.1:8000`. Before you open a pull request, run `.venv/bi
 ## Publishing
 
 Every pull request builds the site with `zensical build --strict`, so a broken link or a missing page fails the
-check. Each push to `main` publishes the docs to GitHub Pages as the `dev` version. When a release pull request
-from release-please is merged, that release is published as `<major>.<minor>` with the `latest` alias. Commit
+check. Each push to `main` publishes the docs as the `dev` version. When a release pull request from release-please is
+merged, that release is published as `<major>.<minor>` with the `latest` alias. mike writes every version to the
+`gh-pages` branch, and the Amplify workflow then deploys that branch to AWS Amplify Hosting at
+<https://docs.sightpress.org>. The redirect rules and response headers it applies live in `amplify/`. Commit
 messages follow [Conventional Commits](https://www.conventionalcommits.org/).
 
 `main` is protected by the ruleset in `.github/rulesets/main.json`. Changes reach it only through a pull request that

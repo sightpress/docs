@@ -1,7 +1,7 @@
 [project]
 site_name = "SightPress documentation"
 site_description = "Documentation for SightPress, a powerful multi-site, multilingual CMS for everyone, designed with blind and low-vision creators and audiences in mind."
-site_url = "https://sightpress.github.io/docs/"
+site_url = "https://docs.sightpress.org/"
 repo_url = "https://github.com/sightpress/docs"
 repo_name = "sightpress/docs"
 edit_uri = "edit/main/docs/"

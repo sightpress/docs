@@ -1,0 +1,84 @@
+# Publishes the built docs (the gh-pages branch, which mike keeps with every version) to AWS Amplify Hosting at
+# https://docs.sightpress.org. Runs after the Docs or Release Please workflow finishes on main, so the site follows every
+# "dev" and release deploy. It can also be started by hand. AWS access uses GitHub OIDC (no stored keys): the repository
+# variables AWS_ROLE_ARN, AWS_REGION and AMPLIFY_APP_ID point at the role and the app.
+name: Amplify
+
+on:
+  workflow_run:
+    workflows: [Docs, Release Please]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: amplify-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to Amplify
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      APP_ID: ${{ vars.AMPLIFY_APP_ID }}
+      BRANCH: main
+    steps:
+      - name: Check out the built site
+        uses: actions/checkout@v7
+        with:
+          ref: gh-pages
+          path: site
+
+      - name: Check out the Amplify settings
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          path: source
+          sparse-checkout: amplify
+
+      - uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Apply the redirect rules and headers
+        run: |
+          aws amplify update-app --app-id "$APP_ID" \
+            --custom-rules file://source/amplify/custom-rules.json \
+            --custom-headers file://source/amplify/custom-headers.yml > /dev/null
+
+      - name: Package the site
+        run: |
+          cd site
+          rm -rf .git
+          zip -qr ../site.zip .
+
+      - name: Upload and start the deployment
+        run: |
+          read -r job_id url < <(aws amplify create-deployment --app-id "$APP_ID" --branch-name "$BRANCH" \
+            --query '[jobId, zipUploadUrl]' --output text)
+          curl --fail --silent --show-error -X PUT -H 'Content-Type: application/zip' -T site.zip "$url"
+          aws amplify start-deployment --app-id "$APP_ID" --branch-name "$BRANCH" --job-id "$job_id" > /dev/null
+          echo "JOB_ID=$job_id" >> "$GITHUB_ENV"
+
+      - name: Wait for the deployment
+        run: |
+          for _ in $(seq 60); do
+            status=$(aws amplify get-job --app-id "$APP_ID" --branch-name "$BRANCH" --job-id "$JOB_ID" \
+              --query 'job.summary.status' --output text)
+            echo "Status: $status"
+            case "$status" in
+              SUCCEED) exit 0 ;;
+              FAILED|CANCELLED) exit 1 ;;
+            esac
+            sleep 10
+          done
+          echo 'Timed out waiting for the deployment.'
+          exit 1
