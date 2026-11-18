@@ -1274,13 +1274,9 @@ have to install PHP, a web server or a database yourself.</p>
 </li>
 </ol>
 <h2 id="step-3-download-sightpress">Step 3: download SightPress<a class="headerlink" href="#step-3-download-sightpress" title="Link to this section">&para;</a></h2>
-<p>SightPress comes in three parts, which must sit side by side in the same folder:</p>
-<ul>
-<li><code>skeleton</code>, the project you start;</li>
-<li><code>core</code>, which holds the features;</li>
-<li>
-<p><code>module-interface</code>, which describes how add-ons talk to SightPress.</p>
-</li>
+<p>You only download the <code>skeleton</code>, the project you start. The other parts of SightPress are fetched for you
+automatically the first time you start it, in step 4.</p>
+<ol>
 <li>
 <p>Make a folder for SightPress and go into it:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>sightpress
@@ -1288,19 +1284,17 @@ have to install PHP, a web server or a database yourself.</p>
 </code></pre></div>
 </li>
 <li>
-<p>Download the three parts:</p>
+<p>Download the skeleton:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sightpress/skeleton.git
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sightpress/core.git
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/sightpress/module-interface.git
 </code></pre></div>
-<p>After each command, you should see a few lines that end with <code>done.</code></p>
+<p>You should see a few lines that end with <code>done.</code></p>
 </li>
 <li>
 <p>Go into the <code>skeleton</code> folder:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>skeleton
 </code></pre></div>
 </li>
-</ul>
+</ol>
 <div class="admonition tip">
 <p class="admonition-title">Only on Linux</p>
 <p>The SightPress container writes files as user number 1000. If your Linux user has a different number, files
