@@ -17,6 +17,13 @@ python3 -m venv .venv
 
 Then open `http://127.0.0.1:8000`. Before you open a pull request, run `.venv/bin/zensical build --strict`.
 
+## Branding
+
+The site uses the SightPress brand: the logo, favicons, self-hosted fonts and design tokens in `docs/brand/` are
+copied unchanged from the brand guide, and `docs/stylesheets/sightpress.css` maps the tokens onto the theme for the
+light and dark schemes. `overrides/` swaps in the light or dark logo and adds the favicons. When the brand guide
+changes, copy its files into `docs/brand/` again rather than editing them here.
+
 ## Publishing
 
 Every pull request builds the site with `zensical build --strict`, so a broken link or a missing page fails the

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{#- SightPress brand: self-hosted fonts, favicons and theme colour. -#}
+{% block extrahead %}
+  <link rel="preload" href="{{ 'brand/fonts/atkinson-hyperlegible-next-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ 'brand/fonts/fraunces-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="{{ 'brand/favicons/favicon.ico' | url }}" sizes="48x48">
+  <link rel="apple-touch-icon" href="{{ 'brand/favicons/apple-touch-icon.png' | url }}">
+  <link rel="manifest" href="{{ 'brand/favicons/site.webmanifest' | url }}">
+  <meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101430" media="(prefers-color-scheme: dark)">
+{% endblock %}

@@ -39,12 +39,24 @@ nav = [
   ] },
 ]
 
+# SightPress brand (copied from the brand guide): self-hosted fonts and design tokens, then the docs styles.
+extra_css = [
+  "brand/fonts/fonts.css",
+  "brand/tokens/tokens.css",
+  "stylesheets/sightpress.css",
+]
+
 [project.validation]
 invalid_links = true
 invalid_link_anchors = true
 
 [project.theme]
 language = "en"
+custom_dir = "overrides"
+# Fonts are self-hosted from docs/brand/fonts, so no requests go to Google Fonts.
+font = false
+logo = "brand/logo/sightpress-logo.svg"
+favicon = "brand/favicons/favicon.svg"
 features = [
   "content.code.copy",
   "navigation.footer",
@@ -57,12 +69,16 @@ features = [
 [[project.theme.palette]]
 media = "(prefers-color-scheme: light)"
 scheme = "default"
+primary = "custom"
+accent = "custom"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to dark mode"
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme: dark)"
 scheme = "slate"
+primary = "custom"
+accent = "custom"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to light mode"
 
