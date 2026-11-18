@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://sightpress.github.io/docs/dev/</loc>
+        <loc>https://docs.sightpress.org/dev/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/getting-started/</loc>
+        <loc>https://docs.sightpress.org/dev/getting-started/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/change-the-ports/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/change-the-ports/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/codes-we-send-you/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/codes-we-send-you/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/create-a-site/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/create-a-site/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/open-the-file-storage-console/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/open-the-file-storage-console/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/open-the-test-email-inbox/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/open-the-test-email-inbox/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/run-in-the-background/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/run-in-the-background/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/start-a-database/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/start-a-database/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/try-the-command-line-tool/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/try-the-command-line-tool/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/how-to/write-and-publish-a-page/</loc>
+        <loc>https://docs.sightpress.org/dev/how-to/write-and-publish-a-page/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/reference/blocks/</loc>
+        <loc>https://docs.sightpress.org/dev/reference/blocks/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/reference/command-line/</loc>
+        <loc>https://docs.sightpress.org/dev/reference/command-line/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/reference/roles-and-permissions/</loc>
+        <loc>https://docs.sightpress.org/dev/reference/roles-and-permissions/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/reference/search-and-ai/</loc>
+        <loc>https://docs.sightpress.org/dev/reference/search-and-ai/</loc>
       </url>
       <url>
-        <loc>https://sightpress.github.io/docs/dev/what-you-can-build/</loc>
+        <loc>https://docs.sightpress.org/dev/what-you-can-build/</loc>
       </url>
 </urlset>
