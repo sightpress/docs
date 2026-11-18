@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/sightpress/docs/compare/0.1.0...0.1.1) (2026-11-18)
+
+
+### Documentation
+
+* apply the SightPress brand: logo, favicons, self-hosted fonts and colour tokens ([#12](https://github.com/sightpress/docs/issues/12)) ([aaaad16](https://github.com/sightpress/docs/commit/aaaad16d01b87a3358d3df509a9e1089735094c5))
+* only clone the skeleton in getting started; other parts are fetched automatically ([#9](https://github.com/sightpress/docs/issues/9)) ([9a71563](https://github.com/sightpress/docs/commit/9a71563d17c743006bf222b2216fa3d6152bf11f))
+
 ## 0.1.0 (2026-11-17)
 
 
