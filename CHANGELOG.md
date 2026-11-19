@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2](https://github.com/sightpress/docs/compare/0.1.1...0.1.2) (2026-11-19)
+
+
+### Documentation
+
+* add a code of conduct and a contributing guide ([#16](https://github.com/sightpress/docs/issues/16)) ([404fbc1](https://github.com/sightpress/docs/commit/404fbc19bd4b089854f0dadee470f3dd9d716d4f))
+* add a how-to for searching a website and the site:search commands (SR-2) ([#15](https://github.com/sightpress/docs/issues/15)) ([5e55316](https://github.com/sightpress/docs/commit/5e55316ec7efbbee7d2ec841825e7706225c83ed))
+* how to turn features on or off, the site:module commands and the module.manage permission (F-2) ([#13](https://github.com/sightpress/docs/issues/13)) ([080464a](https://github.com/sightpress/docs/commit/080464a6b9635a8635251c06847985375a4f37b3))
+
 ## [0.1.1](https://github.com/sightpress/docs/compare/0.1.0...0.1.1) (2026-11-18)
 
 
