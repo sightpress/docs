@@ -350,6 +350,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -499,6 +503,60 @@
     
   
   Search your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/see-who-visits-your-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  See who visits your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/fix-upload-size-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fix upload size limits
 
     
   </span>
@@ -1023,6 +1081,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Analytics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#branding" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1246,6 +1315,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Analytics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#branding" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1438,6 +1518,7 @@ refused: they use "Forgot your password?" instead.</p>
 </tr>
 </tbody>
 </table>
+<p>| <code>system:check</code> | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. Run it with <code>docker compose exec php</code> so it reads the same settings as the website. See <a href="../../how-to/fix-upload-size-limits/">Fix upload size limits</a>. |</p>
 <p>To move a website to another database:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bin/sightpress<span class="w"> </span>site:disable<span class="w"> </span>demo
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># copy the data to the new database with your database's own tools</span>
@@ -1493,6 +1574,26 @@ refused: they use "Forgot your password?" instead.</p>
 </tbody>
 </table>
 <p>They refuse a website with search turned off. See <a href="../../how-to/search-your-website/">Search your website</a>.</p>
+<h2 id="analytics">Analytics<a class="headerlink" href="#analytics" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:analytics:report &lt;slug&gt; [--from=YYYY-MM-DD] [--to=YYYY-MM-DD] [--report=&lt;name&gt;\|all] [--format=table\|csv\|json]</code></td>
+<td>Shows the website's analytics, the last 30 days by default. Reports: <code>summary</code>, <code>daily</code>, <code>pages</code>, <code>sources</code>, <code>languages</code>, <code>devices</code>, <code>searches</code>, <code>searches-without-results</code>, <code>not-found</code>, <code>bots</code>. Warns when the hourly roll-up hasn't run for two hours.</td>
+</tr>
+<tr>
+<td><code>site:analytics:purge &lt;slug&gt; [--before=YYYY-MM-DD]</code></td>
+<td>Deletes the figures from before a day; without <code>--before</code>, those older than the website keeps them.</td>
+</tr>
+</tbody>
+</table>
+<p>They refuse a website with analytics turned off. See <a href="../../how-to/see-who-visits-your-website/">See who visits your website</a>.</p>
 <h2 id="branding">Branding<a class="headerlink" href="#branding" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
