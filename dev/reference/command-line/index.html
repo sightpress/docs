@@ -348,6 +348,8 @@
       
         
       
+        
+      
     
     
     
@@ -470,6 +472,33 @@
     
   
   Turn features on or off
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/search-your-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Search your website
 
     
   </span>
@@ -983,6 +1012,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#site-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Site search
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#branding" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1188,6 +1228,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Features
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Site search
       </span>
     </span>
   </a>
@@ -1418,6 +1469,30 @@ refused: they use "Forgot your password?" instead.</p>
 </table>
 <p>Features the installation set in <code>config/tenant.php</code> (<code>modules.locked</code>) can't be changed. See
 <a href="../../how-to/turn-features-on-or-off/">Turn features on or off</a>.</p>
+<h2 id="site-search">Site search<a class="headerlink" href="#site-search" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:search:reindex &lt;slug&gt; [--locale=&lt;locale&gt;]</code></td>
+<td>Builds the website's search index again from its published pages, in every language or one.</td>
+</tr>
+<tr>
+<td><code>site:search:status &lt;slug&gt;</code></td>
+<td>How many pages the search index holds in each language, when it last changed, and whether it is waiting to be rebuilt.</td>
+</tr>
+<tr>
+<td><code>site:search &lt;slug&gt; &lt;words&gt; [--locale=&lt;locale&gt;] [--members]</code></td>
+<td>Searches the website the way a visitor would (<code>--members</code>: as someone signed in) and lists the first results.</td>
+</tr>
+</tbody>
+</table>
+<p>They refuse a website with search turned off. See <a href="../../how-to/search-your-website/">Search your website</a>.</p>
 <h2 id="branding">Branding<a class="headerlink" href="#branding" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
