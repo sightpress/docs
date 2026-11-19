@@ -37,6 +37,11 @@ messages follow [Conventional Commits](https://www.conventionalcommits.org/).
 passes the `zensical build --strict` check and has one approval. Pull requests are squash-merged. Admins can bypass the
 ruleset.
 
+## Contributing
+
+Everyone can help, not only developers. See [CONTRIBUTING.md](CONTRIBUTING.md) for the ways to take part, and
+the [Code of Conduct](CODE_OF_CONDUCT.md) that everyone who takes part agrees to follow.
+
 ## Licence
 
 GNU General Public License v3.0 or later. See [LICENSE](LICENSE).
