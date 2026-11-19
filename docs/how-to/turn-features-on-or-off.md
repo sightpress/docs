@@ -9,9 +9,11 @@ You need to be an **admin** of the website. Editors, contributors and members do
 
 !!! note "Optional features in this version"
 
-    This version of SightPress has one optional feature of its own: **Site search** (see
-    [Search your website](search-your-website.md)). Statistics and the AI assistant arrive in later versions.
-    Features installed as extra packages show up on the screen too.
+    This version of SightPress has three optional features of its own: **Site search** (see
+    [Search your website](search-your-website.md)), **Analytics** (see
+    [See who visits your website](see-who-visits-your-website.md)), both on for new websites, and the
+    **AI assistant** (see [Use the AI assistant](use-the-ai-assistant.md)), off for new websites. Features installed
+    as extra packages show up on the screen too.
 
 ## See the features of a website
 

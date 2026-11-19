@@ -128,6 +128,19 @@ They refuse a website with search turned off. See [Search your website](../how-t
 
 They refuse a website with analytics turned off. See [See who visits your website](../how-to/see-who-visits-your-website.md).
 
+## AI assistant
+
+| Command | What it does |
+| --- | --- |
+| `site:assistant:set <slug> --provider=<id> --model=<model> [--base-url=<address>] [--key-stdin]` | Chooses the AI service (`anthropic`, `openai`, `mistral` or `openai_compatible`) and model. With `--key-stdin` it reads the API key from standard input, so it never appears in the shell history: `printf %s "$KEY" \| bin/sightpress site:assistant:set …`. |
+| `site:assistant:test <slug>` | Sends a tiny request and says whether the service answered. |
+| `site:assistant:usage <slug> [--month=YYYY-MM]` | Shows the tokens used this month (or another), per task, and the budget. |
+| `site:assistant:disable <slug> [--remove-key]` | Turns the assistant off for the website, and removes its key with `--remove-key`. |
+| `assistant:ask <slug> "<question>"` | Asks the assistant a question from the console. |
+
+They refuse a website with the assistant turned off; turn it on with `site:module:enable <slug> assistant`. See
+[Use the AI assistant](../how-to/use-the-ai-assistant.md).
+
 ## Branding
 
 | Command | What it does |
