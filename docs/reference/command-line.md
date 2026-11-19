@@ -119,6 +119,15 @@ Features the installation set in `config/tenant.php` (`modules.locked`) can't be
 
 They refuse a website with search turned off. See [Search your website](../how-to/search-your-website.md).
 
+## Analytics
+
+| Command | What it does |
+| --- | --- |
+| `site:analytics:report <slug> [--from=YYYY-MM-DD] [--to=YYYY-MM-DD] [--report=<name>\|all] [--format=table\|csv\|json]` | Shows the website's analytics, the last 30 days by default. Reports: `summary`, `daily`, `pages`, `sources`, `languages`, `devices`, `searches`, `searches-without-results`, `not-found`, `bots`. Warns when the hourly roll-up hasn't run for two hours. |
+| `site:analytics:purge <slug> [--before=YYYY-MM-DD]` | Deletes the figures from before a day; without `--before`, those older than the website keeps them. |
+
+They refuse a website with analytics turned off. See [See who visits your website](../how-to/see-who-visits-your-website.md).
+
 ## Branding
 
 | Command | What it does |

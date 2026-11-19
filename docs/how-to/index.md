@@ -9,6 +9,8 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Write and publish a page](write-and-publish-a-page.md), from a draft through review to the public website.
 - [Turn features on or off](turn-features-on-or-off.md) for one website, and delete a feature's data.
 - [Search your website](search-your-website.md) from any page, and leave a page out of the search.
+- [See who visits your website](see-who-visits-your-website.md): the Analytics screen, its charts and tables, and
+  what is and isn't counted.
 
 ## Running SightPress
 

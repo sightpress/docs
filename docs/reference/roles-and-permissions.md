@@ -41,6 +41,8 @@ has one admin: the person named when it was created (see [Create a website](../h
 | Manage features | Turn the site's optional features on and off, and delete their data ([how](../how-to/turn-features-on-or-off.md)). | yes | no | no | no |
 | Apply themes | Choose the site's theme. | yes | no | no | no |
 | View the audit log | See who changed what, and when. | yes | no | no | no |
+| View analytics | See how many people visit the site, what they read and where they come from ([how](../how-to/see-who-visits-your-website.md)). | yes | yes | no | no |
+| Manage analytics | Choose how long analytics are kept, and delete them. | yes | no | no | no |
 
 Archiving pages, deleting pages, more themes and editing roles in the admin panel come in later versions; the
 permissions already exist so that roles are ready for them.
