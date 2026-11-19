@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.3.0](https://github.com/sightpress/docs/compare/0.1.2...0.3.0) (2026-11-19)
+
+
+### Documentation
+
+* add a how-to for fixing upload size limits, and system:check to the command line reference (M-5) ([#17](https://github.com/sightpress/docs/issues/17)) ([27b208a](https://github.com/sightpress/docs/commit/27b208ad3855b7634ae8556a08696b0240371cce))
+* add a how-to for the AI assistant, and its permissions and commands to the references (A-2 … A-6) ([#20](https://github.com/sightpress/docs/issues/20)) ([2424dc5](https://github.com/sightpress/docs/commit/2424dc52c810b70aecb7ef5439902c848a37ab5e))
+* add a how-to for the Analytics screen, and the analytics permissions and commands to the references (AN-3) ([#19](https://github.com/sightpress/docs/issues/19)) ([3389896](https://github.com/sightpress/docs/commit/3389896912dcd790255edf5f6067af52c0e03b55))
+* add the M2 how-to guides, the Help improve SightPress guides and an update guide (Q-3, G-2, CM-3) ([#21](https://github.com/sightpress/docs/issues/21)) ([32cc794](https://github.com/sightpress/docs/commit/32cc794d93fb322dd3d7bc9dedeae05e155e1af2))
+* name the audit log in plain words in the editor and member guides ([#22](https://github.com/sightpress/docs/issues/22)) ([bd01e3c](https://github.com/sightpress/docs/commit/bd01e3c495e5b8dd05e595e23e45928c8e4ff843))
+
+
+### Miscellaneous
+
+* release 0.3.0 in lockstep with core and skeleton ([2688026](https://github.com/sightpress/docs/commit/26880262540b058e3cc85c795e6c533baea13f08))
+
 ## [0.1.2](https://github.com/sightpress/docs/compare/0.1.1...0.1.2) (2026-11-19)
 
 
