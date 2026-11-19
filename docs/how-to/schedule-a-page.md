@@ -42,7 +42,7 @@ Archiving a page or putting it in the trash clears its schedule too.
 - **A time in the past**, an end before the start, or a time that doesn't exist (the night the clocks go forward) is
   explained, and the form keeps what you typed.
 - The page is published **as the person who scheduled it**: the same publish checks run. If a check fails, or that
-  person may no longer publish, nothing is published, the **Audit log** says why, and the time is cleared so that
+  person may no longer publish, nothing is published, the audit log says why, and the time is cleared so that
   you can fix the page and schedule it again.
 - If the computer or server was off at the time, the page is published as soon as the scheduler runs again.
 

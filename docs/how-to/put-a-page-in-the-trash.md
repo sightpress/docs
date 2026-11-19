@@ -50,4 +50,4 @@ entries that pointed to it are removed.
 **Copy this page** makes a new draft right after the page, in every language it is written in, titled "Copy of …",
 with `-copy` added to its address. The pages under it aren't copied. The copy opens in the editor.
 
-Every step on this page is written to the website's **Audit log**.
+Every step on this page is written to the website’s audit log, which admins can read.

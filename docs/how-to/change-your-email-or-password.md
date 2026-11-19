@@ -32,4 +32,4 @@ you have to wait, as when signing in.
 Your old address gets an email saying that the address was changed, with the new one partly hidden and no link.
 Until you type the code, nothing changes. See [Codes we send you](codes-we-send-you.md).
 
-Every change is written to the website's **Audit log**, without the passwords.
+Every change is written to the website's audit log, without the passwords.
