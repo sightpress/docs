@@ -346,6 +346,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -441,6 +445,60 @@
     
   
   Write and publish a page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/turn-features-on-or-off/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Turn features on or off
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/search-your-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Search your website
 
     
   </span>
@@ -943,6 +1001,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Features
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Site search
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#branding" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1144,6 +1224,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Features
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#site-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Site search
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#branding" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1259,11 +1361,12 @@ then a missing or wrong value stops the command with a sentence that says what i
 <h3 id="sitecreate">site:create<a class="headerlink" href="#sitecreate" title="Link to this section">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>site:create [&lt;slug&gt;] [--domain=] [--db= | --db-engine= --db-path= | --db-host= --db-port= --db-name= --db-user= --db-password=]
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>            [--owner-type=] [--locale=] [--admin-email=] [--admin-first-name=] [--admin-last-name=]
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content]
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content] [--without=]
 </code></pre></div>
 <p>Creates a website: its database tables, its roles, its first admin, six starter pages, its menus and its logo, icon
 and share image. It prints the first admin's setup code. Nothing is created if something is wrong.
-<a href="../../how-to/create-a-site/">Create a website</a> explains every option.</p>
+<a href="../../how-to/create-a-site/">Create a website</a> explains every option. <code>--without=</code> names optional features (module
+ids, separated by commas) the website starts with off.</p>
 <h3 id="siteusercreate-admin">site:user:create-admin<a class="headerlink" href="#siteusercreate-admin" title="Link to this section">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>site:user:create-admin &lt;slug&gt; --email= --first-name= --last-name= [--url=]
 </code></pre></div>
@@ -1341,6 +1444,55 @@ refused: they use "Forgot your password?" instead.</p>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>bin/sightpress<span class="w"> </span>site:db:change<span class="w"> </span>demo<span class="w"> </span>--db<span class="o">=</span>postgresql://user:password@db.internal:5432/demo
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>bin/sightpress<span class="w"> </span>site:enable<span class="w"> </span>demo
 </code></pre></div>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:module:list &lt;slug&gt;</code></td>
+<td>Lists the website's optional features (modules): id, name and whether each one is on.</td>
+</tr>
+<tr>
+<td><code>site:module:enable &lt;slug&gt; &lt;module&gt;</code></td>
+<td>Turns a feature on, after updating the website's database for it. Refused while a feature it needs is off.</td>
+</tr>
+<tr>
+<td><code>site:module:disable &lt;slug&gt; &lt;module&gt; [--purge-data]</code></td>
+<td>Turns a feature off; its data is kept. Refused while a feature that is on needs it. <code>--purge-data</code> also deletes its data, for good.</td>
+</tr>
+</tbody>
+</table>
+<p>Features the installation set in <code>config/tenant.php</code> (<code>modules.locked</code>) can't be changed. See
+<a href="../../how-to/turn-features-on-or-off/">Turn features on or off</a>.</p>
+<h2 id="site-search">Site search<a class="headerlink" href="#site-search" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:search:reindex &lt;slug&gt; [--locale=&lt;locale&gt;]</code></td>
+<td>Builds the website's search index again from its published pages, in every language or one.</td>
+</tr>
+<tr>
+<td><code>site:search:status &lt;slug&gt;</code></td>
+<td>How many pages the search index holds in each language, when it last changed, and whether it is waiting to be rebuilt.</td>
+</tr>
+<tr>
+<td><code>site:search &lt;slug&gt; &lt;words&gt; [--locale=&lt;locale&gt;] [--members]</code></td>
+<td>Searches the website the way a visitor would (<code>--members</code>: as someone signed in) and lists the first results.</td>
+</tr>
+</tbody>
+</table>
+<p>They refuse a website with search turned off. See <a href="../../how-to/search-your-website/">Search your website</a>.</p>
 <h2 id="branding">Branding<a class="headerlink" href="#branding" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
