@@ -348,6 +348,8 @@
       
         
       
+        
+      
     
     
     
@@ -443,6 +445,33 @@
     
   
   Write and publish a page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/turn-features-on-or-off/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Turn features on or off
 
     
   </span>
@@ -1244,6 +1273,14 @@ has one admin: the person named when it was created (see <a href="../../how-to/c
 <td>no</td>
 </tr>
 <tr>
+<td>Manage features</td>
+<td>Turn the site's optional features on and off, and delete their data (<a href="../../how-to/turn-features-on-or-off/">how</a>).</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
 <td>Apply themes</td>
 <td>Choose the site's theme.</td>
 <td>yes</td>
@@ -1331,7 +1368,7 @@ website always keeps someone who can manage people.</p>
 <h2 id="for-developers">For developers<a class="headerlink" href="#for-developers" title="Link to this section">&para;</a></h2>
 <p>Permission names, for modules and the command line: <code>admin.access</code>, <code>page.create</code>, <code>page.edit.own</code>, <code>page.edit.any</code>,
 <code>page.submit</code>, <code>page.publish</code>, <code>page.archive</code>, <code>page.delete</code>, <code>media.upload</code>, <code>media.publish</code>, <code>menu.manage</code>,
-<code>user.invite</code>, <code>user.manage</code>, <code>role.manage</code>, <code>settings.manage</code>, <code>theme.apply</code> and <code>audit.view</code>.</p>
+<code>user.invite</code>, <code>user.manage</code>, <code>role.manage</code>, <code>settings.manage</code>, <code>module.manage</code>, <code>theme.apply</code> and <code>audit.view</code>.</p>
 <ul>
 <li>A role that has any permission also has <code>admin.access</code>.</li>
 <li>A module adds permissions with <code>$registrar-&gt;permissions()-&gt;add(...)</code>. They are copied into every website and given
