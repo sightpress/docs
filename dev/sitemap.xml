@@ -10,7 +10,13 @@
         <loc>https://docs.sightpress.org/dev/how-to/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/how-to/add-a-language/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/how-to/change-the-ports/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/change-your-email-or-password/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/codes-we-send-you/</loc>
@@ -22,13 +28,37 @@
         <loc>https://docs.sightpress.org/dev/how-to/fix-upload-size-limits/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/how-to/let-people-sign-up/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/make-a-site-members-only/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/move-or-rename-a-page/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/how-to/open-the-file-storage-console/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/open-the-test-email-inbox/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/how-to/put-a-page-in-the-trash/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/report-a-problem/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/restore-an-older-version/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/review-the-interface/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/how-to/run-in-the-background/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/schedule-a-page/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/search-your-website/</loc>
@@ -40,10 +70,19 @@
         <loc>https://docs.sightpress.org/dev/how-to/start-a-database/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/how-to/test-with-assistive-technology/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/translate-sightpress/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/how-to/try-the-command-line-tool/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/turn-features-on-or-off/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/update-sightpress/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/use-the-ai-assistant/</loc>
