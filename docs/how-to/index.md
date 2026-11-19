@@ -8,6 +8,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Create a website](create-a-site.md) with the command line tool, and give its first admin a setup code.
 - [Write and publish a page](write-and-publish-a-page.md), from a draft through review to the public website.
 - [Turn features on or off](turn-features-on-or-off.md) for one website, and delete a feature's data.
+- [Search your website](search-your-website.md) from any page, and leave a page out of the search.
 
 ## Running SightPress
 

@@ -7,11 +7,11 @@ back as it was.
 
 You need to be an **admin** of the website. Editors, contributors and members don't see the *Features* screen.
 
-!!! note "No optional features yet?"
+!!! note "Optional features in this version"
 
-    This version of SightPress has no optional features of its own yet: search, statistics and the AI assistant
-    arrive in later versions. Until then the screen says "There are no optional features to turn on or off". Features
-    installed as extra packages show up there straight away.
+    This version of SightPress has one optional feature of its own: **Site search** (see
+    [Search your website](search-your-website.md)). Statistics and the AI assistant arrive in later versions.
+    Features installed as extra packages show up on the screen too.
 
 ## See the features of a website
 

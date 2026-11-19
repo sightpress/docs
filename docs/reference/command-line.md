@@ -107,6 +107,16 @@ bin/sightpress site:enable demo
 Features the installation set in `config/tenant.php` (`modules.locked`) can't be changed. See
 [Turn features on or off](../how-to/turn-features-on-or-off.md).
 
+## Site search
+
+| Command | What it does |
+| --- | --- |
+| `site:search:reindex <slug> [--locale=<locale>]` | Builds the website's search index again from its published pages, in every language or one. |
+| `site:search:status <slug>` | How many pages the search index holds in each language, when it last changed, and whether it is waiting to be rebuilt. |
+| `site:search <slug> <words> [--locale=<locale>] [--members]` | Searches the website the way a visitor would (`--members`: as someone signed in) and lists the first results. |
+
+They refuse a website with search turned off. See [Search your website](../how-to/search-your-website.md).
+
 ## Branding
 
 | Command | What it does |
