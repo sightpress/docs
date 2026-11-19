@@ -38,6 +38,7 @@ has one admin: the person named when it was created (see [Create a website](../h
 | Manage users | Change the role of any user, and deactivate accounts. | yes | no | no | no |
 | Manage roles | Create roles and change what they allow. | yes | no | no | no |
 | Manage site settings | Change the site's name, profile, branding and other settings. | yes | no | no | no |
+| Manage features | Turn the site's optional features on and off, and delete their data ([how](../how-to/turn-features-on-or-off.md)). | yes | no | no | no |
 | Apply themes | Choose the site's theme. | yes | no | no | no |
 | View the audit log | See who changed what, and when. | yes | no | no | no |
 
@@ -85,7 +86,7 @@ website always keeps someone who can manage people.
 
 Permission names, for modules and the command line: `admin.access`, `page.create`, `page.edit.own`, `page.edit.any`,
 `page.submit`, `page.publish`, `page.archive`, `page.delete`, `media.upload`, `media.publish`, `menu.manage`,
-`user.invite`, `user.manage`, `role.manage`, `settings.manage`, `theme.apply` and `audit.view`.
+`user.invite`, `user.manage`, `role.manage`, `settings.manage`, `module.manage`, `theme.apply` and `audit.view`.
 
 - A role that has any permission also has `admin.access`.
 - A module adds permissions with `$registrar->permissions()->add(...)`. They are copied into every website and given

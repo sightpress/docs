@@ -48,12 +48,13 @@ then a missing or wrong value stops the command with a sentence that says what i
 ```text
 site:create [<slug>] [--domain=] [--db= | --db-engine= --db-path= | --db-host= --db-port= --db-name= --db-user= --db-password=]
             [--owner-type=] [--locale=] [--admin-email=] [--admin-first-name=] [--admin-last-name=]
-            [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content]
+            [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content] [--without=]
 ```
 
 Creates a website: its database tables, its roles, its first admin, six starter pages, its menus and its logo, icon
 and share image. It prints the first admin's setup code. Nothing is created if something is wrong.
-[Create a website](../how-to/create-a-site.md) explains every option.
+[Create a website](../how-to/create-a-site.md) explains every option. `--without=` names optional features (module
+ids, separated by commas) the website starts with off.
 
 ### site:user:create-admin
 
@@ -94,6 +95,17 @@ bin/sightpress site:disable demo
 bin/sightpress site:db:change demo --db=postgresql://user:password@db.internal:5432/demo
 bin/sightpress site:enable demo
 ```
+
+## Features
+
+| Command | What it does |
+| --- | --- |
+| `site:module:list <slug>` | Lists the website's optional features (modules): id, name and whether each one is on. |
+| `site:module:enable <slug> <module>` | Turns a feature on, after updating the website's database for it. Refused while a feature it needs is off. |
+| `site:module:disable <slug> <module> [--purge-data]` | Turns a feature off; its data is kept. Refused while a feature that is on needs it. `--purge-data` also deletes its data, for good. |
+
+Features the installation set in `config/tenant.php` (`modules.locked`) can't be changed. See
+[Turn features on or off](../how-to/turn-features-on-or-off.md).
 
 ## Branding
 

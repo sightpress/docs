@@ -23,6 +23,7 @@ nav = [
     "how-to/index.md",
     { "Create a website" = "how-to/create-a-site.md" },
     { "Write and publish a page" = "how-to/write-and-publish-a-page.md" },
+    { "Turn features on or off" = "how-to/turn-features-on-or-off.md" },
     { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
     { "Change the ports" = "how-to/change-the-ports.md" },
     { "Start a database server" = "how-to/start-a-database.md" },
