@@ -7,12 +7,25 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 
 - [Create a website](create-a-site.md) with the command line tool, and give its first admin a setup code.
 - [Write and publish a page](write-and-publish-a-page.md), from a draft through review to the public website.
+- [Schedule a page](schedule-a-page.md) to be published, or taken off the website, at a set time.
+- [Restore an older version of a page](restore-an-older-version.md), and see what changed, word by word.
+- [Move or rename a page without breaking links](move-or-rename-a-page.md), and look after the redirects.
+- [Put a page in the trash and get it back](put-a-page-in-the-trash.md), archive it, copy it or delete it for good.
+- [Add a language and translate a page](add-a-language.md).
+- [Make a website or a page members-only](make-a-site-members-only.md).
+- [Let people sign up](let-people-sign-up.md) for an account, confirmed with an emailed code.
 - [Turn features on or off](turn-features-on-or-off.md) for one website, and delete a feature's data.
 - [Search your website](search-your-website.md) from any page, and leave a page out of the search.
 - [See who visits your website](see-who-visits-your-website.md): the Analytics screen, its charts and tables, and
   what is and isn't counted.
 
+## Your account
+
+- [Change your email address or password](change-your-email-or-password.md) on *My account*.
+
 ## Running SightPress
+
+- [Update SightPress](update-sightpress.md) to a newer version, keeping every website.
 
 - [Fix upload size limits](fix-upload-size-limits.md): what the admin warning means, and how to let larger files in.
 - [Run SightPress in the background](run-in-the-background.md), so that you can close the terminal.
@@ -28,6 +41,16 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 ## Signing in
 
 - [Codes we send you](codes-we-send-you.md): why SightPress never sends links, and how to type a 6-digit code.
+
+## Help improve SightPress
+
+You don't need to be a developer for any of these. Everyone who takes part follows our
+[Code of Conduct](https://github.com/sightpress/docs/blob/main/CODE_OF_CONDUCT.md).
+
+- [Report a problem](report-a-problem.md), including accessibility barriers, with or without a GitHub account.
+- [Translate SightPress](translate-sightpress.md) into a language you speak fluently.
+- [Review the interface](review-the-interface.md) as a sighted person, and describe a screenshot in words.
+- [Test with assistive technology](test-with-assistive-technology.md) before each release.
 
 ## Reference
 

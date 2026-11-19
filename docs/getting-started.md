@@ -6,9 +6,10 @@ waiting for downloads.
 
 !!! note "What you can try today"
 
-    This is the first version of SightPress. You can create a website with ready-made pages, write and publish pages,
-    upload pictures and other files, invite people and change the site's settings. Running SightPress on a public
-    server is not covered yet.
+    You can create a website with ready-made pages, write, schedule and publish pages, translate them into other
+    languages, upload pictures and other files, invite people or let them sign up, make pages members-only, search
+    the website, read its visitor statistics, turn features on or off, and set up an optional AI assistant with your
+    own key. Running SightPress on a public server is not covered yet.
 
 ## What you need
 
@@ -162,13 +163,13 @@ The copied file also turns on the test e-mail inbox, which catches every e-mail 
 
     ```text
     Getting the SQLite file /app/sites/demo.sqlite ready…
-    Ran 13 database migrations.
+    Ran 25 database migrations.
     Created the account of the first admin, Ada Lovelace (ada@example.org).
     Set up the roles admin, editor, contributor and member.
     Gave the first admin the admin role.
     Give the setup code 388 641 to ada@example.org. They go to http://localhost:8080/login/setup, type their email address and the code, and choose their password. The code works once, for 7 days.
     Made the site's icons, wordmark and share image from its name; replace them with site:branding:set.
-    Published the starter pages: Welcome to Riverside Library, About us, Contact us, Privacy notice, Terms of use, Accessibility statement.
+    Published the starter pages in British English: Welcome to Riverside Library, About us, Contact us, Privacy notice, Terms of use, Accessibility statement.
     Added 5 starter pages to the main and footer menus.
     The site "demo" is ready at http://localhost:8080.
     ```
@@ -190,8 +191,8 @@ The copied file also turns on the test e-mail inbox, which catches every e-mail 
    with it now."
 7. Type your e-mail address and your new password, then choose **Sign in**.
 8. You should see the admin panel's **Dashboard**. The browser tab says "Dashboard - Admin - Riverside Library".
-   The admin menu has the links Dashboard, Pages, Media, Menus, People, Invite someone, Site settings, Branding and
-   Audit log.
+   The admin menu has links such as Dashboard, Pages, Analytics, Redirects, Media, Menus, People, Invite someone,
+   Site settings, Features and Audit log.
 
 SightPress never sends links to sign in or to set a password. It always gives you a code to type on the website
 instead. See [Codes we send you](how-to/codes-we-send-you.md).
@@ -243,6 +244,18 @@ your account are kept.
 
 ## What to do next
 
-The [how-to guides](how-to/index.md) show you how to write and publish pages, invite people and run SightPress in the
-background. The reference pages explain [roles](reference/roles-and-permissions.md), [blocks](reference/blocks.md),
+The [how-to guides](how-to/index.md) show you how to write and publish pages, add a language and translate a page,
+schedule, move or restore pages, make a site members-only, let people sign up, turn features on or off, search the
+website, read its analytics, set up the AI assistant and run SightPress in the background. To move an older
+installation to this version, see [Update SightPress](how-to/update-sightpress.md).
+
+To start your website in more than one language, give `site:create` a list in `--locale`, for example
+`--locale=en-GB,pt-PT`: every starter page is then written in each language. See
+[Add a language and translate a page](how-to/add-a-language.md) to add one later, and
+[Turn features on or off](how-to/turn-features-on-or-off.md) to choose the optional features.
+
+You can help improve SightPress without being a developer: see [Report a problem](how-to/report-a-problem.md) and
+the other guides under *Help improve SightPress*.
+
+The reference pages explain [roles](reference/roles-and-permissions.md), [blocks](reference/blocks.md),
 [search and AI visibility](reference/search-and-ai.md) and the [command line tool](reference/command-line.md).

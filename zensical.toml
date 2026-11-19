@@ -5,7 +5,7 @@ site_url = "https://docs.sightpress.org/"
 repo_url = "https://github.com/sightpress/docs"
 repo_name = "sightpress/docs"
 edit_uri = "edit/main/docs/"
-copyright = "SightPress is free software, licensed under the GNU GPL v3.0 or later."
+copyright = 'SightPress is free software, licensed under the GNU GPL v3.0 or later. Everyone who takes part follows our <a href="https://github.com/sightpress/docs/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.'
 
 # Warnings fail the build, including builds started by mike.
 strict = true
@@ -23,10 +23,19 @@ nav = [
     "how-to/index.md",
     { "Create a website" = "how-to/create-a-site.md" },
     { "Write and publish a page" = "how-to/write-and-publish-a-page.md" },
+    { "Schedule a page" = "how-to/schedule-a-page.md" },
+    { "Restore an older version" = "how-to/restore-an-older-version.md" },
+    { "Move or rename a page" = "how-to/move-or-rename-a-page.md" },
+    { "Put a page in the trash" = "how-to/put-a-page-in-the-trash.md" },
+    { "Add a language" = "how-to/add-a-language.md" },
+    { "Make a site members-only" = "how-to/make-a-site-members-only.md" },
+    { "Let people sign up" = "how-to/let-people-sign-up.md" },
+    { "Change your email or password" = "how-to/change-your-email-or-password.md" },
     { "Turn features on or off" = "how-to/turn-features-on-or-off.md" },
     { "Search your website" = "how-to/search-your-website.md" },
     { "See who visits your website" = "how-to/see-who-visits-your-website.md" },
     { "Use the AI assistant" = "how-to/use-the-ai-assistant.md" },
+    { "Update SightPress" = "how-to/update-sightpress.md" },
     { "Fix upload size limits" = "how-to/fix-upload-size-limits.md" },
     { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
     { "Change the ports" = "how-to/change-the-ports.md" },
@@ -35,6 +44,12 @@ nav = [
     { "Open the file storage console" = "how-to/open-the-file-storage-console.md" },
     { "Try the command line tool" = "how-to/try-the-command-line-tool.md" },
     { "Codes we send you" = "how-to/codes-we-send-you.md" },
+  ] },
+  { "Help improve SightPress" = [
+    { "Report a problem" = "how-to/report-a-problem.md" },
+    { "Translate SightPress" = "how-to/translate-sightpress.md" },
+    { "Review the interface" = "how-to/review-the-interface.md" },
+    { "Test with assistive technology" = "how-to/test-with-assistive-technology.md" },
   ] },
   { "Reference" = [
     { "Roles and permissions" = "reference/roles-and-permissions.md" },

@@ -98,6 +98,31 @@ bin/sightpress site:db:change demo --db=postgresql://user:password@db.internal:5
 bin/sightpress site:enable demo
 ```
 
+## Languages
+
+| Command | What it does |
+| --- | --- |
+| `site:locale:add <slug> <locale>` | Adds a language to the website, for example `site:locale:add demo pt-PT`. Pages are then translated into it from each page's editor. |
+| `site:locale:default <slug> <locale>` | Makes one of the website's languages the main one, whose pages have addresses without a language part. Warns that addresses change. |
+| `site:locale:remove <slug> <locale> [--yes]` | Removes a language. Without `--yes` it only explains what would happen. Its translations are kept, unreachable, and come back if the language is added again. The main language can't be removed. |
+
+See [Add a language and translate a page](../how-to/add-a-language.md).
+
+## Things that happen at a set time
+
+### schedule:run
+
+```text
+schedule:run
+```
+
+Does everything that is due on every website that is on: publishes and unpublishes scheduled pages, rolls up and
+deletes old analytics, rebuilds search indexes that are out of date and removes sign-ups that were never confirmed.
+It prints a line for each thing it did and a summary. Run it **once a minute**: the skeleton's `scheduler` service does
+this in Docker; on a server, add a crontab line (see [Update SightPress](../how-to/update-sightpress.md#new-settings-in-03)).
+Two runs never overlap: the second says "Another run is still going; this one stops." A missed run catches up on the
+next one. See [Schedule a page](../how-to/schedule-a-page.md).
+
 ## Features
 
 | Command | What it does |
