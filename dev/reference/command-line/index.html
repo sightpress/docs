@@ -354,6 +354,8 @@
       
         
       
+        
+      
     
     
     
@@ -530,6 +532,33 @@
     
   
   See who visits your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/use-the-ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Use the AI assistant
 
     
   </span>
@@ -1092,6 +1121,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        AI assistant
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#branding" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1319,6 +1359,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         Analytics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        AI assistant
       </span>
     </span>
   </a>
@@ -1594,6 +1645,39 @@ refused: they use "Forgot your password?" instead.</p>
 </tbody>
 </table>
 <p>They refuse a website with analytics turned off. See <a href="../../how-to/see-who-visits-your-website/">See who visits your website</a>.</p>
+<h2 id="ai-assistant">AI assistant<a class="headerlink" href="#ai-assistant" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:assistant:set &lt;slug&gt; --provider=&lt;id&gt; --model=&lt;model&gt; [--base-url=&lt;address&gt;] [--key-stdin]</code></td>
+<td>Chooses the AI service (<code>anthropic</code>, <code>openai</code>, <code>mistral</code> or <code>openai_compatible</code>) and model. With <code>--key-stdin</code> it reads the API key from standard input, so it never appears in the shell history: <code>printf %s "$KEY" \| bin/sightpress site:assistant:set …</code>.</td>
+</tr>
+<tr>
+<td><code>site:assistant:test &lt;slug&gt;</code></td>
+<td>Sends a tiny request and says whether the service answered.</td>
+</tr>
+<tr>
+<td><code>site:assistant:usage &lt;slug&gt; [--month=YYYY-MM]</code></td>
+<td>Shows the tokens used this month (or another), per task, and the budget.</td>
+</tr>
+<tr>
+<td><code>site:assistant:disable &lt;slug&gt; [--remove-key]</code></td>
+<td>Turns the assistant off for the website, and removes its key with <code>--remove-key</code>.</td>
+</tr>
+<tr>
+<td><code>assistant:ask &lt;slug&gt; "&lt;question&gt;"</code></td>
+<td>Asks the assistant a question from the console.</td>
+</tr>
+</tbody>
+</table>
+<p>They refuse a website with the assistant turned off; turn it on with <code>site:module:enable &lt;slug&gt; assistant</code>. See
+<a href="../../how-to/use-the-ai-assistant/">Use the AI assistant</a>.</p>
 <h2 id="branding">Branding<a class="headerlink" href="#branding" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
