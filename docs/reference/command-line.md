@@ -240,6 +240,16 @@ site:theme:apply <site> <theme>
 Applies an installed theme to a website. The theme must be allowed (`themes.allowed` in `config/tenant.php`) and pass
 the checks of `theme:validate`. The website's activity log records the change.
 
+### theme:publish-assets
+
+```text
+theme:publish-assets [--no-screenshot]
+```
+
+Writes the preview page of every installed theme to `public/themes/<theme>/<version>/preview/`, with its screenshots
+where Node.js and Chromium are installed, for the **Appearance** screen. The project runs it after `composer install`
+and `composer update`.
+
 ### cache:clear
 
 ```text
