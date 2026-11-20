@@ -49,6 +49,7 @@ nav = [
     { "Report a problem" = "how-to/report-a-problem.md" },
     { "Translate SightPress" = "how-to/translate-sightpress.md" },
     { "Review the interface" = "how-to/review-the-interface.md" },
+    { "Review a theme change" = "how-to/review-a-theme-change.md" },
     { "Test with assistive technology" = "how-to/test-with-assistive-technology.md" },
   ] },
   { "Reference" = [

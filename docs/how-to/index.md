@@ -50,6 +50,7 @@ You don't need to be a developer for any of these. Everyone who takes part follo
 - [Report a problem](report-a-problem.md), including accessibility barriers, with or without a GitHub account.
 - [Translate SightPress](translate-sightpress.md) into a language you speak fluently.
 - [Review the interface](review-the-interface.md) as a sighted person, and describe a screenshot in words.
+- [Review a theme change](review-a-theme-change.md) from the preview every theme pull request gets.
 - [Test with assistive technology](test-with-assistive-technology.md) before each release.
 
 ## Reference
