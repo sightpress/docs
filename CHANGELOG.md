@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.1](https://github.com/sightpress/docs/compare/0.3.0...0.3.1) (2026-11-20)
+
+
+### Documentation
+
+* add a how-to for installing and changing a theme, and the theme commands to the reference (T-1) ([#24](https://github.com/sightpress/docs/issues/24)) ([bdefed2](https://github.com/sightpress/docs/commit/bdefed2134d2d4b6f769e4b4dde58e7efc4fcc38))
+* add a how-to for reviewing a theme change from its pull request preview (TI-0.2c) ([#23](https://github.com/sightpress/docs/issues/23)) ([20d949e](https://github.com/sightpress/docs/commit/20d949ea3ced6e947d0a068056b7fbf3edb18be0))
+* add the Appearance screen, the site's colours and theme previews to the theme how-to (T-2, T-3) ([#27](https://github.com/sightpress/docs/issues/27)) ([8fa1d36](https://github.com/sightpress/docs/commit/8fa1d363e676d8805630c8605ef2c217108c62dc))
+
 ## [0.3.0](https://github.com/sightpress/docs/compare/0.1.2...0.3.0) (2026-11-19)
 
 
