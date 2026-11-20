@@ -1,0 +1,52 @@
+# Follows the "Create a theme" tutorial on a fresh copy of sightpress/theme-template (tools/tutorial/), so the
+# tutorial's commands, snippets and the messages it quotes keep matching what SightPress does.
+name: Tutorial
+
+on:
+  pull_request:
+    paths:
+      - docs/tutorials/**
+      - tools/tutorial/**
+      - .github/workflows/tutorial.yml
+  push:
+    branches: [main]
+    paths:
+      - docs/tutorials/**
+      - tools/tutorial/**
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  create-a-theme:
+    name: create a theme
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: docs
+
+      - uses: actions/checkout@v7
+        with:
+          repository: sightpress/theme-template
+          path: theme
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          extensions: gd, intl, sodium, exif, fileinfo, pdo_sqlite
+          ini-values: date.timezone=UTC, memory_limit=512M
+          coverage: pcov
+          tools: composer:v2
+
+      - name: Install the template like composer create-project does
+        working-directory: theme
+        run: |
+          rm -rf .git
+          composer update --no-interaction --no-progress --prefer-dist
+
+      - name: Follow the tutorial
+        run: docs/tools/tutorial/create-a-theme.sh "$GITHUB_WORKSPACE/theme"
