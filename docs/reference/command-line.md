@@ -190,15 +190,63 @@ Each change to the file keeps the previous version as `config/sites.php.bak`.
 
 ## Themes
 
+See [Install and change a theme](../how-to/install-and-change-a-theme.md).
+
+### theme:list
+
+```text
+theme:list
+```
+
+Lists the installed themes: id, name, version, whether websites may use it (or why it can't be used), whether new
+websites start with it, and the websites that use it. Websites whose theme isn't installed any more are listed as
+errors; they are shown in the default theme.
+
 ### theme:validate
 
 ```text
-theme:validate [<path>]
+theme:validate [<theme>|<path>] [--axe]
 ```
 
-Checks a theme's colour contrast, in light and dark mode and with and without more contrast, and its base font size,
-against WCAG 2.2 AA, and says what to fix. Without a path, it checks the active theme. It ends with an error when a
-check fails.
+Checks a theme the way it is checked before it is applied, and says what to fix:
+
+- `theme.json` and the theme's manifest agree;
+- the colour contrast passes in light and dark mode, with and without more contrast, chart colours included, against
+  WCAG 2.2 AA, and the base font size is at least 16 px;
+- the required templates are there, and the page shell includes SightPress's `<head>` partial;
+- the theme ships no screenshot or preview output.
+
+Give an installed theme's id or the folder of a theme. Without one, it checks every installed theme. `--axe` also
+scans the theme's preview page with axe in light, dark and forced-colours mode; this needs Node.js and Playwright's
+Chromium. It ends with an error when a check fails.
+
+### theme:preview
+
+```text
+theme:preview <theme|path> [--out=build/theme-preview/<id>] [--locale=en-GB] [--screenshot]
+```
+
+Writes the theme's preview page to a folder that opens in any browser without a server or an internet connection: a
+top bar, a band with the theme's name and a Download button, one block of every kind, and the footer. `--screenshot`
+also writes `screenshot.png`, `screenshot-dark.png` and `page.png` (needs Node.js and Playwright's Chromium). Theme
+authors can run the same commands without a project with `vendor/bin/sightpress-theme`.
+
+### site:theme:apply
+
+```text
+site:theme:apply <site> <theme>
+```
+
+Applies an installed theme to a website. The theme must be allowed (`themes.allowed` in `config/tenant.php`) and pass
+the checks of `theme:validate`. The website's activity log records the change.
+
+### cache:clear
+
+```text
+cache:clear
+```
+
+Empties the cache folder. Run it after installing or removing a theme or a module with Composer.
 
 ## Database addresses
 

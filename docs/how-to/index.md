@@ -15,6 +15,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Make a website or a page members-only](make-a-site-members-only.md).
 - [Let people sign up](let-people-sign-up.md) for an account, confirmed with an emailed code.
 - [Turn features on or off](turn-features-on-or-off.md) for one website, and delete a feature's data.
+- [Install and change a theme](install-and-change-a-theme.md): install themes on the server, and choose one for each website.
 - [Search your website](search-your-website.md) from any page, and leave a page out of the search.
 - [See who visits your website](see-who-visits-your-website.md): the Analytics screen, its charts and tables, and
   what is and isn't counted.

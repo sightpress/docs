@@ -32,6 +32,7 @@ nav = [
     { "Let people sign up" = "how-to/let-people-sign-up.md" },
     { "Change your email or password" = "how-to/change-your-email-or-password.md" },
     { "Turn features on or off" = "how-to/turn-features-on-or-off.md" },
+    { "Install and change a theme" = "how-to/install-and-change-a-theme.md" },
     { "Search your website" = "how-to/search-your-website.md" },
     { "See who visits your website" = "how-to/see-who-visits-your-website.md" },
     { "Use the AI assistant" = "how-to/use-the-ai-assistant.md" },
