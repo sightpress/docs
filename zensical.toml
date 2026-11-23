@@ -46,6 +46,9 @@ nav = [
     { "Try the command line tool" = "how-to/try-the-command-line-tool.md" },
     { "Codes we send you" = "how-to/codes-we-send-you.md" },
   ] },
+  { "Tutorials" = [
+    { "Create a theme" = "tutorials/create-a-theme.md" },
+  ] },
   { "Help improve SightPress" = [
     { "Report a problem" = "how-to/report-a-problem.md" },
     { "Translate SightPress" = "how-to/translate-sightpress.md" },
