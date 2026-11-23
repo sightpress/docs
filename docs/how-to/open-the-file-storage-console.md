@@ -9,9 +9,9 @@ to sign in to it.
 4. Sign in with the user name `sightpress` and the password `sightpress-secret`.
 5. You should see the MinIO console. There are no files yet.
 
-In this version, websites don't use MinIO yet. Each website keeps its uploaded files, such as pictures and documents,
-in its own folder inside the `sites` folder of the `skeleton`. A later version will let websites store their files in
-MinIO or another storage service.
+By default, each website keeps its uploaded files, such as pictures and documents, in its own folder inside the
+`sites` folder of the `skeleton`, so MinIO stays empty. From the next release, the `site:storage:s3` command can move
+a website's storage to MinIO or another S3-compatible service.
 
 If you changed `MINIO_ROOT_USER`, `MINIO_ROOT_PASSWORD` or `MINIO_CONSOLE_PORT` in your `.env` file, use your
 values instead. These settings only take effect the first time the storage starts.

@@ -39,7 +39,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 ## Checking the built-in tools
 
 - [Open the test e-mail inbox](open-the-test-email-inbox.md), which catches every e-mail SightPress sends.
-- [Open the file storage console](open-the-file-storage-console.md), which later versions will use for uploaded files.
+- [Open the file storage console](open-the-file-storage-console.md), a local service for trying cloud storage.
 - [Try the command line tool](try-the-command-line-tool.md).
 
 ## Signing in

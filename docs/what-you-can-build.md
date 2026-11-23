@@ -8,7 +8,8 @@ This page explains what SightPress can do today, then gives you ideas for websit
 
 ## What you can do today
 
-This is the first version of SightPress (0.1). It already gives you the following.
+SightPress is still at an early stage, and this page follows the newest documentation. Features marked **next
+release** are finished but aren't in version 0.3 yet. SightPress already gives you the following.
 
 ### Run many websites from one installation
 
@@ -66,6 +67,25 @@ services may read your pages. See [Search and AI visibility](reference/search-an
 The admin panel, the default theme and every built-in feature aim to meet the Web Content Accessibility Guidelines
 (WCAG) 2.2 at level AA. Nothing depends on dragging, on colour alone or on a puzzle to prove you are human. Admins can
 also do many tasks with the [command line tool](reference/command-line.md).
+
+### Reach more people and understand your visitors
+
+- **Several languages.** Publish a website in more than one language. See
+  [Add a language and translate a page](how-to/add-a-language.md).
+- **Site search.** Visitors can search your pages. See [Search your website](how-to/search-your-website.md).
+- **Analytics.** See how many people visit and what they read. See
+  [See who visits your website](how-to/see-who-visits-your-website.md).
+- **An AI assistant.** Turn it on if you want help drafting, with your own API key. A person checks every suggestion.
+  See [Use the AI assistant](how-to/use-the-ai-assistant.md).
+
+### Choose how your website looks and where its files live
+
+- **Themes and colours (next release).** Install other themes, and change the colours on the **Appearance** screen.
+  See [Install and change a theme](how-to/install-and-change-a-theme.md).
+- **Large files (next release).** Send big files in parts, and pause or resume them. See
+  [Upload large files](how-to/upload-large-files.md).
+- **Cloud storage and a CDN (next release).** Keep a website's files with an S3-compatible service, and deliver public
+  files from near each visitor.
 
 ## Ideas for websites
 
@@ -148,7 +168,7 @@ A web agency, a federation of clubs or an organisation with several brands.
 
 ## Coming later
 
-Later versions of SightPress add more, such as more themes, add-on modules and putting SightPress on a public server.
+Later versions of SightPress add more, such as add-on modules and a guide to putting SightPress on a public server.
 The [Getting started](getting-started.md) guide and the [how-to guides](how-to/index.md) are updated as each feature
 arrives.
 

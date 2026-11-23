@@ -75,6 +75,6 @@ To give one website larger or smaller limits than the others, see [Choose upload
 
 ## Large audio files and videos
 
-The website accepts audio files up to 200 MB and videos up to 1 GB, but for now one upload can't be larger than
-`UPLOAD_MAX_SIZE`. A later version will send large files in parts, so they can be larger than the server's limit.
-`system:check` mentions this as a note, not a problem.
+The website accepts audio files up to 200 MB and videos up to 1 GB. With JavaScript, SightPress
+[sends large files in parts](upload-large-files.md), so they can be larger than `UPLOAD_MAX_SIZE`. Without JavaScript,
+one upload can't be larger than `UPLOAD_MAX_SIZE`. `system:check` mentions this lower limit as a note, not a problem.

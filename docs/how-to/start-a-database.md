@@ -1,12 +1,13 @@
 # Start a database server
 
-SightPress keeps its data in a single file on disk (an SQLite database), so it doesn't need a separate database
-server. If you want to try one, SightPress can start MySQL, MariaDB or PostgreSQL for you. This guide shows you how.
+A website can keep its data in a single file on disk (an SQLite database), so it doesn't need a separate database
+server. If you want to use one, SightPress can start MySQL, MariaDB or PostgreSQL for you. This guide shows you how.
 
-!!! note "Not used yet"
+!!! note "Using it for a website"
 
-    At this stage SightPress starts the database server but doesn't store anything in it. You can check that it
-    runs. Later versions will let you use it for your sites.
+    Starting a database server doesn't move any website to it. Choose the database when you
+    [create a website](create-a-site.md), with `--db-engine` and the `--db-host`, `--db-name`, `--db-user` and
+    `--db-password` options. The server's host name is `mysql`, `mariadb` or `postgres`.
 
 ## Start SightPress with a database
 
