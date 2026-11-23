@@ -3,6 +3,10 @@
 SightPress sends large files in small parts. If your connection drops, or you close the page, you can carry on from
 where the upload stopped instead of starting again.
 
+If your website keeps its files in **cloud storage**, large files go straight from your browser to the storage, which
+is faster and doesn't load your server. If the storage doesn't allow that, SightPress sends the file through your
+server instead and says so. You don't need to do anything different.
+
 ## Upload a large file
 
 1. In the admin, open **Media**.
@@ -34,7 +38,10 @@ accept is deleted, and **Media** explains why.
 
 ## For whoever runs the server
 
-- Waiting files are kept in `var/uploads`. To use another folder, set `uploads.temp_path` in `config/tenant.php`. It
+- To see which way large files travel, and why, open **Site settings**, then **File storage**. For files to go straight
+  to cloud storage, its CORS rules must allow `PUT` from your website's address and expose `ETag`. `site:storage:provision`
+  sets this up on AWS and Cloudflare.
+- Files that go through the server wait in `var/uploads`. To use another folder, set `uploads.temp_path` in `config/tenant.php`. It
   can't be inside `public`.
 - The largest file that can be sent in parts is 5 GB. To change it, set `uploads.max_chunked_bytes`. Each website's own
   limits still apply, see [Choose upload limits](choose-upload-limits.md).
