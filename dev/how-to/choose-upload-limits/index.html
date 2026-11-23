@@ -382,6 +382,8 @@
       
         
       
+        
+      
     
     
     
@@ -855,6 +857,33 @@
     
   
   Update SightPress
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../upload-large-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Upload large files
 
     
   </span>
@@ -1866,13 +1895,14 @@ upload field, but they can't change it.</p>
 </tr>
 <tr>
 <td><strong>Lots of media</strong></td>
-<td>As large as your largest file</td>
+<td><code>64M</code></td>
 <td><code>512M</code></td>
 <td>Larger audio and video, and pictures up to 50 million pixels</td>
 </tr>
 </tbody>
 </table>
-<p>Until SightPress can send files in parts, a file can't be larger than <code>UPLOAD_MAX_SIZE</code>.</p>
+<p>With JavaScript, SightPress <a href="../upload-large-files/">sends large files in parts</a>, so a file can be larger than
+<code>UPLOAD_MAX_SIZE</code>, up to the website's limit. Without JavaScript, a file can't be larger than <code>UPLOAD_MAX_SIZE</code>.</p>
 <h2 id="see-a-websites-limits">See a website's limits<a class="headerlink" href="#see-a-websites-limits" title="Link to this section">&para;</a></h2>
 <p>Type this in the <code>skeleton</code> folder, replacing <code>demo</code> with the website's short name:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:media:limits<span class="w"> </span>demo
