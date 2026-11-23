@@ -5,6 +5,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 
 ## Your website
 
+- [Plan your website](plan-a-site.md): choose the right options and content for what you need.
 - [Create a website](create-a-site.md) with the command line tool, and give its first admin a setup code.
 - [Write and publish a page](write-and-publish-a-page.md), from a draft through review to the public website.
 - [Schedule a page](schedule-a-page.md) to be published, or taken off the website, at a set time.

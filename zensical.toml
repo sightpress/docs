@@ -21,6 +21,7 @@ nav = [
   { "Getting started" = "getting-started.md" },
   { "How-to guides" = [
     "how-to/index.md",
+    { "Plan your website" = "how-to/plan-a-site.md" },
     { "Create a website" = "how-to/create-a-site.md" },
     { "Write and publish a page" = "how-to/write-and-publish-a-page.md" },
     { "Schedule a page" = "how-to/schedule-a-page.md" },

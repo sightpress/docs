@@ -123,6 +123,9 @@ in `docs/`, and guides for people who aren't developers live in `docs/how-to/`.
   page, and the same check runs on every pull request.
 - Write in plain British English. Headings go in order, link text says where the link goes, and every image has alt
   text.
+- When a change adds, removes or limits something people choose when they plan a website, update
+  [Plan your website](docs/how-to/plan-a-site.md) in the same pull request. Check the whole page again before each
+  release: remove its **next release** labels and anything in *What to plan around today* that now works.
 
 ## Licence
 

@@ -154,6 +154,7 @@ arrives.
 
 ## Where to go next
 
+- To decide which options and content suit your website, read [Plan your website](how-to/plan-a-site.md).
 - To try SightPress on your own computer, follow [Getting started](getting-started.md).
 - To build your first website, follow [Create a website](how-to/create-a-site.md), then
   [Write and publish a page](how-to/write-and-publish-a-page.md).
