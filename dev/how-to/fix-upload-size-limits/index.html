@@ -17,7 +17,7 @@
         <link rel="prev" href="../update-sightpress/">
       
       
-        <link rel="next" href="../run-in-the-background/">
+        <link rel="next" href="../choose-upload-limits/">
       
       
         
@@ -330,6 +330,8 @@
       
         
           
+        
+      
         
       
         
@@ -964,6 +966,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#choose-how-large-each-websites-files-can-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Choose how large each website's files can be
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#large-audio-files-and-videos" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -978,6 +991,33 @@
   
 </nav>
       
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose-upload-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose upload limits
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1727,6 +1767,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#choose-how-large-each-websites-files-can-be" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Choose how large each website's files can be
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#large-audio-files-and-videos" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1770,7 +1821,9 @@ how to change them.</p>
 <li>If something too large is sent anyway, you see a page called <strong>This is too large to send</strong>. It says how much the
   server accepts and has a <strong>Go back to the form</strong> link.</li>
 <li>Admins see a warning called <strong>Your server’s settings stop some uploads</strong> on the dashboard and in <strong>Media</strong>. Each
-  point names a server setting and the value it needs. Editors and contributors don't see it.</li>
+  point names a server setting and the value it needs. It also says how many uploads the web server refused in the
+  last 7 days. Editors and contributors don't see it.</li>
+<li>To put the warning away, choose <strong>Hide until this changes</strong>. It comes back by itself if the result changes.</li>
 </ul>
 <h2 id="change-the-limits-on-your-own-computer">Change the limits on your own computer<a class="headerlink" href="#change-the-limits-on-your-own-computer" title="Link to this section">&para;</a></h2>
 <p>With SightPress running in Docker, the limits are one group of lines in the <code>.env</code> file of the <code>skeleton</code> folder.
@@ -1850,6 +1903,8 @@ value to fix.</p>
 <code>upload_max_filesize</code>, <code>post_max_size</code> or the web server's limit (<code>client_max_body_size</code> for nginx), and the value
 each needs. Ask them to tell you when it is done, then open the dashboard again: the warning is gone once the
 settings are right.</p>
+<h2 id="choose-how-large-each-websites-files-can-be">Choose how large each website's files can be<a class="headerlink" href="#choose-how-large-each-websites-files-can-be" title="Link to this section">&para;</a></h2>
+<p>To give one website larger or smaller limits than the others, see <a href="../choose-upload-limits/">Choose upload limits</a>.</p>
 <h2 id="large-audio-files-and-videos">Large audio files and videos<a class="headerlink" href="#large-audio-files-and-videos" title="Link to this section">&para;</a></h2>
 <p>The website accepts audio files up to 200 MB and videos up to 1 GB, but for now one upload can't be larger than
 <code>UPLOAD_MAX_SIZE</code>. A later version will send large files in parts, so they can be larger than the server's limit.
@@ -1908,13 +1963,13 @@ settings are right.</p>
         
         
           
-          <a href="../run-in-the-background/" class="md-footer__link md-footer__link--next" aria-label="Next: Run SightPress in the background">
+          <a href="../choose-upload-limits/" class="md-footer__link md-footer__link--next" aria-label="Next: Choose upload limits">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Run SightPress in the background
+                Choose upload limits
               </div>
             </div>
             <div class="md-footer__button md-icon">

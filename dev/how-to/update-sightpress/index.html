@@ -380,6 +380,8 @@
       
         
       
+        
+      
     
     
     
@@ -971,6 +973,33 @@
     
   
   Fix upload size limits
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose-upload-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose upload limits
 
     
   </span>
@@ -1783,15 +1812,22 @@ can't open the websites' databases.</p>
 </code></pre></div>
 </li>
 <li>
+<p>Update the list of websites to the new format (from 0.4 on, it can hold each website's upload limits):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:registry:upgrade
+</code></pre></div>
+<p>You should see that the file was upgraded, or that there is nothing to do. The old file is kept as
+<code>config/sites.php.bak</code>.</p>
+</li>
+<li>
 <p>Update the database tables of every website:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:migrate<span class="w"> </span>--all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:migrate<span class="w"> </span>--all
 </code></pre></div>
 <p>You should see one line per website saying how many database migrations ran. One website failing doesn't stop
 the others; run it again for that website once the problem is fixed.</p>
 </li>
 <li>
 <p>Build the search index of each website, replacing <code>demo</code> with its short name:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:search:reindex<span class="w"> </span>demo
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--no-deps<span class="w"> </span>php<span class="w"> </span>bin/sightpress<span class="w"> </span>site:search:reindex<span class="w"> </span>demo
 </code></pre></div>
 </li>
 <li>
@@ -1821,7 +1857,7 @@ the others; run it again for that website once the problem is fixed.</p>
 <p><code>docker-compose.yml</code> has a <strong>scheduler</strong> service, which publishes scheduled pages and keeps the analytics up to
   date. It runs <code>bin/sightpress schedule:run</code> once a minute. On a server without Docker, add this line to the
   crontab of the user that runs SightPress (<code>crontab -e</code>), with the path of your project:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>* * * * * cd /var/www/my-site &amp;&amp; php bin/sightpress schedule:run --no-interaction &gt;&gt; var/log/schedule.log 2&gt;&amp;1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>* * * * * cd /var/www/my-site &amp;&amp; php bin/sightpress schedule:run --no-interaction &gt;&gt; var/log/schedule.log 2&gt;&amp;1
 </code></pre></div>
 <p>Run it in one place only per installation.</p>
 </li>
@@ -1829,12 +1865,14 @@ the others; run it again for that website once the problem is fixed.</p>
 <h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Link to this section">&para;</a></h2>
 <dl>
 <dt><strong>A website shows an error page after the update</strong></dt>
-<dd>Its database tables are older than the code. Run <code>site:migrate</code> for it (step 4) and read the message it prints.</dd>
+<dd>Its database tables are older than the code. Run <code>site:migrate</code> for it (step 5) and read the message it prints.</dd>
+<dt><strong>An error says <code>config/sites.php</code> uses an older format version</strong></dt>
+<dd>Run <code>site:registry:upgrade</code> (step 4).</dd>
 <dt><strong><code>composer update</code> fails</strong></dt>
 <dd>Check that you are in the <code>skeleton</code> folder and that SightPress is stopped, then try again. Your websites are
 not changed until step 4.</dd>
 <dt><strong>Search finds nothing</strong></dt>
-<dd>Pages are added to the search index when they are published or changed. Run step 5 for that website to add
+<dd>Pages are added to the search index when they are published or changed. Run step 6 for that website to add
 the pages that were already there.</dd>
 </dl>
 
