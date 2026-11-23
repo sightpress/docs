@@ -386,6 +386,14 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -561,10 +569,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upload-limits-next-release" class="md-nav__link">
+  <a href="#upload-limits" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Upload limits (next release)
+        Upload limits
       </span>
     </span>
   </a>
@@ -1026,6 +1034,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../choose-a-page-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a page layout
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-captions-and-transcripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add captions and transcripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../search-your-website/" class="md-nav__link">
         
   
@@ -1134,6 +1196,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../keep-files-in-the-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Keep your files in the cloud
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../upload-large-files/" class="md-nav__link">
         
   
@@ -1142,6 +1231,33 @@
     
   
   Upload large files
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Import files from a folder
 
     
   </span>
@@ -1718,6 +1834,8 @@
       
         
       
+        
+      
     
     
     
@@ -1870,6 +1988,33 @@
 
                 
               
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/theme-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme contract
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
             </ul>
           </nav>
         
@@ -1975,10 +2120,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upload-limits-next-release" class="md-nav__link">
+  <a href="#upload-limits" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Upload limits (next release)
+        Upload limits
       </span>
     </span>
   </a>
@@ -2127,9 +2272,8 @@ the website needs. The guide then suggests the settings to choose and the conten
 and this guide says which ones.</p>
 <div class="admonition note">
 <p class="admonition-title">Which version this guide describes</p>
-<p>This guide follows the newest documentation. Choices marked <strong>next release</strong> are finished but aren't in version
-0.3 yet. If you run 0.3, plan to keep files on the server, use the default theme with its Home page and Standard
-page layouts, and keep the standard upload limits for now.</p>
+<p>This guide describes version 0.4. If you run 0.3, update first: it has no cloud storage, other themes, extra page
+layouts or per-website upload limits. See <a href="../update-sightpress/">Update SightPress</a>.</p>
 </div>
 <h2 id="step-1-answer-these-questions">Step 1: Answer these questions<a class="headerlink" href="#step-1-answer-these-questions" title="Link to this section">&para;</a></h2>
 <p>Write down your answers. Each one points to a choice in the next steps.</p>
@@ -2216,7 +2360,7 @@ page layouts, and keep the standard upload limits for now.</p>
 <tr>
 <td>Podcast or media project</td>
 <td>MariaDB or PostgreSQL</td>
-<td>Cloud storage and a CDN (next release)</td>
+<td>Cloud storage and a CDN</td>
 <td>Public</td>
 <td>Admin and editors</td>
 <td>Search and analytics</td>
@@ -2248,7 +2392,7 @@ page layouts, and keep the standard upload limits for now.</p>
 <tr>
 <td>Agency or group of websites</td>
 <td>MariaDB or PostgreSQL</td>
-<td>Cloud storage per website (next release)</td>
+<td>Cloud storage per website</td>
 <td>Set per website</td>
 <td>Separate people per website</td>
 <td>Defaults set for all websites</td>
@@ -2296,11 +2440,11 @@ page layouts, and keep the standard upload limits for now.</p>
 <td>Pictures and documents, and a server with enough disk space.</td>
 </tr>
 <tr>
-<td><strong>Cloud storage</strong> (next release)</td>
+<td><strong>Cloud storage</strong></td>
 <td>Lots of media, large files, or more than one server. Works with AWS, Cloudflare and other S3-compatible services.</td>
 </tr>
 <tr>
-<td><strong>Cloud storage with a CDN</strong> (next release)</td>
+<td><strong>Cloud storage with a CDN</strong></td>
 <td>Visitors in many countries, or popular audio and video. A CDN delivers public files from near each visitor.</td>
 </tr>
 </tbody>
@@ -2321,7 +2465,7 @@ page layouts, and keep the standard upload limits for now.</p>
   provider other than AWS, also give its address with <code>--endpoint</code>.</li>
 <li>The website keeps using its current files until <code>site:storage:migrate</code> has copied them.</li>
 </ul>
-<h3 id="upload-limits-next-release">Upload limits (next release)<a class="headerlink" href="#upload-limits-next-release" title="Link to this section">&para;</a></h3>
+<h3 id="upload-limits">Upload limits<a class="headerlink" href="#upload-limits" title="Link to this section">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2390,7 +2534,7 @@ that someone can cover absences.</p>
 better than an old one. The admin panel is available in British English, Spanish and European Portuguese, and a website
 can publish in other languages. See <a href="../add-a-language/">Add a language</a>.</p>
 <h3 id="look-and-layout">Look and layout<a class="headerlink" href="#look-and-layout" title="Link to this section">&para;</a></h3>
-<p>Start with the default theme. From the next release, you can install other themes and change the colours on the
+<p>Start with the default theme. You can install other themes and change the colours on the
 <strong>Appearance</strong> screen, and SightPress checks that they stay readable. Choose a layout for each page:</p>
 <table>
 <thead>
@@ -2409,20 +2553,20 @@ can publish in other languages. See <a href="../add-a-language/">Add a language<
 <td>Most pages.</td>
 </tr>
 <tr>
-<td><strong>Landing</strong> (next release)</td>
+<td><strong>Landing</strong></td>
 <td>A single campaign or call to action.</td>
 </tr>
 <tr>
-<td><strong>Sidebar</strong> (next release)</td>
+<td><strong>Sidebar</strong></td>
 <td>A section with several related pages.</td>
 </tr>
 <tr>
-<td><strong>Full width</strong> (next release)</td>
+<td><strong>Full width</strong></td>
 <td>Wide galleries and tables.</td>
 </tr>
 </tbody>
 </table>
-<p>See <a href="../install-and-change-a-theme/">Install and change a theme</a>.</p>
+<p>See <a href="../choose-a-page-layout/">Choose a page layout</a> and <a href="../install-and-change-a-theme/">Install and change a theme</a>.</p>
 <h3 id="optional-features">Optional features<a class="headerlink" href="#optional-features" title="Link to this section">&para;</a></h3>
 <table>
 <thead>

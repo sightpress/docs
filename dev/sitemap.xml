@@ -13,10 +13,16 @@
         <loc>https://docs.sightpress.org/dev/how-to/add-a-language/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/how-to/add-captions-and-transcripts/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/how-to/change-the-ports/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/change-your-email-or-password/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/choose-a-page-layout/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/choose-upload-limits/</loc>
@@ -31,7 +37,13 @@
         <loc>https://docs.sightpress.org/dev/how-to/fix-upload-size-limits/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/how-to/import-files/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/how-to/install-and-change-a-theme/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/how-to/keep-files-in-the-cloud/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/how-to/let-people-sign-up/</loc>
@@ -116,6 +128,9 @@
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/reference/search-and-ai/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/reference/theme-contract/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/tutorials/create-a-theme/</loc>

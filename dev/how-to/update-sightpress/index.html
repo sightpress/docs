@@ -17,7 +17,7 @@
         <link rel="prev" href="../use-the-ai-assistant/">
       
       
-        <link rel="next" href="../upload-large-files/">
+        <link rel="next" href="../keep-files-in-the-cloud/">
       
       
         
@@ -330,6 +330,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -797,6 +805,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../choose-a-page-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a page layout
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-captions-and-transcripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add captions and transcripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../search-your-website/" class="md-nav__link">
         
   
@@ -970,6 +1032,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-in-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New in 0.4
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#if-something-goes-wrong" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -996,6 +1069,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../keep-files-in-the-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Keep your files in the cloud
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../upload-large-files/" class="md-nav__link">
         
   
@@ -1004,6 +1104,33 @@
     
   
   Upload large files
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../import-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Import files from a folder
 
     
   </span>
@@ -1580,6 +1707,8 @@
       
         
       
+        
+      
     
     
     
@@ -1732,6 +1861,33 @@
 
                 
               
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/theme-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme contract
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
             </ul>
           </nav>
         
@@ -1814,6 +1970,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-in-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New in 0.4
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#if-something-goes-wrong" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1846,7 +2013,7 @@
 
 <h1 id="update-sightpress">Update SightPress<a class="headerlink" href="#update-sightpress" title="Link to this section">&para;</a></h1>
 <p>This guide shows you how to move an installation to a newer version of SightPress, keeping every website, page,
-account, menu and setting. It is written for <strong>0.1 to 0.3</strong>, the first update with new database tables.</p>
+account, menu and setting. It covers updates up to <strong>0.4</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Make a copy first</p>
 <p>Before you update, make a copy of the <code>skeleton</code> folder, including the <code>sites</code> folder and the <code>.env</code> file, and of
@@ -1920,6 +2087,23 @@ the others; run it again for that website once the problem is fixed.</p>
 <p>Run it in one place only per installation.</p>
 </li>
 </ul>
+<h2 id="new-in-04">New in 0.4<a class="headerlink" href="#new-in-04" title="Link to this section">&para;</a></h2>
+<p>Follow the same steps. Step 4 is needed for this update. After it:</p>
+<ul>
+<li><strong>The look of your websites stays the same.</strong> The default theme now comes as its own package, which Composer
+  installs. <code>composer update</code> also publishes the theme files and previews.</li>
+<li><strong>Your files stay where they are.</strong> Nothing moves to the cloud unless you <a href="../keep-files-in-the-cloud/">set it up</a>.</li>
+<li>A <strong>published page with a video without captions, or a recording without a transcript, stays published</strong>, but the
+  publish check asks for them the next time it is published. See
+  <a href="../add-captions-and-transcripts/">Add captions and transcripts</a>.</li>
+</ul>
+<p><code>config/tenant.php</code> has new optional sections. Copy them from the new skeleton if Git can't merge them:</p>
+<ul>
+<li><code>themes</code>: which installed themes websites may use, and the theme of new websites.</li>
+<li><code>media.limits</code>: every website's upload limits and the most a website may set.</li>
+<li><code>uploads.temp_path</code> and <code>uploads.max_chunked_bytes</code>: where large files wait while their parts arrive, and the largest
+  file that can be sent in parts.</li>
+</ul>
 <h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Link to this section">&para;</a></h2>
 <dl>
 <dt><strong>A website shows an error page after the update</strong></dt>
@@ -1987,13 +2171,13 @@ the pages that were already there.</dd>
         
         
           
-          <a href="../upload-large-files/" class="md-footer__link md-footer__link--next" aria-label="Next: Upload large files">
+          <a href="../keep-files-in-the-cloud/" class="md-footer__link md-footer__link--next" aria-label="Next: Keep your files in the cloud">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Upload large files
+                Keep your files in the cloud
               </div>
             </div>
             <div class="md-footer__button md-icon">

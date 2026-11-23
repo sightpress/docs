@@ -17,6 +17,8 @@
         <link rel="prev" href="../search-and-ai/">
       
       
+        <link rel="next" href="../theme-contract/">
+      
       
         
       
@@ -326,6 +328,14 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -793,6 +803,60 @@
   
   
     <li class="md-nav__item">
+      <a href="../../how-to/choose-a-page-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a page layout
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/add-captions-and-transcripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add captions and transcripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../how-to/search-your-website/" class="md-nav__link">
         
   
@@ -901,6 +965,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../how-to/keep-files-in-the-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Keep your files in the cloud
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../how-to/upload-large-files/" class="md-nav__link">
         
   
@@ -909,6 +1000,33 @@
     
   
   Upload large files
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/import-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Import files from a folder
 
     
   </span>
@@ -1487,6 +1605,8 @@
       
         
       
+        
+      
     
     
     
@@ -1866,6 +1986,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#files-and-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Files and cloud storage
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#themes" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1963,6 +2094,33 @@
   
 </nav>
       
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theme-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme contract
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2198,6 +2356,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         The site registry
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-and-cloud-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Files and cloud storage
       </span>
     </span>
   </a>
@@ -2620,6 +2789,43 @@ next one. See <a href="../../how-to/schedule-a-page/">Schedule a page</a>.</p>
 </tbody>
 </table>
 <p>Each change to the file keeps the previous version as <code>config/sites.php.bak</code>.</p>
+<h2 id="files-and-cloud-storage">Files and cloud storage<a class="headerlink" href="#files-and-cloud-storage" title="Link to this section">&para;</a></h2>
+<p>See <a href="../../how-to/keep-files-in-the-cloud/">Keep your files in the cloud</a> and
+<a href="../../how-to/import-files/">Import files from a folder</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:storage:provision &lt;slug&gt; --provider=aws\|cloudflare [--region=] [--bucket=] [--domain=] [--dry-run]</code></td>
+<td>Creates a bucket, its upload rules and a CDN at AWS or Cloudflare. <code>--dry-run</code> prints the plan and contacts nobody. The provider's keys come from the environment and are never saved. The website doesn't change.</td>
+</tr>
+<tr>
+<td><code>site:storage:s3 &lt;slug&gt; --bucket= --region= [--endpoint=] [--prefix=] [--path-style]</code></td>
+<td>Connects a website to an S3-compatible bucket after checking it works. The keys come from <code>SIGHTPRESS_S3_ACCESS_KEY</code> and <code>SIGHTPRESS_S3_SECRET_KEY</code>, and are stored encrypted.</td>
+</tr>
+<tr>
+<td><code>site:storage:migrate &lt;slug&gt; [--delete-source]</code></td>
+<td>Copies a website's files to its bucket, checks each one and switches the website. It can be run again if it stops. <code>--delete-source</code> deletes the local copies after the check, which can't be undone.</td>
+</tr>
+<tr>
+<td><code>site:storage:cdn &lt;slug&gt; [--url=] [--remove]</code></td>
+<td>Shows, sets or removes the <code>https://</code> CDN address that delivers a website's public files. Run <code>theme:publish-assets</code> after setting it.</td>
+</tr>
+<tr>
+<td><code>site:media:import &lt;slug&gt; &lt;path&gt;… [--recursive] [--publish] [--alt=] [--locale=] [--memory-limit=]</code></td>
+<td>Adds files of any size from the server to the media library, with every safety check. Ends with an error if any file was refused, after trying the others.</td>
+</tr>
+<tr>
+<td><code>site:media:uploads &lt;slug&gt; [--purge-expired]</code></td>
+<td>Lists uploads in progress. <code>--purge-expired</code> removes those idle for 24 hours and the records of those finished 7 days ago. The scheduler also does this.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="themes">Themes<a class="headerlink" href="#themes" title="Link to this section">&para;</a></h2>
 <p>See <a href="../../how-to/install-and-change-a-theme/">Install and change a theme</a>.</p>
 <h3 id="themelist">theme:list<a class="headerlink" href="#themelist" title="Link to this section">&para;</a></h3>
@@ -2747,6 +2953,22 @@ your computer, see <a href="../../how-to/start-a-database/">Start a database ser
             </div>
           </a>
         
+        
+          
+          <a href="../theme-contract/" class="md-footer__link md-footer__link--next" aria-label="Next: Theme contract">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Theme contract
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
         
       </nav>
     
