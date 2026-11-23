@@ -384,6 +384,8 @@
       
         
       
+        
+      
     
     
     
@@ -435,6 +437,33 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix>
               
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan-a-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plan your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
                 
               
                 
@@ -1936,9 +1965,9 @@ settings are right.</p>
 <h2 id="choose-how-large-each-websites-files-can-be">Choose how large each website's files can be<a class="headerlink" href="#choose-how-large-each-websites-files-can-be" title="Link to this section">&para;</a></h2>
 <p>To give one website larger or smaller limits than the others, see <a href="../choose-upload-limits/">Choose upload limits</a>.</p>
 <h2 id="large-audio-files-and-videos">Large audio files and videos<a class="headerlink" href="#large-audio-files-and-videos" title="Link to this section">&para;</a></h2>
-<p>The website accepts audio files up to 200 MB and videos up to 1 GB, but for now one upload can't be larger than
-<code>UPLOAD_MAX_SIZE</code>. A later version will send large files in parts, so they can be larger than the server's limit.
-<code>system:check</code> mentions this as a note, not a problem.</p>
+<p>The website accepts audio files up to 200 MB and videos up to 1 GB. With JavaScript, SightPress
+<a href="../upload-large-files/">sends large files in parts</a>, so they can be larger than <code>UPLOAD_MAX_SIZE</code>. Without JavaScript,
+one upload can't be larger than <code>UPLOAD_MAX_SIZE</code>. <code>system:check</code> mentions this lower limit as a note, not a problem.</p>
 
 
 

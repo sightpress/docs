@@ -384,6 +384,8 @@
       
         
       
+        
+      
     
     
     
@@ -435,6 +437,33 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix>
               
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan-a-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plan your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
                 
               
                 
@@ -1687,9 +1716,9 @@ to sign in to it.</p>
 <li>Sign in with the user name <code>sightpress</code> and the password <code>sightpress-secret</code>.</li>
 <li>You should see the MinIO console. There are no files yet.</li>
 </ol>
-<p>In this version, websites don't use MinIO yet. Each website keeps its uploaded files, such as pictures and documents,
-in its own folder inside the <code>sites</code> folder of the <code>skeleton</code>. A later version will let websites store their files in
-MinIO or another storage service.</p>
+<p>By default, each website keeps its uploaded files, such as pictures and documents, in its own folder inside the
+<code>sites</code> folder of the <code>skeleton</code>, so MinIO stays empty. From the next release, the <code>site:storage:s3</code> command can move
+a website's storage to MinIO or another S3-compatible service.</p>
 <p>If you changed <code>MINIO_ROOT_USER</code>, <code>MINIO_ROOT_PASSWORD</code> or <code>MINIO_CONSOLE_PORT</code> in your <code>.env</code> file, use your
 values instead. These settings only take effect the first time the storage starts.</p>
 

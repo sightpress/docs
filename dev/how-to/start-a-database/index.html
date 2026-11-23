@@ -384,6 +384,8 @@
       
         
       
+        
+      
     
     
     
@@ -435,6 +437,33 @@
             </label>
             <ul class="md-nav__list" data-md-scrollfix>
               
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan-a-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plan your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
                 
               
                 
@@ -1816,12 +1845,13 @@
 
 
 <h1 id="start-a-database-server">Start a database server<a class="headerlink" href="#start-a-database-server" title="Link to this section">&para;</a></h1>
-<p>SightPress keeps its data in a single file on disk (an SQLite database), so it doesn't need a separate database
-server. If you want to try one, SightPress can start MySQL, MariaDB or PostgreSQL for you. This guide shows you how.</p>
+<p>A website can keep its data in a single file on disk (an SQLite database), so it doesn't need a separate database
+server. If you want to use one, SightPress can start MySQL, MariaDB or PostgreSQL for you. This guide shows you how.</p>
 <div class="admonition note">
-<p class="admonition-title">Not used yet</p>
-<p>At this stage SightPress starts the database server but doesn't store anything in it. You can check that it
-runs. Later versions will let you use it for your sites.</p>
+<p class="admonition-title">Using it for a website</p>
+<p>Starting a database server doesn't move any website to it. Choose the database when you
+<a href="../create-a-site/">create a website</a>, with <code>--db-engine</code> and the <code>--db-host</code>, <code>--db-name</code>, <code>--db-user</code> and
+<code>--db-password</code> options. The server's host name is <code>mysql</code>, <code>mariadb</code> or <code>postgres</code>.</p>
 </div>
 <h2 id="start-sightpress-with-a-database">Start SightPress with a database<a class="headerlink" href="#start-sightpress-with-a-database" title="Link to this section">&para;</a></h2>
 <ol>
