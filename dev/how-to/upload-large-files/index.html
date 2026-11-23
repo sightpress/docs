@@ -1840,6 +1840,9 @@
 <h1 id="upload-large-files">Upload large files<a class="headerlink" href="#upload-large-files" title="Link to this section">&para;</a></h1>
 <p>SightPress sends large files in small parts. If your connection drops, or you close the page, you can carry on from
 where the upload stopped instead of starting again.</p>
+<p>If your website keeps its files in <strong>cloud storage</strong>, large files go straight from your browser to the storage, which
+is faster and doesn't load your server. If the storage doesn't allow that, SightPress sends the file through your
+server instead and says so. You don't need to do anything different.</p>
 <h2 id="upload-a-large-file">Upload a large file<a class="headerlink" href="#upload-a-large-file" title="Link to this section">&para;</a></h2>
 <ol>
 <li>In the admin, open <strong>Media</strong>.</li>
@@ -1867,7 +1870,10 @@ SightPress checks the file and opens its page, so you can describe it.</p>
 accept is deleted, and <strong>Media</strong> explains why.</p>
 <h2 id="for-whoever-runs-the-server">For whoever runs the server<a class="headerlink" href="#for-whoever-runs-the-server" title="Link to this section">&para;</a></h2>
 <ul>
-<li>Waiting files are kept in <code>var/uploads</code>. To use another folder, set <code>uploads.temp_path</code> in <code>config/tenant.php</code>. It
+<li>To see which way large files travel, and why, open <strong>Site settings</strong>, then <strong>File storage</strong>. For files to go straight
+  to cloud storage, its CORS rules must allow <code>PUT</code> from your website's address and expose <code>ETag</code>. <code>site:storage:provision</code>
+  sets this up on AWS and Cloudflare.</li>
+<li>Files that go through the server wait in <code>var/uploads</code>. To use another folder, set <code>uploads.temp_path</code> in <code>config/tenant.php</code>. It
   can't be inside <code>public</code>.</li>
 <li>The largest file that can be sent in parts is 5 GB. To change it, set <code>uploads.max_chunked_bytes</code>. Each website's own
   limits still apply, see <a href="../choose-upload-limits/">Choose upload limits</a>.</li>
