@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           repository: sightpress/theme-template
-          path: theme
+          path: template
 
       - uses: shivammathur/setup-php@v2
         with:
@@ -42,11 +42,16 @@ jobs:
           coverage: pcov
           tools: composer:v2
 
-      - name: Install the template like composer create-project does
-        working-directory: theme
+      # The package is what git archive makes, as on Packagist, so files left out by .gitattributes are missing here too.
+      - name: Create the theme from the template's package with composer create-project
         run: |
-          rm -rf .git
-          composer update --no-interaction --no-progress --prefer-dist
+          archive="$RUNNER_TEMP/theme-template.zip"
+          git -C template archive --format=zip --output="$archive" HEAD
+          repository="$(jq -c --arg url "file://$archive" \
+            '{type: "package", package: (. + {version: "0.1.99", dist: {type: "zip", url: $url}})}' \
+            template/composer.json)"
+          composer create-project --no-interaction --no-progress --prefer-dist \
+            --repository="$repository" sightpress/theme-template theme 0.1.99
 
       - name: Follow the tutorial
         run: docs/tools/tutorial/create-a-theme.sh "$GITHUB_WORKSPACE/theme"
