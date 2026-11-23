@@ -7,7 +7,8 @@ how to change them.
 ## What you see
 
 - Next to the upload field in **Media**, everyone sees the largest file they can upload, for example "Largest file
-  you can upload: pictures 20 MB, documents 50 MB, audio files 64 MB and videos 64 MB."
+  you can upload: pictures 20 MB, documents 50 MB, audio files 200 MB and videos 1 GB." Large files are
+  [sent in parts](upload-large-files.md). Without JavaScript the lower server limit applies, and the hint says so.
 - If you choose a file that is too large, the browser refuses it before sending it. The reason appears under the
   field, which gets focus, so screen readers read it out.
 - If something too large is sent anyway, you see a page called **This is too large to send**. It says how much the

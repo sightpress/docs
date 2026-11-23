@@ -28,6 +28,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 
 - [Update SightPress](update-sightpress.md) to a newer version, keeping every website.
 
+- [Upload large files](upload-large-files.md): send big files in parts, and pause, resume or cancel.
 - [Fix upload size limits](fix-upload-size-limits.md): what the admin warning means, and how to let larger files in.
 - [Choose upload limits](choose-upload-limits.md): how large a file each website accepts.
 - [Run SightPress in the background](run-in-the-background.md), so that you can close the terminal.

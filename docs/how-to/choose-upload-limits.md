@@ -18,9 +18,10 @@ upload field, but they can't change it.
 |----------------------------|-------------------|--------------------|-------------------------------------------------------------------|
 | **Standard** (the default) | `64M`             | `256M`             | Pictures 20 MB, documents 50 MB, audio 200 MB, video 1 GB         |
 | **Small or shared hosting** | `32M`            | `256M`             | Pictures 20 MB, documents 20 MB, audio and video 32 MB            |
-| **Lots of media**          | As large as your largest file | `512M` | Larger audio and video, and pictures up to 50 million pixels |
+| **Lots of media**          | `64M`             | `512M` | Larger audio and video, and pictures up to 50 million pixels |
 
-Until SightPress can send files in parts, a file can't be larger than `UPLOAD_MAX_SIZE`.
+With JavaScript, SightPress [sends large files in parts](upload-large-files.md), so a file can be larger than
+`UPLOAD_MAX_SIZE`, up to the website's limit. Without JavaScript, a file can't be larger than `UPLOAD_MAX_SIZE`.
 
 ## See a website's limits
 

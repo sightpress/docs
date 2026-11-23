@@ -37,6 +37,7 @@ nav = [
     { "See who visits your website" = "how-to/see-who-visits-your-website.md" },
     { "Use the AI assistant" = "how-to/use-the-ai-assistant.md" },
     { "Update SightPress" = "how-to/update-sightpress.md" },
+    { "Upload large files" = "how-to/upload-large-files.md" },
     { "Fix upload size limits" = "how-to/fix-upload-size-limits.md" },
     { "Choose upload limits" = "how-to/choose-upload-limits.md" },
     { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
