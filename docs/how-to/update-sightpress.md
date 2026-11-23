@@ -29,7 +29,16 @@ Type these commands in the `skeleton` folder.
     docker compose run --rm --no-deps php composer update
     ```
 
-4. Update the database tables of every website:
+4. Update the list of websites to the new format (from 0.4 on, it can hold each website's upload limits):
+
+    ```sh
+    docker compose run --rm --no-deps php bin/sightpress site:registry:upgrade
+    ```
+
+    You should see that the file was upgraded, or that there is nothing to do. The old file is kept as
+    `config/sites.php.bak`.
+
+5. Update the database tables of every website:
 
     ```sh
     docker compose run --rm --no-deps php bin/sightpress site:migrate --all
@@ -38,14 +47,14 @@ Type these commands in the `skeleton` folder.
     You should see one line per website saying how many database migrations ran. One website failing doesn't stop
     the others; run it again for that website once the problem is fixed.
 
-5. Build the search index of each website, replacing `demo` with its short name:
+6. Build the search index of each website, replacing `demo` with its short name:
 
     ```sh
     docker compose run --rm --no-deps php bin/sightpress site:search:reindex demo
     ```
 
-6. Start SightPress again with `docker compose up`. The **scheduler** starts with it now (see below).
-7. Check: sign in to a website. The admin menu now has **Features**, **Analytics** and **Redirects**, and your pages,
+7. Start SightPress again with `docker compose up`. The **scheduler** starts with it now (see below).
+8. Check: sign in to a website. The admin menu now has **Features**, **Analytics** and **Redirects**, and your pages,
    people and menus are as they were.
 
 ## What changes for your websites
@@ -78,12 +87,15 @@ Type these commands in the `skeleton` folder.
 ## If something goes wrong
 
 **A website shows an error page after the update**
-:   Its database tables are older than the code. Run `site:migrate` for it (step 4) and read the message it prints.
+:   Its database tables are older than the code. Run `site:migrate` for it (step 5) and read the message it prints.
+
+**An error says `config/sites.php` uses an older format version**
+:   Run `site:registry:upgrade` (step 4).
 
 **`composer update` fails**
 :   Check that you are in the `skeleton` folder and that SightPress is stopped, then try again. Your websites are
     not changed until step 4.
 
 **Search finds nothing**
-:   Pages are added to the search index when they are published or changed. Run step 5 for that website to add
+:   Pages are added to the search index when they are published or changed. Run step 6 for that website to add
     the pages that were already there.

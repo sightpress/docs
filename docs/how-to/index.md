@@ -29,6 +29,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Update SightPress](update-sightpress.md) to a newer version, keeping every website.
 
 - [Fix upload size limits](fix-upload-size-limits.md): what the admin warning means, and how to let larger files in.
+- [Choose upload limits](choose-upload-limits.md): how large a file each website accepts.
 - [Run SightPress in the background](run-in-the-background.md), so that you can close the terminal.
 - [Change the ports SightPress uses](change-the-ports.md), if another program already uses them.
 - [Start a database server](start-a-database.md): MySQL, MariaDB or PostgreSQL.

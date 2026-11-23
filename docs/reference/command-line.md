@@ -87,7 +87,8 @@ Every change is written to the installation's log.
 | `site:db:change <slug> [--db= or the --db-… parts] [--migrate]` | Points a **disabled** website at another database, asked for in parts like in `site:create`. **Nothing is copied**: move the data first. The new database must be up to date, or add `--migrate`. If anything fails, the website keeps its old database. |
 | `site:seo:check <slug>` | Checks what search engines will find: titles longer than 60 characters, missing or too long descriptions, pages left out of search and why. Ends with an error when two pages have the same title. See [Search and AI visibility](search-and-ai.md). |
 
-| `system:check` | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. Run it with `docker compose exec php` so it reads the same settings as the website. See [Fix upload size limits](../how-to/fix-upload-size-limits.md). |
+| `system:check [--site=<slug>] [--probe-url=<address>] [--recommend]` | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. `--site` checks one website's limits and counts the uploads refused for it. `--probe-url` sends test requests to find the web server's real limit. `--recommend` prints the server values the limits need. Run it with `docker compose exec php` so it reads the same settings as the website. See [Choose upload limits](../how-to/choose-upload-limits.md). |
+| `site:media:limits <slug> [--image=] [--video=] [--audio=] [--document=] [--pixels=] [--reset]` | Shows or changes the largest files a website accepts, up to the most the installation allows. See [Choose upload limits](../how-to/choose-upload-limits.md). |
 
 To move a website to another database:
 

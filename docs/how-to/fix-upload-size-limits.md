@@ -13,7 +13,9 @@ how to change them.
 - If something too large is sent anyway, you see a page called **This is too large to send**. It says how much the
   server accepts and has a **Go back to the form** link.
 - Admins see a warning called **Your server’s settings stop some uploads** on the dashboard and in **Media**. Each
-  point names a server setting and the value it needs. Editors and contributors don't see it.
+  point names a server setting and the value it needs. It also says how many uploads the web server refused in the
+  last 7 days. Editors and contributors don't see it.
+- To put the warning away, choose **Hide until this changes**. It comes back by itself if the result changes.
 
 ## Change the limits on your own computer
 
@@ -65,6 +67,10 @@ If someone else runs your server, send them the warning's text. It names the set
 `upload_max_filesize`, `post_max_size` or the web server's limit (`client_max_body_size` for nginx), and the value
 each needs. Ask them to tell you when it is done, then open the dashboard again: the warning is gone once the
 settings are right.
+
+## Choose how large each website's files can be
+
+To give one website larger or smaller limits than the others, see [Choose upload limits](choose-upload-limits.md).
 
 ## Large audio files and videos
 

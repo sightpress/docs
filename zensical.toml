@@ -38,6 +38,7 @@ nav = [
     { "Use the AI assistant" = "how-to/use-the-ai-assistant.md" },
     { "Update SightPress" = "how-to/update-sightpress.md" },
     { "Fix upload size limits" = "how-to/fix-upload-size-limits.md" },
+    { "Choose upload limits" = "how-to/choose-upload-limits.md" },
     { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
     { "Change the ports" = "how-to/change-the-ports.md" },
     { "Start a database server" = "how-to/start-a-database.md" },
