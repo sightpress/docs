@@ -189,6 +189,20 @@ The installation keeps its list of websites in `config/sites.php`, with each dat
 
 Each change to the file keeps the previous version as `config/sites.php.bak`.
 
+## Files and cloud storage
+
+See [Keep your files in the cloud](../how-to/keep-files-in-the-cloud.md) and
+[Import files from a folder](../how-to/import-files.md).
+
+| Command | What it does |
+| --- | --- |
+| `site:storage:provision <slug> --provider=aws\|cloudflare [--region=] [--bucket=] [--domain=] [--dry-run]` | Creates a bucket, its upload rules and a CDN at AWS or Cloudflare. `--dry-run` prints the plan and contacts nobody. The provider's keys come from the environment and are never saved. The website doesn't change. |
+| `site:storage:s3 <slug> --bucket= --region= [--endpoint=] [--prefix=] [--path-style]` | Connects a website to an S3-compatible bucket after checking it works. The keys come from `SIGHTPRESS_S3_ACCESS_KEY` and `SIGHTPRESS_S3_SECRET_KEY`, and are stored encrypted. |
+| `site:storage:migrate <slug> [--delete-source]` | Copies a website's files to its bucket, checks each one and switches the website. It can be run again if it stops. `--delete-source` deletes the local copies after the check, which can't be undone. |
+| `site:storage:cdn <slug> [--url=] [--remove]` | Shows, sets or removes the `https://` CDN address that delivers a website's public files. Run `theme:publish-assets` after setting it. |
+| `site:media:import <slug> <path>… [--recursive] [--publish] [--alt=] [--locale=] [--memory-limit=]` | Adds files of any size from the server to the media library, with every safety check. Ends with an error if any file was refused, after trying the others. |
+| `site:media:uploads <slug> [--purge-expired]` | Lists uploads in progress. `--purge-expired` removes those idle for 24 hours and the records of those finished 7 days ago. The scheduler also does this. |
+
 ## Themes
 
 See [Install and change a theme](../how-to/install-and-change-a-theme.md).

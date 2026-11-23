@@ -80,11 +80,11 @@ also do many tasks with the [command line tool](reference/command-line.md).
 
 ### Choose how your website looks and where its files live
 
-- **Themes and colours (next release).** Install other themes, and change the colours on the **Appearance** screen.
+- **Themes and colours.** Install other themes, and change the colours on the **Appearance** screen.
   See [Install and change a theme](how-to/install-and-change-a-theme.md).
-- **Large files (next release).** Send big files in parts, and pause or resume them. See
+- **Large files.** Send big files in parts, and pause or resume them. See
   [Upload large files](how-to/upload-large-files.md).
-- **Cloud storage and a CDN (next release).** Keep a website's files with an S3-compatible service, and deliver public
+- **Cloud storage and a CDN.** Keep a website's files with an S3-compatible service, and deliver public
   files from near each visitor.
 
 ## Ideas for websites

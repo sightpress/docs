@@ -17,6 +17,8 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Let people sign up](let-people-sign-up.md) for an account, confirmed with an emailed code.
 - [Turn features on or off](turn-features-on-or-off.md) for one website, and delete a feature's data.
 - [Install and change a theme](install-and-change-a-theme.md): install themes on the server, and choose one for each website.
+- [Choose a page layout](choose-a-page-layout.md): home, standard, landing, sidebar or full width.
+- [Add captions and transcripts](add-captions-and-transcripts.md) to videos and recordings, in each language.
 - [Search your website](search-your-website.md) from any page, and leave a page out of the search.
 - [See who visits your website](see-who-visits-your-website.md): the Analytics screen, its charts and tables, and
   what is and isn't counted.
@@ -29,7 +31,9 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 
 - [Update SightPress](update-sightpress.md) to a newer version, keeping every website.
 
+- [Keep your files in the cloud](keep-files-in-the-cloud.md): AWS, Cloudflare or another service, with a CDN.
 - [Upload large files](upload-large-files.md): send big files in parts, and pause, resume or cancel.
+- [Import files from a folder](import-files.md) on the server, of any size.
 - [Fix upload size limits](fix-upload-size-limits.md): what the admin warning means, and how to let larger files in.
 - [Choose upload limits](choose-upload-limits.md): how large a file each website accepts.
 - [Run SightPress in the background](run-in-the-background.md), so that you can close the terminal.
@@ -63,6 +67,7 @@ You don't need to be a developer for any of these. Everyone who takes part follo
 - [Blocks](../reference/blocks.md): every kind of content block and its fields.
 - [Search and AI visibility](../reference/search-and-ai.md): how pages appear in search engines and AI search.
 - [Command line reference](../reference/command-line.md): every command of `bin/sightpress`.
+- [Theme contract](../reference/theme-contract.md): what a theme can rely on and must provide.
 
 ## Coming later
 

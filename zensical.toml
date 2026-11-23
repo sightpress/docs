@@ -34,11 +34,15 @@ nav = [
     { "Change your email or password" = "how-to/change-your-email-or-password.md" },
     { "Turn features on or off" = "how-to/turn-features-on-or-off.md" },
     { "Install and change a theme" = "how-to/install-and-change-a-theme.md" },
+    { "Choose a page layout" = "how-to/choose-a-page-layout.md" },
+    { "Add captions and transcripts" = "how-to/add-captions-and-transcripts.md" },
     { "Search your website" = "how-to/search-your-website.md" },
     { "See who visits your website" = "how-to/see-who-visits-your-website.md" },
     { "Use the AI assistant" = "how-to/use-the-ai-assistant.md" },
     { "Update SightPress" = "how-to/update-sightpress.md" },
+    { "Keep your files in the cloud" = "how-to/keep-files-in-the-cloud.md" },
     { "Upload large files" = "how-to/upload-large-files.md" },
+    { "Import files from a folder" = "how-to/import-files.md" },
     { "Fix upload size limits" = "how-to/fix-upload-size-limits.md" },
     { "Choose upload limits" = "how-to/choose-upload-limits.md" },
     { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
@@ -64,6 +68,7 @@ nav = [
     { "Blocks" = "reference/blocks.md" },
     { "Search and AI visibility" = "reference/search-and-ai.md" },
     { "Command line" = "reference/command-line.md" },
+    { "Theme contract" = "reference/theme-contract.md" },
   ] },
 ]
 

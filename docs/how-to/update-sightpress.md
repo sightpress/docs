@@ -1,7 +1,7 @@
 # Update SightPress
 
 This guide shows you how to move an installation to a newer version of SightPress, keeping every website, page,
-account, menu and setting. It is written for **0.1 to 0.3**, the first update with new database tables.
+account, menu and setting. It covers updates up to **0.4**.
 
 !!! warning "Make a copy first"
 
@@ -83,6 +83,24 @@ Type these commands in the `skeleton` folder.
     ```
 
     Run it in one place only per installation.
+
+## New in 0.4
+
+Follow the same steps. Step 4 is needed for this update. After it:
+
+- **The look of your websites stays the same.** The default theme now comes as its own package, which Composer
+  installs. `composer update` also publishes the theme files and previews.
+- **Your files stay where they are.** Nothing moves to the cloud unless you [set it up](keep-files-in-the-cloud.md).
+- A **published page with a video without captions, or a recording without a transcript, stays published**, but the
+  publish check asks for them the next time it is published. See
+  [Add captions and transcripts](add-captions-and-transcripts.md).
+
+`config/tenant.php` has new optional sections. Copy them from the new skeleton if Git can't merge them:
+
+- `themes`: which installed themes websites may use, and the theme of new websites.
+- `media.limits`: every website's upload limits and the most a website may set.
+- `uploads.temp_path` and `uploads.max_chunked_bytes`: where large files wait while their parts arrive, and the largest
+  file that can be sent in parts.
 
 ## If something goes wrong
 

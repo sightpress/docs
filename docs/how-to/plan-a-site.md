@@ -8,9 +8,8 @@ and this guide says which ones.
 
 !!! note "Which version this guide describes"
 
-    This guide follows the newest documentation. Choices marked **next release** are finished but aren't in version
-    0.3 yet. If you run 0.3, plan to keep files on the server, use the default theme with its Home page and Standard
-    page layouts, and keep the standard upload limits for now.
+    This guide describes version 0.4. If you run 0.3, update first: it has no cloud storage, other themes, extra page
+    layouts or per-website upload limits. See [Update SightPress](update-sightpress.md).
 
 ## Step 1: Answer these questions
 
@@ -36,11 +35,11 @@ Pick the row closest to yours. You can change every choice later.
 | Personal website or portfolio | SQLite | On the server | Public | One admin | Search off if there are few pages |
 | Small business | SQLite | On the server | Public | One admin, perhaps an editor | Search and analytics |
 | Charity or community group | SQLite or MariaDB | On the server | Public, with some members-only pages | Admin, editor, volunteer contributors | Search and analytics |
-| Podcast or media project | MariaDB or PostgreSQL | Cloud storage and a CDN (next release) | Public | Admin and editors | Search and analytics |
+| Podcast or media project | MariaDB or PostgreSQL | Cloud storage and a CDN | Public | Admin and editors | Search and analytics |
 | School, library or museum | MariaDB or PostgreSQL | Server, or cloud storage if there is a lot of media | Public | Web editor, staff as contributors | Search and analytics |
 | Public service or health information | MariaDB or PostgreSQL | Server or cloud storage | Public | Editors approve every page | Search, and analytics if your policy allows it |
 | Private club or staff website | SQLite or MariaDB | On the server | Members-only | Admin, editors, members | Search |
-| Agency or group of websites | MariaDB or PostgreSQL | Cloud storage per website (next release) | Set per website | Separate people per website | Defaults set for all websites |
+| Agency or group of websites | MariaDB or PostgreSQL | Cloud storage per website | Set per website | Separate people per website | Defaults set for all websites |
 
 ## Step 3: Choose your options
 
@@ -62,8 +61,8 @@ You can move later, but SightPress doesn't copy the data for you. See `site:db:c
 | Choose | When |
 | --- | --- |
 | **On the server** (the default) | Pictures and documents, and a server with enough disk space. |
-| **Cloud storage** (next release) | Lots of media, large files, or more than one server. Works with AWS, Cloudflare and other S3-compatible services. |
-| **Cloud storage with a CDN** (next release) | Visitors in many countries, or popular audio and video. A CDN delivers public files from near each visitor. |
+| **Cloud storage** | Lots of media, large files, or more than one server. Works with AWS, Cloudflare and other S3-compatible services. |
+| **Cloud storage with a CDN** | Visitors in many countries, or popular audio and video. A CDN delivers public files from near each visitor. |
 
 Whoever runs the installation sets up cloud storage with the command line tool. This example uses AWS in London:
 
@@ -83,7 +82,7 @@ bin/sightpress site:storage:cdn demo --url=https://files.example.org
   provider other than AWS, also give its address with `--endpoint`.
 - The website keeps using its current files until `site:storage:migrate` has copied them.
 
-### Upload limits (next release)
+### Upload limits
 
 | Kind of website | Suggested setup |
 | --- | --- |
@@ -125,18 +124,18 @@ can publish in other languages. See [Add a language](add-a-language.md).
 
 ### Look and layout
 
-Start with the default theme. From the next release, you can install other themes and change the colours on the
+Start with the default theme. You can install other themes and change the colours on the
 **Appearance** screen, and SightPress checks that they stay readable. Choose a layout for each page:
 
 | Layout | Good for |
 | --- | --- |
 | **Home page** | The first page, with a large introduction. |
 | **Standard page** | Most pages. |
-| **Landing** (next release) | A single campaign or call to action. |
-| **Sidebar** (next release) | A section with several related pages. |
-| **Full width** (next release) | Wide galleries and tables. |
+| **Landing** | A single campaign or call to action. |
+| **Sidebar** | A section with several related pages. |
+| **Full width** | Wide galleries and tables. |
 
-See [Install and change a theme](install-and-change-a-theme.md).
+See [Choose a page layout](choose-a-page-layout.md) and [Install and change a theme](install-and-change-a-theme.md).
 
 ### Optional features
 

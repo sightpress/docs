@@ -8,8 +8,8 @@ waiting for downloads.
 
     You can create a website with ready-made pages, write, schedule and publish pages, translate them into other
     languages, upload pictures and other files, invite people or let them sign up, make pages members-only, search
-    the website, read its visitor statistics, turn features on or off, and set up an optional AI assistant with your
-    own key. Running SightPress on a public server is not covered yet.
+    the website, read its visitor statistics, turn features on or off, change its theme, colours and page layouts, add
+    captions and transcripts, keep files in the cloud, and set up an optional AI assistant with your own key. Running SightPress on a public server is not covered yet.
 
 ## What you need
 
@@ -256,6 +256,12 @@ To start your website in more than one language, give `site:create` a list in `-
 
 You can help improve SightPress without being a developer: see [Report a problem](how-to/report-a-problem.md) and
 the other guides under *Help improve SightPress*.
+
+To change how your website looks, see [Install and change a theme](how-to/install-and-change-a-theme.md) and
+[Choose a page layout](how-to/choose-a-page-layout.md). Your files are kept in the `sites` folder on your computer. To
+keep them elsewhere, see [Keep your files in the cloud](how-to/keep-files-in-the-cloud.md). For big files, see
+[Upload large files](how-to/upload-large-files.md) and [Import files from a folder](how-to/import-files.md). To make
+videos and recordings accessible, see [Add captions and transcripts](how-to/add-captions-and-transcripts.md).
 
 The reference pages explain [roles](reference/roles-and-permissions.md), [blocks](reference/blocks.md),
 [search and AI visibility](reference/search-and-ai.md) and the [command line tool](reference/command-line.md).

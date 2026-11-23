@@ -75,6 +75,11 @@ Open the website: it now has the new look. The other websites keep theirs.
 
 The admin panel keeps its own colours whatever you choose.
 
+## Choose a layout for each page
+
+Themes offer layouts such as **Landing**, **Sidebar** and **Full width**. See
+[Choose a page layout](choose-a-page-layout.md).
+
 ## Pictures of each theme
 
 The pictures and previews on the **Appearance** screen are made on the server by
