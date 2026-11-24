@@ -64,6 +64,7 @@ nav = [
   ] },
   { "Tutorials" = [
     { "Create a theme" = "tutorials/create-a-theme.md" },
+    { "Create a module" = "tutorials/create-a-module.md" },
   ] },
   { "Help improve SightPress" = [
     { "Report a problem" = "how-to/report-a-problem.md" },

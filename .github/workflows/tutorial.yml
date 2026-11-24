@@ -1,5 +1,6 @@
-# Follows the "Create a theme" tutorial on a fresh copy of sightpress/theme-template (tools/tutorial/), so the
-# tutorial's commands, snippets and the messages it quotes keep matching what SightPress does.
+# Follows the "Create a theme" and "Create a module" tutorials on fresh copies of sightpress/theme-template and
+# sightpress/module-template (tools/tutorial/), so the tutorials' commands, snippets and the messages they quote keep
+# matching what SightPress does. The module tutorial also checks its admin screen and an event page with axe.
 name: Tutorial
 
 on:
@@ -55,3 +56,51 @@ jobs:
 
       - name: Follow the tutorial
         run: docs/tools/tutorial/create-a-theme.sh "$GITHUB_WORKSPACE/theme"
+
+  create-a-module:
+    name: create a module
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: docs
+
+      - uses: actions/checkout@v7
+        with:
+          repository: sightpress/module-template
+          path: template
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          extensions: gd, intl, sodium, exif, fileinfo, pdo_sqlite
+          ini-values: date.timezone=UTC, memory_limit=512M
+          coverage: pcov
+          tools: composer:v2
+
+      # The package is what git archive makes, as on Packagist, so files left out by .gitattributes are missing here too.
+      - name: Create the module from the template's package with composer create-project
+        run: |
+          archive="$RUNNER_TEMP/module-template.zip"
+          git -C template archive --format=zip --output="$archive" HEAD
+          repository="$(jq -c --arg url "file://$archive" \
+            '{type: "package", package: (. + {version: "0.1.99", dist: {type: "zip", url: $url}})}' \
+            template/composer.json)"
+          composer create-project --no-interaction --no-progress --prefer-dist \
+            --repository="$repository" sightpress/module-template module 0.1.99
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+
+      - name: Install Playwright and axe (tooling only)
+        run: |
+          mkdir -p "$RUNNER_TEMP/tools" && cd "$RUNNER_TEMP/tools"
+          npm init -y > /dev/null
+          npm install --no-audit --no-fund @playwright/test@1 @axe-core/playwright@4
+          npx playwright install --with-deps chromium
+          echo "$RUNNER_TEMP/tools/node_modules/.bin" >> "$GITHUB_PATH"
+          echo "NODE_PATH=$RUNNER_TEMP/tools/node_modules" >> "$GITHUB_ENV"
+
+      - name: Follow the tutorial
+        run: docs/tools/tutorial/create-a-module.sh "$GITHUB_WORKSPACE/module"

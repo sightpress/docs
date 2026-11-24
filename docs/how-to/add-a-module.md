@@ -88,5 +88,5 @@ new websites start with, and `locked` turns a module on or off for every website
 [Turn features on or off](turn-features-on-or-off.md#for-whoever-runs-the-installation) and the
 [tenant configuration reference](../reference/tenant-config.md).
 
-To build a module of your own, the [module interface reference](../reference/module-interface.md) lists everything a
-module can use.
+To build a module of your own, follow the [Create a module](../tutorials/create-a-module.md) tutorial. The
+[module interface reference](../reference/module-interface.md) lists everything a module can use.

@@ -20,6 +20,7 @@ site settings and an audit log. Every page is ready for search engines and AI re
 - The source code lives on GitHub in the [SightPress organisation](https://github.com/sightpress).
 - To run SightPress on your own computer, follow [Getting started](getting-started.md).
 - To make a theme of your own, follow the tutorial [Create a theme](tutorials/create-a-theme.md).
+- To make a module of your own, follow the tutorial [Create a module](tutorials/create-a-module.md).
 - The [how-to guides](how-to/index.md) show you how to do one task at a time, such as
   [creating a website](how-to/create-a-site.md) or [writing and publishing a page](how-to/write-and-publish-a-page.md).
 - The reference pages explain [roles and permissions](reference/roles-and-permissions.md), [blocks](reference/blocks.md),
