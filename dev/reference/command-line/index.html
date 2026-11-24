@@ -394,6 +394,8 @@
       
         
       
+        
+      
     
     
     
@@ -732,6 +734,33 @@
     
   
   Create a custom role
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/keep-websites-to-your-organisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Keep websites to your organisation
 
     
   </span>
@@ -2574,11 +2603,15 @@ then a missing or wrong value stops the command with a sentence that says what i
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>site:create [&lt;slug&gt;] [--domain=] [--db= | --db-engine= --db-path= | --db-host= --db-port= --db-name= --db-user= --db-password=]
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>            [--owner-type=] [--locale=] [--admin-email=] [--admin-first-name=] [--admin-last-name=]
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content] [--without=]
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            [--domain-registration=tenant|off]
 </code></pre></div>
 <p>Creates a website: its database tables, its roles, its first admin, six starter pages, its menus and its logo, icon
 and share image. It prints the first admin's setup code. Nothing is created if something is wrong.
 <a href="../../how-to/create-a-site/">Create a website</a> explains every option. <code>--without=</code> names optional features (module
-ids, separated by commas) the website starts with off.</p>
+ids, separated by commas) the website starts with off. <code>--domain-registration=off</code> turns your organisation's
+registration with an organisation email address off for this website. When your installation has a <code>domain_policy</code>
+or an <code>email_policy</code>, the domains and the first admin's address must follow it (see
+<a href="../../how-to/keep-websites-to-your-organisation/">Keep websites to your organisation</a>).</p>
 <h3 id="siteusercreate-admin">site:user:create-admin<a class="headerlink" href="#siteusercreate-admin" title="Link to this section">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>site:user:create-admin &lt;slug&gt; --email= --first-name= --last-name= [--url=]
 </code></pre></div>
@@ -2650,7 +2683,7 @@ refused: they use "Forgot your password?" instead.</p>
 </tr>
 </tbody>
 </table>
-<p>| <code>system:check [--site=&lt;slug&gt;] [--probe-url=&lt;address&gt;] [--recommend]</code> | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. <code>--site</code> checks one website's limits and counts the uploads refused for it. <code>--probe-url</code> sends test requests to find the web server's real limit. <code>--recommend</code> prints the server values the limits need. Run it with <code>docker compose exec php</code> so it reads the same settings as the website. See <a href="../../how-to/choose-upload-limits/">Choose upload limits</a>. |
+<p>| <code>system:check [--site=&lt;slug&gt;] [--probe-url=&lt;address&gt;] [--recommend]</code> | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. <code>--site</code> checks one website's limits and counts the uploads refused for it. <code>--probe-url</code> sends test requests to find the web server's real limit. <code>--recommend</code> prints the server values the limits need. It also notes websites and accounts outside a <code>domain_policy</code> or <code>email_policy</code> that was made stricter. Run it with <code>docker compose exec php</code> so it reads the same settings as the website. See <a href="../../how-to/choose-upload-limits/">Choose upload limits</a>. |
 | <code>site:media:limits &lt;slug&gt; [--image=] [--video=] [--audio=] [--document=] [--pixels=] [--reset]</code> | Shows or changes the largest files a website accepts, up to the most the installation allows. See <a href="../../how-to/choose-upload-limits/">Choose upload limits</a>. |</p>
 <p>To move a website to another database:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bin/sightpress<span class="w"> </span>site:disable<span class="w"> </span>demo
