@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.4.0](https://github.com/sightpress/docs/compare/0.3.0...0.4.0) (2026-11-24)
+
+
+### Documentation
+
+* add a how-to for installing and changing a theme, and the theme commands to the reference (T-1) ([#24](https://github.com/sightpress/docs/issues/24)) ([bdefed2](https://github.com/sightpress/docs/commit/bdefed2134d2d4b6f769e4b4dde58e7efc4fcc38))
+* add a how-to for reviewing a theme change from its pull request preview (TI-0.2c) ([#23](https://github.com/sightpress/docs/issues/23)) ([20d949e](https://github.com/sightpress/docs/commit/20d949ea3ced6e947d0a068056b7fbf3edb18be0))
+* add Choose upload limits, and the registry upgrade step when updating (M-5b) ([#28](https://github.com/sightpress/docs/issues/28)) ([b4d2610](https://github.com/sightpress/docs/commit/b4d2610ede3559f73359ee7b974c4a74320439d2))
+* add cloud storage, import, captions, layouts and the theme contract, and update the guides for 0.4 (Q-3) ([#34](https://github.com/sightpress/docs/issues/34)) ([e336a08](https://github.com/sightpress/docs/commit/e336a08861c2dfdf14ee5a6b7e5d7f8db003a701))
+* add Plan your website, a guide to choosing a site's options and content ([#32](https://github.com/sightpress/docs/issues/32)) ([88e33ea](https://github.com/sightpress/docs/commit/88e33eab303f3a6ccad9f8f4e5b79118704d2b19))
+* add the Appearance screen, the site's colours and theme previews to the theme how-to (T-2, T-3) ([#27](https://github.com/sightpress/docs/issues/27)) ([8fa1d36](https://github.com/sightpress/docs/commit/8fa1d363e676d8805630c8605ef2c217108c62dc))
+* add the Create a theme tutorial, followed by CI on a fresh copy of the theme template (T-4) ([#26](https://github.com/sightpress/docs/issues/26)) ([0083dad](https://github.com/sightpress/docs/commit/0083dad6be5ae3c6d20827b2a8a0f519f3b3e070))
+* add Upload large files, and explain limits now that files are sent in parts (M-7) ([#30](https://github.com/sightpress/docs/issues/30)) ([34b287a](https://github.com/sightpress/docs/commit/34b287a07d43d1a912117962b8150b9cbe7fcaf1))
+* explain uploads that go straight to cloud storage (M-8) ([#31](https://github.com/sightpress/docs/issues/31)) ([7c22897](https://github.com/sightpress/docs/commit/7c22897c097d6747ff426d46ba5d4591299fb4c8))
+* update pages that still describe storage, databases, uploads and features as unavailable ([#33](https://github.com/sightpress/docs/issues/33)) ([4c63696](https://github.com/sightpress/docs/commit/4c63696221ac08ce6c7a7308b553f6b5359d3fbd))
+
+
+### Miscellaneous
+
+* release 0.4.0 in lockstep with core and skeleton ([2d5189b](https://github.com/sightpress/docs/commit/2d5189b80cefbaacbb912bade7bfc92140bbfde4))
+
 ## [0.3.0](https://github.com/sightpress/docs/compare/0.1.2...0.3.0) (2026-11-19)
 
 
