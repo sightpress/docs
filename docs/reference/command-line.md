@@ -49,12 +49,16 @@ then a missing or wrong value stops the command with a sentence that says what i
 site:create [<slug>] [--domain=] [--db= | --db-engine= --db-path= | --db-host= --db-port= --db-name= --db-user= --db-password=]
             [--owner-type=] [--locale=] [--admin-email=] [--admin-first-name=] [--admin-last-name=]
             [--name=] [--timezone=] [--url=] [--create-db] [--with-demo-content] [--without=]
+            [--domain-registration=tenant|off]
 ```
 
 Creates a website: its database tables, its roles, its first admin, six starter pages, its menus and its logo, icon
 and share image. It prints the first admin's setup code. Nothing is created if something is wrong.
 [Create a website](../how-to/create-a-site.md) explains every option. `--without=` names optional features (module
-ids, separated by commas) the website starts with off.
+ids, separated by commas) the website starts with off. `--domain-registration=off` turns your organisation's
+registration with an organisation email address off for this website. When your installation has a `domain_policy`
+or an `email_policy`, the domains and the first admin's address must follow it (see
+[Keep websites to your organisation](../how-to/keep-websites-to-your-organisation.md)).
 
 ### site:user:create-admin
 
@@ -87,7 +91,7 @@ Every change is written to the installation's log.
 | `site:db:change <slug> [--db= or the --db-… parts] [--migrate]` | Points a **disabled** website at another database, asked for in parts like in `site:create`. **Nothing is copied**: move the data first. The new database must be up to date, or add `--migrate`. If anything fails, the website keeps its old database. |
 | `site:seo:check <slug>` | Checks what search engines will find: titles longer than 60 characters, missing or too long descriptions, pages left out of search and why. Ends with an error when two pages have the same title. See [Search and AI visibility](search-and-ai.md). |
 
-| `system:check [--site=<slug>] [--probe-url=<address>] [--recommend]` | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. `--site` checks one website's limits and counts the uploads refused for it. `--probe-url` sends test requests to find the web server's real limit. `--recommend` prints the server values the limits need. Run it with `docker compose exec php` so it reads the same settings as the website. See [Choose upload limits](../how-to/choose-upload-limits.md). |
+| `system:check [--site=<slug>] [--probe-url=<address>] [--recommend]` | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. `--site` checks one website's limits and counts the uploads refused for it. `--probe-url` sends test requests to find the web server's real limit. `--recommend` prints the server values the limits need. It also notes websites and accounts outside a `domain_policy` or `email_policy` that was made stricter. Run it with `docker compose exec php` so it reads the same settings as the website. See [Choose upload limits](../how-to/choose-upload-limits.md). |
 | `site:media:limits <slug> [--image=] [--video=] [--audio=] [--document=] [--pixels=] [--reset]` | Shows or changes the largest files a website accepts, up to the most the installation allows. See [Choose upload limits](../how-to/choose-upload-limits.md). |
 
 To move a website to another database:

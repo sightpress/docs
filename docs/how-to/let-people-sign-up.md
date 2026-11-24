@@ -43,4 +43,7 @@ The code works once, for 15 minutes. **Send a new code** sends another one, at m
   no picture puzzles.
 - Every new account and every change to these settings is written to the **Audit log**.
 
+On a members-only website, your organisation may also let people with its email addresses register while sign-up is
+off: see [Keep websites to your organisation](keep-websites-to-your-organisation.md).
+
 To turn sign-up off again, untick **Let anyone create an account**. Accounts that were already made are kept.

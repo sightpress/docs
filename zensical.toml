@@ -32,6 +32,7 @@ nav = [
     { "Make a site members-only" = "how-to/make-a-site-members-only.md" },
     { "Let people sign up" = "how-to/let-people-sign-up.md" },
     { "Create a custom role" = "how-to/create-a-custom-role.md" },
+    { "Keep websites to your organisation" = "how-to/keep-websites-to-your-organisation.md" },
     { "Change your email or password" = "how-to/change-your-email-or-password.md" },
     { "Turn features on or off" = "how-to/turn-features-on-or-off.md" },
     { "Install and change a theme" = "how-to/install-and-change-a-theme.md" },
