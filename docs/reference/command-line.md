@@ -135,6 +135,20 @@ next one. See [Schedule a page](../how-to/schedule-a-page.md).
 Features the installation set in `config/tenant.php` (`modules.locked`) can't be changed. See
 [Turn features on or off](../how-to/turn-features-on-or-off.md).
 
+## Roles
+
+| Command | What it does |
+| --- | --- |
+| `site:role:list <slug>` | Lists the website's roles: name, label, how many people have each one and its permissions. |
+| `site:role:create <slug> <name> [--label=] [--permissions=a,b]` | Creates a role. The name is lower-case letters, digits and `_`; the label defaults to the name. |
+| `site:role:grant <slug> <role> <permission>` | Gives a role one more permission. |
+| `site:role:revoke <slug> <role> <permission>` | Takes a permission away from a role. |
+| `site:role:delete <slug> <role>` | Deletes a role nobody has. |
+
+The rules of the **Roles** screen apply: Admin and Member can't be changed, the sign-up role only gets permissions
+that are safe on sign-up, and only permissions of features that are on can be given. Changes are written to the
+audit log. See [Create a custom role](../how-to/create-a-custom-role.md).
+
 ## Site search
 
 | Command | What it does |

@@ -86,6 +86,14 @@ On the same page, **Deactivate account** stops someone signing in straight away;
 lets them sign in again with their old password. Nobody can change their own role or deactivate themselves, so a
 website always keeps someone who can manage people.
 
+## Custom roles
+
+Admins (or anyone whose role may **Manage roles**) make their own roles on the **Roles** screen: a name, then the
+permissions to tick, grouped by area, each with what it allows. Editor and Contributor can be changed too. Admin
+always has every permission and Member never has one, so those two can't be changed. Permissions of features that
+are off aren't listed, and roles keep them. Nobody can take **Manage roles** away from their own role, and a role
+that someone has can't be deleted. Step by step: [Create a custom role](../how-to/create-a-custom-role.md).
+
 ## For developers
 
 Permission names, for modules and the command line: `admin.access`, `page.create`, `page.edit.own`, `page.edit.any`,

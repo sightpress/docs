@@ -15,6 +15,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Add a language and translate a page](add-a-language.md).
 - [Make a website or a page members-only](make-a-site-members-only.md).
 - [Let people sign up](let-people-sign-up.md) for an account, confirmed with an emailed code.
+- [Create a custom role](create-a-custom-role.md), choose what it may do and give it to people.
 - [Turn features on or off](turn-features-on-or-off.md) for one website, and delete a feature's data.
 - [Install and change a theme](install-and-change-a-theme.md): install themes on the server, and choose one for each website.
 - [Choose a page layout](choose-a-page-layout.md): home, standard, landing, sidebar or full width.
