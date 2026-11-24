@@ -392,6 +392,8 @@
       
         
       
+        
+      
     
     
     
@@ -703,6 +705,33 @@
     
   
   Let people sign up
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/create-a-custom-role/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Create a custom role
 
     
   </span>
@@ -1931,6 +1960,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Roles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#site-search" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2308,6 +2348,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Roles
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#site-search" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2666,6 +2717,40 @@ next one. See <a href="../../how-to/schedule-a-page/">Schedule a page</a>.</p>
 </table>
 <p>Features the installation set in <code>config/tenant.php</code> (<code>modules.locked</code>) can't be changed. See
 <a href="../../how-to/turn-features-on-or-off/">Turn features on or off</a>.</p>
+<h2 id="roles">Roles<a class="headerlink" href="#roles" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:role:list &lt;slug&gt;</code></td>
+<td>Lists the website's roles: name, label, how many people have each one and its permissions.</td>
+</tr>
+<tr>
+<td><code>site:role:create &lt;slug&gt; &lt;name&gt; [--label=] [--permissions=a,b]</code></td>
+<td>Creates a role. The name is lower-case letters, digits and <code>_</code>; the label defaults to the name.</td>
+</tr>
+<tr>
+<td><code>site:role:grant &lt;slug&gt; &lt;role&gt; &lt;permission&gt;</code></td>
+<td>Gives a role one more permission.</td>
+</tr>
+<tr>
+<td><code>site:role:revoke &lt;slug&gt; &lt;role&gt; &lt;permission&gt;</code></td>
+<td>Takes a permission away from a role.</td>
+</tr>
+<tr>
+<td><code>site:role:delete &lt;slug&gt; &lt;role&gt;</code></td>
+<td>Deletes a role nobody has.</td>
+</tr>
+</tbody>
+</table>
+<p>The rules of the <strong>Roles</strong> screen apply: Admin and Member can't be changed, the sign-up role only gets permissions
+that are safe on sign-up, and only permissions of features that are on can be given. Changes are written to the
+audit log. See <a href="../../how-to/create-a-custom-role/">Create a custom role</a>.</p>
 <h2 id="site-search">Site search<a class="headerlink" href="#site-search" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
