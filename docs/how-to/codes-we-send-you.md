@@ -1,7 +1,7 @@
 # Codes we send you
 
-A SightPress website **never sends you a link** to click. When it needs to check that an e-mail address is yours,
-it sends a **6-digit code** instead, and you type that code on the website yourself.
+A SightPress website **never sends you a link** to click. When it needs to check that an e-mail address or a mobile
+number is yours, it sends a **6-digit code** instead, and you type that code on the website yourself.
 
 This keeps you safe from fake messages. If you ever get a message that claims to come from a SightPress website and
 asks you to click a link, it is not from us. Don't click it.
@@ -12,6 +12,15 @@ You get a code by e-mail when:
 
 - you **forgot your password** and asked for a new one: the code works for 15 minutes;
 - someone **invited you** to help with a website: the invitation code works for 7 days.
+
+On websites with [text messages](set-up-text-messages.md), you get a code **by text message** when:
+
+- you [add or change your mobile number](add-your-mobile-number.md): the code works for 10 minutes;
+- you [reset your password with your number](sign-in-with-your-phone.md): 10 minutes;
+- the website [asks you to confirm an important change](confirm-important-changes.md): 10 minutes.
+
+A text with a code says which website it is from, for example "123 456 is your code for Riverside Library. It works
+for 10 minutes. Never share it." It never contains a link or a web address.
 
 The person who sets up a new website gets a **setup code** from the command line tool, not by e-mail. They pass it
 on to the website's first admin, who uses it to choose a password. A setup code works for 7 days.

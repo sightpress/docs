@@ -63,12 +63,22 @@ or an `email_policy`, the domains and the first admin's address must follow it (
 ### site:user:create-admin
 
 ```text
-site:user:create-admin <slug> --email= --first-name= --last-name= [--url=]
+site:user:create-admin <slug> --email= --first-name= --last-name= [--url=] [--phone=]
 ```
 
 Creates an admin on a website and prints the setup code they choose their password with. For an admin who hasn't
 chosen a password yet, it prints a new code, and the old one stops working. Someone who can already sign in is
-refused: they use "Forgot your password?" instead.
+refused: they use "Forgot your password?" instead. `--phone=` gives them a confirmed mobile number (for text
+messages and two-step confirmation): you vouch that it is theirs, so no code is sent.
+
+### site:user:phone:reset
+
+```text
+site:user:phone:reset <slug> <email>
+```
+
+Removes the mobile number of an account, for example after its owner lost their phone, so they can add a new one. It
+works whatever two-step confirmation says. See [Lost your phone](../how-to/lost-your-phone.md).
 
 ## Turn websites on and off
 
@@ -184,6 +194,18 @@ They refuse a website with analytics turned off. See [See who visits your websit
 
 They refuse a website with the assistant turned off; turn it on with `site:module:enable <slug> assistant`. See
 [Use the AI assistant](../how-to/use-the-ai-assistant.md).
+
+## Text messages
+
+| Command | What it does |
+| --- | --- |
+| `site:sms:set <slug> --provider=<id> [--account=] [--sender=] [--region=] [--budget=] [--key-stdin]` | Sets up the website's text message provider (`twilio` or `vonage`, or a module's). With `--key-stdin` it reads the key from standard input: `printf %s "$KEY" \| bin/sightpress site:sms:set …`. `--budget` is message parts a month (0 = no limit). |
+| `site:sms:remove <slug>` | Forgets the website's provider and key. |
+| `site:sms:enable <slug>` | Turns text messages on. Refused until a provider is set up. |
+| `site:sms:disable <slug>` | Turns text messages off. Numbers on accounts and the message log are kept. |
+| `site:sms:test <slug> --to=<number>` | Sends a test message and says what happened. The number is only shown partly hidden. |
+
+See [Set up text messages](../how-to/set-up-text-messages.md).
 
 ## Branding
 

@@ -24,14 +24,20 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Search your website](search-your-website.md) from any page, and leave a page out of the search.
 - [See who visits your website](see-who-visits-your-website.md): the Analytics screen, its charts and tables, and
   what is and isn't counted.
+- [Confirm important changes](confirm-important-changes.md) with a code by text message (two-step confirmation).
 
 ## Your account
 
 - [Change your email address or password](change-your-email-or-password.md) on *My account*.
+- [Add your mobile number](add-your-mobile-number.md) and choose your text messages.
+- [Get notifications by text](text-message-notifications.md), and stop them.
+- [Sign in with your phone](sign-in-with-your-phone.md), and reset your password with a code by text.
+- [Lost your phone](lost-your-phone.md): get your number removed and add the new one.
 
 ## Running SightPress
 
 - [Update SightPress](update-sightpress.md) to a newer version, keeping every website.
+- [Set up text messages](set-up-text-messages.md): a provider, the limits that protect you, and the budget.
 
 - [Keep your files in the cloud](keep-files-in-the-cloud.md): AWS, Cloudflare or another service, with a CDN.
 - [Upload large files](upload-large-files.md): send big files in parts, and pause, resume or cancel.
