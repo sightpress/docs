@@ -396,6 +396,18 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -977,6 +989,168 @@
     
   
   Use the AI assistant
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/set-up-text-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Set up text messages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/add-your-mobile-number/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add your mobile number
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/text-message-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Get notifications by text
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/sign-in-with-your-phone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sign in with your phone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/confirm-important-changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Confirm important changes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/lost-your-phone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lost your phone
 
     
   </span>
@@ -1911,6 +2085,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#siteuserphonereset" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        site:user:phone:reset
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2026,6 +2211,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         AI assistant
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text messages
       </span>
     </span>
   </a>
@@ -2299,6 +2495,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#siteuserphonereset" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        site:user:phone:reset
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2414,6 +2621,17 @@
     <span class="md-ellipsis">
       <span class="md-typeset">
         AI assistant
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text messages
       </span>
     </span>
   </a>
@@ -2613,11 +2831,17 @@ registration with an organisation email address off for this website. When your 
 or an <code>email_policy</code>, the domains and the first admin's address must follow it (see
 <a href="../../how-to/keep-websites-to-your-organisation/">Keep websites to your organisation</a>).</p>
 <h3 id="siteusercreate-admin">site:user:create-admin<a class="headerlink" href="#siteusercreate-admin" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>site:user:create-admin &lt;slug&gt; --email= --first-name= --last-name= [--url=]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>site:user:create-admin &lt;slug&gt; --email= --first-name= --last-name= [--url=] [--phone=]
 </code></pre></div>
 <p>Creates an admin on a website and prints the setup code they choose their password with. For an admin who hasn't
 chosen a password yet, it prints a new code, and the old one stops working. Someone who can already sign in is
-refused: they use "Forgot your password?" instead.</p>
+refused: they use "Forgot your password?" instead. <code>--phone=</code> gives them a confirmed mobile number (for text
+messages and two-step confirmation): you vouch that it is theirs, so no code is sent.</p>
+<h3 id="siteuserphonereset">site:user:phone:reset<a class="headerlink" href="#siteuserphonereset" title="Link to this section">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>site:user:phone:reset &lt;slug&gt; &lt;email&gt;
+</code></pre></div>
+<p>Removes the mobile number of an account, for example after its owner lost their phone, so they can add a new one. It
+works whatever two-step confirmation says. See <a href="../../how-to/lost-your-phone/">Lost your phone</a>.</p>
 <h2 id="turn-websites-on-and-off">Turn websites on and off<a class="headerlink" href="#turn-websites-on-and-off" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
@@ -2686,10 +2910,10 @@ refused: they use "Forgot your password?" instead.</p>
 <p>| <code>system:check [--site=&lt;slug&gt;] [--probe-url=&lt;address&gt;] [--recommend]</code> | Lists the server's upload and input limits, the largest file of each kind that can be uploaded, and the settings to change. Ends with an error when something must be fixed. <code>--site</code> checks one website's limits and counts the uploads refused for it. <code>--probe-url</code> sends test requests to find the web server's real limit. <code>--recommend</code> prints the server values the limits need. It also notes websites and accounts outside a <code>domain_policy</code> or <code>email_policy</code> that was made stricter. Run it with <code>docker compose exec php</code> so it reads the same settings as the website. See <a href="../../how-to/choose-upload-limits/">Choose upload limits</a>. |
 | <code>site:media:limits &lt;slug&gt; [--image=] [--video=] [--audio=] [--document=] [--pixels=] [--reset]</code> | Shows or changes the largest files a website accepts, up to the most the installation allows. See <a href="../../how-to/choose-upload-limits/">Choose upload limits</a>. |</p>
 <p>To move a website to another database:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>bin/sightpress<span class="w"> </span>site:disable<span class="w"> </span>demo
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># copy the data to the new database with your database's own tools</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>bin/sightpress<span class="w"> </span>site:db:change<span class="w"> </span>demo<span class="w"> </span>--db<span class="o">=</span>postgresql://user:password@db.internal:5432/demo
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>bin/sightpress<span class="w"> </span>site:enable<span class="w"> </span>demo
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>bin/sightpress<span class="w"> </span>site:disable<span class="w"> </span>demo
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># copy the data to the new database with your database's own tools</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>bin/sightpress<span class="w"> </span>site:db:change<span class="w"> </span>demo<span class="w"> </span>--db<span class="o">=</span>postgresql://user:password@db.internal:5432/demo
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>bin/sightpress<span class="w"> </span>site:enable<span class="w"> </span>demo
 </code></pre></div>
 <h2 id="languages">Languages<a class="headerlink" href="#languages" title="Link to this section">&para;</a></h2>
 <table>
@@ -2717,7 +2941,7 @@ refused: they use "Forgot your password?" instead.</p>
 <p>See <a href="../../how-to/add-a-language/">Add a language and translate a page</a>.</p>
 <h2 id="things-that-happen-at-a-set-time">Things that happen at a set time<a class="headerlink" href="#things-that-happen-at-a-set-time" title="Link to this section">&para;</a></h2>
 <h3 id="schedulerun">schedule:run<a class="headerlink" href="#schedulerun" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>schedule:run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>schedule:run
 </code></pre></div>
 <p>Does everything that is due on every website that is on: publishes and unpublishes scheduled pages, rolls up and
 deletes old analytics, rebuilds search indexes that are out of date and removes sign-ups that were never confirmed.
@@ -2861,6 +3085,38 @@ audit log. See <a href="../../how-to/create-a-custom-role/">Create a custom role
 </table>
 <p>They refuse a website with the assistant turned off; turn it on with <code>site:module:enable &lt;slug&gt; assistant</code>. See
 <a href="../../how-to/use-the-ai-assistant/">Use the AI assistant</a>.</p>
+<h2 id="text-messages">Text messages<a class="headerlink" href="#text-messages" title="Link to this section">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>site:sms:set &lt;slug&gt; --provider=&lt;id&gt; [--account=] [--sender=] [--region=] [--budget=] [--key-stdin]</code></td>
+<td>Sets up the website's text message provider (<code>twilio</code> or <code>vonage</code>, or a module's). With <code>--key-stdin</code> it reads the key from standard input: <code>printf %s "$KEY" \| bin/sightpress site:sms:set …</code>. <code>--budget</code> is message parts a month (0 = no limit).</td>
+</tr>
+<tr>
+<td><code>site:sms:remove &lt;slug&gt;</code></td>
+<td>Forgets the website's provider and key.</td>
+</tr>
+<tr>
+<td><code>site:sms:enable &lt;slug&gt;</code></td>
+<td>Turns text messages on. Refused until a provider is set up.</td>
+</tr>
+<tr>
+<td><code>site:sms:disable &lt;slug&gt;</code></td>
+<td>Turns text messages off. Numbers on accounts and the message log are kept.</td>
+</tr>
+<tr>
+<td><code>site:sms:test &lt;slug&gt; --to=&lt;number&gt;</code></td>
+<td>Sends a test message and says what happened. The number is only shown partly hidden.</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../../how-to/set-up-text-messages/">Set up text messages</a>.</p>
 <h2 id="branding">Branding<a class="headerlink" href="#branding" title="Link to this section">&para;</a></h2>
 <table>
 <thead>
@@ -2947,13 +3203,13 @@ audit log. See <a href="../../how-to/create-a-custom-role/">Create a custom role
 <h2 id="themes">Themes<a class="headerlink" href="#themes" title="Link to this section">&para;</a></h2>
 <p>See <a href="../../how-to/install-and-change-a-theme/">Install and change a theme</a>.</p>
 <h3 id="themelist">theme:list<a class="headerlink" href="#themelist" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>theme:list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>theme:list
 </code></pre></div>
 <p>Lists the installed themes: id, name, version, whether websites may use it (or why it can't be used), whether new
 websites start with it, and the websites that use it. Websites whose theme isn't installed any more are listed as
 errors; they are shown in the default theme.</p>
 <h3 id="themevalidate">theme:validate<a class="headerlink" href="#themevalidate" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>theme:validate [&lt;theme&gt;|&lt;path&gt;] [--axe]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>theme:validate [&lt;theme&gt;|&lt;path&gt;] [--axe]
 </code></pre></div>
 <p>Checks a theme the way it is checked before it is applied, and says what to fix:</p>
 <ul>
@@ -2967,25 +3223,25 @@ errors; they are shown in the default theme.</p>
 scans the theme's preview page with axe in light, dark and forced-colours mode; this needs Node.js and Playwright's
 Chromium. It ends with an error when a check fails.</p>
 <h3 id="themepreview">theme:preview<a class="headerlink" href="#themepreview" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>theme:preview &lt;theme|path&gt; [--out=build/theme-preview/&lt;id&gt;] [--locale=en-GB] [--screenshot]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>theme:preview &lt;theme|path&gt; [--out=build/theme-preview/&lt;id&gt;] [--locale=en-GB] [--screenshot]
 </code></pre></div>
 <p>Writes the theme's preview page to a folder that opens in any browser without a server or an internet connection: a
 top bar, a band with the theme's name and a Download button, one block of every kind, and the footer. <code>--screenshot</code>
 also writes <code>screenshot.png</code>, <code>screenshot-dark.png</code> and <code>page.png</code> (needs Node.js and Playwright's Chromium). Theme
 authors can run the same commands without a project with <code>vendor/bin/sightpress-theme</code>.</p>
 <h3 id="sitethemeapply">site:theme:apply<a class="headerlink" href="#sitethemeapply" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>site:theme:apply &lt;site&gt; &lt;theme&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>site:theme:apply &lt;site&gt; &lt;theme&gt;
 </code></pre></div>
 <p>Applies an installed theme to a website. The theme must be allowed (<code>themes.allowed</code> in <code>config/tenant.php</code>) and pass
 the checks of <code>theme:validate</code>. The website's activity log records the change.</p>
 <h3 id="themepublish-assets">theme:publish-assets<a class="headerlink" href="#themepublish-assets" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>theme:publish-assets [--no-screenshot]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>theme:publish-assets [--no-screenshot]
 </code></pre></div>
 <p>Writes the preview page of every installed theme to <code>public/themes/&lt;theme&gt;/&lt;version&gt;/preview/</code>, with its screenshots
 where Node.js and Chromium are installed, for the <strong>Appearance</strong> screen. The project runs it after <code>composer install</code>
 and <code>composer update</code>.</p>
 <h3 id="cacheclear">cache:clear<a class="headerlink" href="#cacheclear" title="Link to this section">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>cache:clear
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>cache:clear
 </code></pre></div>
 <p>Empties the cache folder. Run it after installing or removing a theme or a module with Composer.</p>
 <h2 id="database-addresses">Database addresses<a class="headerlink" href="#database-addresses" title="Link to this section">&para;</a></h2>
