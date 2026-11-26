@@ -35,6 +35,7 @@ nav = [
     { "Keep websites to your organisation" = "how-to/keep-websites-to-your-organisation.md" },
     { "Change your email or password" = "how-to/change-your-email-or-password.md" },
     { "Turn features on or off" = "how-to/turn-features-on-or-off.md" },
+    { "Add a module" = "how-to/add-a-module.md" },
     { "Install and change a theme" = "how-to/install-and-change-a-theme.md" },
     { "Choose a page layout" = "how-to/choose-a-page-layout.md" },
     { "Add captions and transcripts" = "how-to/add-captions-and-transcripts.md" },
@@ -77,6 +78,8 @@ nav = [
     { "Search and AI visibility" = "reference/search-and-ai.md" },
     { "Command line" = "reference/command-line.md" },
     { "Theme contract" = "reference/theme-contract.md" },
+    { "Module interface" = "reference/module-interface.md" },
+    { "Tenant configuration" = "reference/tenant-config.md" },
   ] },
 ]
 

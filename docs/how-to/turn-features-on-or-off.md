@@ -13,7 +13,7 @@ You need to be an **admin** of the website. Editors, contributors and members do
     [Search your website](search-your-website.md)), **Analytics** (see
     [See who visits your website](see-who-visits-your-website.md)), both on for new websites, and the
     **AI assistant** (see [Use the AI assistant](use-the-ai-assistant.md)), off for new websites. Features installed
-    as extra packages show up on the screen too.
+    as extra packages (modules) show up on the screen too: see [Add a module](add-a-module.md).
 
 ## See the features of a website
 

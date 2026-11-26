@@ -1,7 +1,7 @@
 # Update SightPress
 
 This guide shows you how to move an installation to a newer version of SightPress, keeping every website, page,
-account, menu and setting. It covers updates up to **0.4**.
+account, menu and setting. It covers updates up to **0.5**.
 
 !!! warning "Make a copy first"
 
@@ -101,6 +101,35 @@ Follow the same steps. Step 4 is needed for this update. After it:
 - `media.limits`: every website's upload limits and the most a website may set.
 - `uploads.temp_path` and `uploads.max_chunked_bytes`: where large files wait while their parts arrive, and the largest
   file that can be sent in parts.
+
+## New in 0.5
+
+Follow the same steps, including updating the websites' databases (`site:migrate --all`). After it:
+
+- **Nothing changes for your websites until you choose to.** Text messages are off, so nobody is asked for a mobile
+  number and the sign-in page still says "Email address". Two-step confirmation is off. No email or domain policy
+  applies. Custom roles, text messages and two-step confirmation are there to set up when you want them: see
+  [Create a custom role](create-a-custom-role.md), [Set up text messages](set-up-text-messages.md) and
+  [Confirm important changes](confirm-important-changes.md).
+- **Modules you install from now on start off** on the websites that already exist; an admin turns them on. See
+  [Add a module](add-a-module.md).
+
+`config/tenant.php` has new optional settings. Copy them from the new skeleton if Git can't merge them, or leave them
+out to keep the defaults. Each one is described in the [tenant configuration reference](../reference/tenant-config.md):
+
+- `domain_policy`, `email_policy` and `domain_registration`: keep websites and accounts to your organisation's domains
+  (see [Keep websites to your organisation](keep-websites-to-your-organisation.md));
+- `sms`: a text message provider every website may use, the monthly budget and the limits;
+- `two_step`: whether websites may, must or must not ask for a code before important changes.
+
+`.env.example` names `SMS_API_KEY` and `ASSISTANT_API_KEY`, for the keys of providers you set in `config/tenant.php`.
+
+### For module authors
+
+Modules need `sightpress/module-interface` `^0.5`. The events a module listens to moved from core into the contract,
+under `SightPress\Module\Event` (for example `SightPress\Module\Event\PageTransitioned`), and values that were enums
+are strings there. Change the `use` lines of your subscribers and remove any dependency on `sightpress/core` outside
+`require-dev`. The [module interface reference](../reference/module-interface.md) lists every event with its fields.
 
 ## If something goes wrong
 

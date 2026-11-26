@@ -18,6 +18,7 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Create a custom role](create-a-custom-role.md), choose what it may do and give it to people.
 - [Keep websites to your organisation](keep-websites-to-your-organisation.md): your domains, your email addresses, and registration with an organisation email.
 - [Turn features on or off](turn-features-on-or-off.md) for one website, and delete a feature's data.
+- [Add a module](add-a-module.md): install a module package on the server, turn it on for a website, and remove it.
 - [Install and change a theme](install-and-change-a-theme.md): install themes on the server, and choose one for each website.
 - [Choose a page layout](choose-a-page-layout.md): home, standard, landing, sidebar or full width.
 - [Add captions and transcripts](add-captions-and-transcripts.md) to videos and recordings, in each language.
