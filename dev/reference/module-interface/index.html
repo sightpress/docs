@@ -1,0 +1,3878 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for SightPress, a powerful multi-site, multilingual CMS for everyone, designed with blind and low-vision creators and audiences in mind.">
+      
+      
+      
+        <link rel="canonical" href="https://docs.sightpress.org/dev/reference/module-interface/">
+      
+      
+      
+        <link rel="prev" href="../theme-contract/">
+      
+      
+        <link rel="next" href="../tenant-config/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../brand/favicons/favicon.svg">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>Module interface - SightPress documentation</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../brand/fonts/fonts.css">
+    
+      <link rel="stylesheet" href="../../brand/tokens/tokens.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/sightpress.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  <link rel="preload" href="../../brand/fonts/atkinson-hyperlegible-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../brand/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="../../brand/favicons/favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="../../brand/favicons/apple-touch-icon.png">
+  <link rel="manifest" href="../../brand/favicons/site.webmanifest">
+  <meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101430" media="(prefers-color-scheme: dark)">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SightPress documentation" class="md-header__button md-logo" aria-label="SightPress documentation" data-md-component="logo">
+      <img class="sp-logo sp-logo--light" src="../../brand/logo/sightpress-logo.svg" width="154" height="32" alt="">
+<img class="sp-logo sp-logo--dark" src="../../brand/logo/sightpress-logo-dark.svg" width="154" height="32" alt="">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SightPress documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module interface
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/sightpress/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sightpress/docs
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SightPress documentation" class="md-nav__button md-logo" aria-label="SightPress documentation" data-md-component="logo">
+      <img class="sp-logo sp-logo--light" src="../../brand/logo/sightpress-logo.svg" width="154" height="32" alt="">
+<img class="sp-logo sp-logo--dark" src="../../brand/logo/sightpress-logo-dark.svg" width="154" height="32" alt="">
+    </a>
+    SightPress documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sightpress/docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sightpress/docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-you-can-build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What you can build
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../how-to/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  How-to guides
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  How-to guides
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/plan-a-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plan your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/create-a-site/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Create a website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/write-and-publish-a-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Write and publish a page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/schedule-a-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Schedule a page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/restore-an-older-version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Restore an older version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/move-or-rename-a-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Move or rename a page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/put-a-page-in-the-trash/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Put a page in the trash
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/add-a-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add a language
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/make-a-site-members-only/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Make a site members-only
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/let-people-sign-up/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Let people sign up
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/create-a-custom-role/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Create a custom role
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/keep-websites-to-your-organisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Keep websites to your organisation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/change-your-email-or-password/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Change your email or password
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/turn-features-on-or-off/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Turn features on or off
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/add-a-module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add a module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/install-and-change-a-theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Install and change a theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/choose-a-page-layout/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose a page layout
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/add-captions-and-transcripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add captions and transcripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/search-your-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Search your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/see-who-visits-your-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  See who visits your website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/use-the-ai-assistant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Use the AI assistant
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/set-up-text-messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Set up text messages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/add-your-mobile-number/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add your mobile number
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/text-message-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Get notifications by text
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/sign-in-with-your-phone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sign in with your phone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/confirm-important-changes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Confirm important changes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/lost-your-phone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lost your phone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/update-sightpress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Update SightPress
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/keep-files-in-the-cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Keep your files in the cloud
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/upload-large-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Upload large files
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/import-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Import files from a folder
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/fix-upload-size-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fix upload size limits
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/choose-upload-limits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Choose upload limits
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/run-in-the-background/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Run SightPress in the background
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/change-the-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Change the ports
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/start-a-database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Start a database server
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/open-the-test-email-inbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Open the test e-mail inbox
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/open-the-file-storage-console/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Open the file storage console
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/try-the-command-line-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Try the command line tool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/codes-we-send-you/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Codes we send you
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tutorials
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Tutorials
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/create-a-theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Create a theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/create-a-module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Create a module
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Help improve SightPress
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Help improve SightPress
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/report-a-problem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Report a problem
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/translate-sightpress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translate SightPress
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/review-the-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Review the interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/review-a-theme-change/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Review a theme change
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/test-with-assistive-technology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Test with assistive technology
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roles-and-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Roles and permissions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blocks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Blocks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../search-and-ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Search and AI visibility
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Command line
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theme-contract/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme contract
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Module interface
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Module interface
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-module-registers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What a module registers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#every-part-of-the-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Every part of the contract
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Every part of the contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Access
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Admin
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Assistant
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Audit
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Block
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Console
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dashboard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exception
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Http
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Migration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Module
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Notification
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Registrar
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Routing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Schedule
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Search
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Seo
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Setting
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Site
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sms
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tenant-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tenant configuration
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-a-module-registers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What a module registers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#every-part-of-the-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Every part of the contract
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Every part of the contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Access
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Admin
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Assistant
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Audit
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Block
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#console" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Console
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dashboard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exception
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Http
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Migration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Module
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Notification
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Registrar
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Routing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Schedule
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Search
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Seo
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Setting
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Site
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sms
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+  
+  
+
+
+<h1 id="module-interface-reference">Module interface reference<a class="headerlink" href="#module-interface-reference" title="Link to this section">&para;</a></h1>
+<!-- Generated by tools/module-interface-reference.php from module-interface. Don't edit by hand. -->
+
+<p>This page lists what a SightPress module can use: the <code>sightpress/module-interface</code> package (0.5.0). A module
+depends on this package only, never on <code>sightpress/core</code>. To install one, see <a href="../../how-to/add-a-module/">Add a module</a>. To build one step by step, follow the
+<a href="../../tutorials/create-a-module/">Create a module</a> tutorial.</p>
+<h2 id="what-a-module-registers">What a module registers<a class="headerlink" href="#what-a-module-registers" title="Link to this section">&para;</a></h2>
+<p>A module implements <code>ModuleInterface</code>: <code>manifest()</code> says who it is, and <code>register(ModuleRegistrar $registrar)</code> adds
+what it brings. Each method of the registrar gives one kind of thing:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>What it adds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>services()</code></td>
+<td>Adds services to the site's service container.</td>
+</tr>
+<tr>
+<td><code>routes()</code></td>
+<td>Adds HTTP routes.</td>
+</tr>
+<tr>
+<td><code>blockTypes()</code></td>
+<td>Adds block types that editors can use in page content, variants of existing block types, and icons.</td>
+</tr>
+<tr>
+<td><code>permissions()</code></td>
+<td>Adds permissions to the site's permission catalogue.</td>
+</tr>
+<tr>
+<td><code>migrations()</code></td>
+<td>Adds the module's database migrations.</td>
+</tr>
+<tr>
+<td><code>adminMenu()</code></td>
+<td>Adds entries to the admin navigation.</td>
+</tr>
+<tr>
+<td><code>views()</code></td>
+<td>Adds a folder of templates under a namespace, so templates can refer to them as <code>@&lt;namespace&gt;/&lt;file&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>subscribers()</code></td>
+<td>Adds event listeners.</td>
+</tr>
+<tr>
+<td><code>commands()</code></td>
+<td>Adds commands to the <code>bin/sightpress</code> console.</td>
+</tr>
+<tr>
+<td><code>settings()</code></td>
+<td>Adds site settings.</td>
+</tr>
+<tr>
+<td><code>search()</code></td>
+<td>Site search: document providers and an optional back-end (since 0.4).</td>
+</tr>
+<tr>
+<td><code>dashboard()</code></td>
+<td>Admin dashboard widgets (since 0.4).</td>
+</tr>
+<tr>
+<td><code>assistant()</code></td>
+<td>AI assistant providers and tasks (since 0.4).</td>
+</tr>
+<tr>
+<td><code>seo()</code></td>
+<td>Public pages for the sitemap and <code>llms.txt</code> (since 0.5).</td>
+</tr>
+<tr>
+<td><code>sms()</code></td>
+<td>Text message (SMS) providers (since 0.5).</td>
+</tr>
+<tr>
+<td><code>schedule()</code></td>
+<td>Background work for <code>schedule:run</code> (since 0.5).</td>
+</tr>
+<tr>
+<td><code>translations()</code></td>
+<td>Translations of the module's interface text (since 0.5).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Link to this section">&para;</a></h2>
+<p>A module listens to an event with <code>$registrar-&gt;subscribers()</code>. Events are in <code>SightPress\Module\Event</code>; values that core keeps as enums travel as strings.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AccountChanged</code></td>
+<td>Details of an account changed (by the person or by an admin).</td>
+<td><code>fields</code> (array), <code>userId</code> (int), <code>changedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>AccountRegistered</code></td>
+<td>Someone signed up and confirmed their email address.</td>
+<td><code>userId</code> (int), <code>role</code> (string), <code>refusedRole</code> (?string)</td>
+</tr>
+<tr>
+<td><code>AnalyticsDataDeleted</code></td>
+<td>The site's visit statistics were deleted.</td>
+<td><code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>AssistantUsed</code></td>
+<td>The AI assistant answered (or failed to answer) a request.</td>
+<td><code>actorId</code> (?int), <code>task</code> (string), <code>provider</code> (string), <code>model</code> (string), <code>inputTokens</code> (int), <code>outputTokens</code> (int), <code>outcome</code> (string)</td>
+</tr>
+<tr>
+<td><code>LocaleRemoved</code></td>
+<td>A language was removed from the site.</td>
+<td><code>locale</code> (string), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>MediaChanged</code></td>
+<td>Details of a media item changed.</td>
+<td><code>fields</code> (array), <code>mediaId</code> (int), <code>changedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>MediaDeleted</code></td>
+<td>A media item and its files were deleted.</td>
+<td><code>mediaId</code> (int), <code>originalName</code> (string), <code>deletedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>MediaUploaded</code></td>
+<td>A file was added to the media library.</td>
+<td><code>mediaId</code> (int), <code>key</code> (string), <code>kind</code> (string), <code>uploadedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>MenuChanged</code></td>
+<td>An entry of one of the site's menus was added, removed, moved or changed.</td>
+<td><code>menu</code> (string), <code>change</code> (string), <code>itemId</code> (int), <code>pageId</code> (?int), <code>url</code> (?string), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>PageCloned</code></td>
+<td>A page was copied as a new draft.</td>
+<td><code>pageId</code> (int), <code>sourceId</code> (int), <code>clonedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>PageCreated</code></td>
+<td>A page was started, in its first language.</td>
+<td><code>locale</code> (string), <code>pageId</code> (int), <code>authorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>PageMoved</code></td>
+<td>A page was moved to another place in the page tree (its address may have changed with it).</td>
+<td><code>pageId</code> (int), <code>fromParentId</code> (?int), <code>toParentId</code> (?int), <code>position</code> (int), <code>revision</code> (int), <code>movedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>PagePurged</code></td>
+<td>Pages were deleted for good (emptied from the trash).</td>
+<td><code>pageIds</code> (array), <code>pageId</code> (int), <code>title</code> (string), <code>purgedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>PageSaved</code></td>
+<td>A page's text in one language was saved as a new revision.</td>
+<td><code>locale</code> (string), <code>pageId</code> (int), <code>revision</code> (int), <code>savedBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>PageScheduled</code></td>
+<td>A page's publishing schedule was set, changed or cleared.</td>
+<td><code>publishAt</code> (?DateTimeImmutable), <code>unpublishAt</code> (?DateTimeImmutable), <code>pageId</code> (int), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>PageTransitioned</code></td>
+<td>A page went through a workflow step: sent for review, approved, published, unpublished, archived, put in the trash … Part of the stable event list (1.0 API).</td>
+<td><code>pageId</code> (int), <code>transition</code> (string), <code>from</code> (string), <code>to</code> (string), <code>actorId</code> (?int), <code>comment</code> (?string)</td>
+</tr>
+<tr>
+<td><code>RedirectChanged</code></td>
+<td>A redirect (or a "gone" answer) was added or removed.</td>
+<td><code>locale</code> (string), <code>change</code> (string), <code>from</code> (string), <code>to</code> (?string), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>RevisionRestored</code></td>
+<td>An older revision of a page's text was restored as a new revision.</td>
+<td><code>locale</code> (string), <code>pageId</code> (int), <code>restored</code> (int), <code>revision</code> (int), <code>restoredBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>RoleChanged</code></td>
+<td>Someone's role on the site changed.</td>
+<td><code>userId</code> (int), <code>changedBy</code> (?int), <code>from</code> (?string), <code>to</code> (string)</td>
+</tr>
+<tr>
+<td><code>ScheduledStepFailed</code></td>
+<td><code>schedule:run</code> couldn't publish or unpublish a page at its scheduled time.</td>
+<td><code>pageId</code> (int), <code>transition</code> (string), <code>reason</code> (string), <code>scheduledBy</code> (?int)</td>
+</tr>
+<tr>
+<td><code>SettingsChanged</code></td>
+<td>Site settings were saved.</td>
+<td><code>keys</code> (array), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>SiteModuleChanged</code></td>
+<td>A module was turned on or off for the site, or its data was deleted.</td>
+<td><code>moduleId</code> (string), <code>name</code> (string), <code>change</code> (string), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>ThemeApplied</code></td>
+<td>The site switched to another theme.</td>
+<td><code>themeId</code> (string), <code>name</code> (string), <code>previous</code> (?string), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>ThemeColoursChanged</code></td>
+<td>The site's own colours for its theme changed.</td>
+<td><code>colours</code> (array), <code>themeId</code> (string), <code>name</code> (string), <code>actorId</code> (?int)</td>
+</tr>
+<tr>
+<td><code>TranslationPublished</code></td>
+<td>A translation of a published page was published, or made a draft again.</td>
+<td><code>locale</code> (string), <code>pageId</code> (int), <code>published</code> (bool), <code>revision</code> (int), <code>actorId</code> (?int)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="every-part-of-the-contract">Every part of the contract<a class="headerlink" href="#every-part-of-the-contract" title="Link to this section">&para;</a></h2>
+<p>By area (namespace under <code>SightPress\Module</code>).</p>
+<h3 id="access">Access<a class="headerlink" href="#access" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Permission</code></td>
+<td>class</td>
+<td>Something a role can be allowed to do, for example <code>page.publish</code>.</td>
+</tr>
+<tr>
+<td><code>Viewer</code></td>
+<td>class</td>
+<td>Who is making the request: their account id and their permissions on this site.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="admin">Admin<a class="headerlink" href="#admin" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AdminMenuItem</code></td>
+<td>class</td>
+<td>One entry in the admin navigation, linking to a named route.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="assistant">Assistant<a class="headerlink" href="#assistant" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AssistantConnection</code></td>
+<td>class</td>
+<td>How a provider reaches its service for one site: the site's (or tenant's) API key and, for custom endpoints, a base URL.</td>
+</tr>
+<tr>
+<td><code>AssistantContext</code></td>
+<td>interface</td>
+<td>What an assistant task may need to know about the request it answers.</td>
+</tr>
+<tr>
+<td><code>AssistantFailure</code></td>
+<td>enum</td>
+<td>Why an assistant call failed.</td>
+</tr>
+<tr>
+<td><code>AssistantImage</code></td>
+<td>class</td>
+<td>An image sent with a message, for providers and models that can see images (alt text suggestions).</td>
+</tr>
+<tr>
+<td><code>AssistantMessage</code></td>
+<td>class</td>
+<td>One message of an <code>AssistantRequest</code>.</td>
+</tr>
+<tr>
+<td><code>AssistantProvider</code></td>
+<td>interface</td>
+<td>An AI service the optional assistant can use, with the site's own key (bring your own key).</td>
+</tr>
+<tr>
+<td><code>AssistantRequest</code></td>
+<td>class</td>
+<td>Everything a provider sends to its model for one answer.</td>
+</tr>
+<tr>
+<td><code>AssistantResponse</code></td>
+<td>class</td>
+<td>A model's answer, as the provider got it.</td>
+</tr>
+<tr>
+<td><code>AssistantRole</code></td>
+<td>enum</td>
+<td>Who a message in an <code>AssistantRequest</code> comes from.</td>
+</tr>
+<tr>
+<td><code>AssistantSuggestion</code></td>
+<td>class</td>
+<td>A checked answer, ready to show with <em>Insert</em>, <em>Copy</em>, <em>Try again</em> and <em>Discard</em>.</td>
+</tr>
+<tr>
+<td><code>AssistantTask</code></td>
+<td>interface</td>
+<td>One thing the assistant can help with, for example a page summary or alt text for an image.</td>
+</tr>
+<tr>
+<td><code>ProviderCapabilities</code></td>
+<td>class</td>
+<td>What a provider's model can do besides text.</td>
+</tr>
+<tr>
+<td><code>StreamingAssistantProvider</code></td>
+<td>interface</td>
+<td>A provider that can also stream an answer as it is written.</td>
+</tr>
+<tr>
+<td><code>TokenUsage</code></td>
+<td>class</td>
+<td>Tokens a provider counted for one answer, as it reports them.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="audit">Audit<a class="headerlink" href="#audit" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AuditRecord</code></td>
+<td>class</td>
+<td>One line of the site's audit log, written by a module through <code>AuditTrail</code>.</td>
+</tr>
+<tr>
+<td><code>AuditTrail</code></td>
+<td>interface</td>
+<td>Writes to the site's audit log, which admins read on the Audit log screen.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="block">Block<a class="headerlink" href="#block" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A11yIssue</code></td>
+<td>class</td>
+<td>An accessibility problem found in one block's data by an <code>A11yRule</code>.</td>
+</tr>
+<tr>
+<td><code>A11yRule</code></td>
+<td>interface</td>
+<td>An accessibility check on one block's data, for example "an image needs alt text or must be marked decorative" or "a video needs a captions track".</td>
+</tr>
+<tr>
+<td><code>A11ySeverity</code></td>
+<td>enum</td>
+<td>How serious an accessibility issue found in block data is.</td>
+</tr>
+<tr>
+<td><code>BlockContext</code></td>
+<td>interface</td>
+<td>What a block type may need to know about where it is rendered.</td>
+</tr>
+<tr>
+<td><code>BlockIcon</code></td>
+<td>class</td>
+<td>An icon that blocks with icons can show, such as a brand logo in <code>social_links</code>.</td>
+</tr>
+<tr>
+<td><code>BlockOption</code></td>
+<td>enum</td>
+<td>Shared options a block type can offer editors, stored in each block's own data and drawn by core as classes on the block's wrapper (never inline styles), which the theme styles through its tokens.</td>
+</tr>
+<tr>
+<td><code>BlockStyles</code></td>
+<td>class</td>
+<td>The looks and shared options a block type offers (<code>StyledBlockType::styles()</code>).</td>
+</tr>
+<tr>
+<td><code>BlockType</code></td>
+<td>interface</td>
+<td>A kind of content block (heading, image, video, call to action …) that editors can put on a page.</td>
+</tr>
+<tr>
+<td><code>BlockVariant</code></td>
+<td>class</td>
+<td>A named look of a block type, such as <code>card</code> for a quote.</td>
+</tr>
+<tr>
+<td><code>StyledBlockType</code></td>
+<td>interface</td>
+<td>A block type with variants or shared options (since 0.5).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="console">Console<a class="headerlink" href="#console" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Command</code></td>
+<td>interface</td>
+<td>A <code>bin/sightpress</code> console command added by a module.</td>
+</tr>
+<tr>
+<td><code>CommandInput</code></td>
+<td>interface</td>
+<td>The parsed command line, as declared by <code>Command::parameters()</code>.</td>
+</tr>
+<tr>
+<td><code>CommandOutput</code></td>
+<td>interface</td>
+<td>Where a command writes its messages.</td>
+</tr>
+<tr>
+<td><code>CommandParameter</code></td>
+<td>class</td>
+<td>One argument, option or flag of a console command, shown in the command's help and used as a question when someone runs the command at a terminal.</td>
+</tr>
+<tr>
+<td><code>CommandParameterType</code></td>
+<td>enum</td>
+<td>How a command parameter is given on the command line.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DashboardContext</code></td>
+<td>interface</td>
+<td>What a dashboard widget may need to know about the person looking at the dashboard.</td>
+</tr>
+<tr>
+<td><code>DashboardWidget</code></td>
+<td>interface</td>
+<td>A box on the admin dashboard, for example "Last 7 days" from analytics.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="exception">Exception<a class="headerlink" href="#exception" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AssistantException</code></td>
+<td>class</td>
+<td>Thrown by assistant providers and tasks when a call can't give a usable suggestion.</td>
+</tr>
+<tr>
+<td><code>InvalidValueException</code></td>
+<td>class</td>
+<td>Thrown when a value object of this package is built with a value that breaks one of its rules.</td>
+</tr>
+<tr>
+<td><code>SmsException</code></td>
+<td>class</td>
+<td>A text message provider call failed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="http">Http<a class="headerlink" href="#http" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AdminScreen</code></td>
+<td>class</td>
+<td>A module's admin screen, rendered by <code>Screens::admin()</code> inside the admin panel: core draws the navigation, skip link, notices and the <code>&lt;h1&gt;</code> with the title; the module's template draws only what goes under it.</td>
+</tr>
+<tr>
+<td><code>PublicScreen</code></td>
+<td>class</td>
+<td>A module's public page, rendered by <code>Screens::public()</code> in the site's theme, with its menus, skip link, language links and footer; the module's template draws the main content, starting with its <code>&lt;h1&gt;</code>.</td>
+</tr>
+<tr>
+<td><code>Screens</code></td>
+<td>interface</td>
+<td>Renders a module's screens the way core renders its own, so they share the admin panel or the site's theme, its accessibility features and its security headers.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="migration">Migration<a class="headerlink" href="#migration" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MigrationProvider</code></td>
+<td>interface</td>
+<td>Tells core where a module's database migrations are.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module">Module<a class="headerlink" href="#module" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ModuleInterface</code></td>
+<td>interface</td>
+<td>A SightPress module: core's own features and third-party extensions alike.</td>
+</tr>
+<tr>
+<td><code>ModuleManifest</code></td>
+<td>class</td>
+<td>What core needs to know about a module before it registers anything: who it is, its version, which modules it needs and whether it can be turned off.</td>
+</tr>
+<tr>
+<td><code>ModuleRegistrar</code></td>
+<td>interface</td>
+<td>Passed to <code>ModuleInterface::register()</code>: one typed sub-registrar per kind of thing a module can add.</td>
+</tr>
+<tr>
+<td><code>ModuleRequirement</code></td>
+<td>class</td>
+<td>One module that another module needs, with the versions it works with.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notification">Notification<a class="headerlink" href="#notification" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NotificationChannel</code></td>
+<td>enum</td>
+<td>How a notification reaches a person.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registrar">Registrar<a class="headerlink" href="#registrar" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AdminMenuRegistrar</code></td>
+<td>interface</td>
+<td>Adds entries to the admin navigation.</td>
+</tr>
+<tr>
+<td><code>AssistantRegistrar</code></td>
+<td>interface</td>
+<td>Adds providers and tasks to the optional AI assistant.</td>
+</tr>
+<tr>
+<td><code>BlockTypeRegistrar</code></td>
+<td>interface</td>
+<td>Adds block types that editors can use in page content, variants of existing block types, and icons.</td>
+</tr>
+<tr>
+<td><code>CommandRegistrar</code></td>
+<td>interface</td>
+<td>Adds commands to the <code>bin/sightpress</code> console.</td>
+</tr>
+<tr>
+<td><code>DashboardRegistrar</code></td>
+<td>interface</td>
+<td>Adds widgets to the admin dashboard.</td>
+</tr>
+<tr>
+<td><code>MigrationRegistrar</code></td>
+<td>interface</td>
+<td>Adds the module's database migrations.</td>
+</tr>
+<tr>
+<td><code>PermissionRegistrar</code></td>
+<td>interface</td>
+<td>Adds permissions to the site's permission catalogue.</td>
+</tr>
+<tr>
+<td><code>RouteRegistrar</code></td>
+<td>interface</td>
+<td>Adds HTTP routes.</td>
+</tr>
+<tr>
+<td><code>ScheduleRegistrar</code></td>
+<td>interface</td>
+<td>Adds background work that <code>schedule:run</code> does for each site where the module is on (since 0.5).</td>
+</tr>
+<tr>
+<td><code>SearchRegistrar</code></td>
+<td>interface</td>
+<td>Adds content to site search, or replaces the search back-end.</td>
+</tr>
+<tr>
+<td><code>SeoRegistrar</code></td>
+<td>interface</td>
+<td>Adds a module's public pages to the sitemap and <code>llms.txt</code> (since 0.5).</td>
+</tr>
+<tr>
+<td><code>ServiceRegistrar</code></td>
+<td>interface</td>
+<td>Adds services to the site's service container.</td>
+</tr>
+<tr>
+<td><code>SettingRegistrar</code></td>
+<td>interface</td>
+<td>Adds site settings.</td>
+</tr>
+<tr>
+<td><code>SmsRegistrar</code></td>
+<td>interface</td>
+<td>Adds a text message (SMS) provider that site admins can choose (since 0.5).</td>
+</tr>
+<tr>
+<td><code>SubscriberRegistrar</code></td>
+<td>interface</td>
+<td>Adds event listeners.</td>
+</tr>
+<tr>
+<td><code>TranslationRegistrar</code></td>
+<td>interface</td>
+<td>Adds a module's translations of its interface text (since 0.5).</td>
+</tr>
+<tr>
+<td><code>ViewRegistrar</code></td>
+<td>interface</td>
+<td>Adds a folder of templates under a namespace, so templates can refer to them as <code>@&lt;namespace&gt;/&lt;file&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="routing">Routing<a class="headerlink" href="#routing" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Route</code></td>
+<td>class</td>
+<td>One HTTP route: a path, the methods it answers and the PSR-15 handler that answers it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schedule">Schedule<a class="headerlink" href="#schedule" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ScheduleRun</code></td>
+<td>class</td>
+<td>One run of <code>schedule:run</code> for one site, passed to every <code>ScheduledJob</code>.</td>
+</tr>
+<tr>
+<td><code>ScheduledJob</code></td>
+<td>interface</td>
+<td>Work a module does in the background, on every run of <code>schedule:run</code> (the operator runs it every minute, from cron or the scheduler container), once per site where the module is on.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="search">Search<a class="headerlink" href="#search" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SearchBackend</code></td>
+<td>interface</td>
+<td>Stores the search index of one site and answers queries.</td>
+</tr>
+<tr>
+<td><code>SearchDocument</code></td>
+<td>class</td>
+<td>One searchable thing in one locale, for example one translation of a page, as plain text.</td>
+</tr>
+<tr>
+<td><code>SearchDocumentProvider</code></td>
+<td>interface</td>
+<td>Turns a module's content into <code>SearchDocument</code>s, so site search can find it.</td>
+</tr>
+<tr>
+<td><code>SearchHit</code></td>
+<td>class</td>
+<td>One result: the document that matched, how well, and which words in it matched.</td>
+</tr>
+<tr>
+<td><code>SearchIndexStatus</code></td>
+<td>class</td>
+<td>How many documents a back-end holds in one locale, and when it last indexed one.</td>
+</tr>
+<tr>
+<td><code>SearchPerformed</code></td>
+<td>class</td>
+<td>Event dispatched by core after each site search, so other modules (analytics) can count searches.</td>
+</tr>
+<tr>
+<td><code>SearchQuery</code></td>
+<td>class</td>
+<td>What a visitor searched for, in which locale, what they may see, and which page of results they want.</td>
+</tr>
+<tr>
+<td><code>SearchResults</code></td>
+<td>class</td>
+<td>One page of results for a <code>SearchQuery</code>, best first.</td>
+</tr>
+<tr>
+<td><code>SearchVisibility</code></td>
+<td>enum</td>
+<td>Who may find a document in site search.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="seo">Seo<a class="headerlink" href="#seo" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SeoEntry</code></td>
+<td>class</td>
+<td>One public page of a module, as search engines and AI readers should see it: listed in the sitemap and in <code>llms.txt</code>, and, when the module renders it with <code>\SightPress\Module\Http\PublicScreen</code>, described in its <code>&lt;head&gt;</code> (description, canonical address, other languages, schema.org JSON-LD).</td>
+</tr>
+<tr>
+<td><code>SeoProvider</code></td>
+<td>interface</td>
+<td>Lists a module's public pages for the sitemap and <code>llms.txt</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting">Setting<a class="headerlink" href="#setting" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Setting</code></td>
+<td>class</td>
+<td>A per-site setting of a module.</td>
+</tr>
+<tr>
+<td><code>SettingType</code></td>
+<td>enum</td>
+<td>The kind of value a setting holds; core picks the form control from it.</td>
+</tr>
+<tr>
+<td><code>SettingValues</code></td>
+<td>interface</td>
+<td>Reads the site's settings, typed as their <code>SettingType</code> says, with the registered default when none was saved.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="site">Site<a class="headerlink" href="#site" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SiteInfo</code></td>
+<td>class</td>
+<td>The site a request or command works on.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sms">Sms<a class="headerlink" href="#sms" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PhoneLineType</code></td>
+<td>enum</td>
+<td>What kind of line a number is, from a provider's lookup.</td>
+</tr>
+<tr>
+<td><code>PhoneLookupResult</code></td>
+<td>class</td>
+<td>What a provider knows about a number before anything is sent to it.</td>
+</tr>
+<tr>
+<td><code>PhoneNumber</code></td>
+<td>class</td>
+<td>A phone number in E.164 form (<code>+447700900123</code>).</td>
+</tr>
+<tr>
+<td><code>SmsCapabilities</code></td>
+<td>class</td>
+<td>What a provider can do, so core only offers what works.</td>
+</tr>
+<tr>
+<td><code>SmsConnection</code></td>
+<td>class</td>
+<td>A site's account with a provider.</td>
+</tr>
+<tr>
+<td><code>SmsDeliveryStatus</code></td>
+<td>enum</td>
+<td></td>
+</tr>
+<tr>
+<td><code>SmsEncoding</code></td>
+<td>enum</td>
+<td>How a text message is encoded, which sets how many characters fit in one message part.</td>
+</tr>
+<tr>
+<td><code>SmsFailure</code></td>
+<td>enum</td>
+<td>Why a provider call failed, so core can tell people in plain language what to do.</td>
+</tr>
+<tr>
+<td><code>SmsMessage</code></td>
+<td>class</td>
+<td>One text message to send.</td>
+</tr>
+<tr>
+<td><code>SmsOptChange</code></td>
+<td>class</td>
+<td>Someone replied STOP (or START) to the site's messages.</td>
+</tr>
+<tr>
+<td><code>SmsProvider</code></td>
+<td>interface</td>
+<td>A text message (SMS) service a site can send through.</td>
+</tr>
+<tr>
+<td><code>SmsPurpose</code></td>
+<td>enum</td>
+<td>Why a text message is sent.</td>
+</tr>
+<tr>
+<td><code>SmsReceipt</code></td>
+<td>class</td>
+<td>A provider's report that a message was delivered, or that it failed.</td>
+</tr>
+<tr>
+<td><code>SmsResult</code></td>
+<td>class</td>
+<td>The provider accepted a message for delivery.</td>
+</tr>
+<tr>
+<td><code>SmsWebhooks</code></td>
+<td>interface</td>
+<td>A provider that tells the site about delivery and replies by calling a webhook.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="text">Text<a class="headerlink" href="#text" title="Link to this section">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Kind</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Message</code></td>
+<td>class</td>
+<td>Text for a person to read, translated by core into the reader's language when it is shown: screen titles and notices, for example.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../theme-contract/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Theme contract">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Theme contract
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tenant-config/" class="md-footer__link md-footer__link--next" aria-label="Next: Tenant configuration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Tenant configuration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      SightPress is free software, licensed under the GNU GPL v3.0 or later. Everyone who takes part follows our <a href="https://github.com/sightpress/docs/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a>.
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.code.copy","navigation.footer","navigation.indexes","navigation.sections","navigation.top","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"default":"latest","provider":"mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -410,6 +410,8 @@
       
         
       
+        
+      
     
     
     
@@ -829,6 +831,33 @@
     
   
   Turn features on or off
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-a-module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Add a module
 
     
   </span>
@@ -1275,6 +1304,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-in-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New in 0.5
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New in 0.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-module-authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        For module authors
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#if-something-goes-wrong" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -1637,6 +1694,8 @@
       
         
       
+        
+      
     
     
     
@@ -1696,6 +1755,33 @@
     
   
   Create a theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/create-a-module/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Create a module
 
     
   </span>
@@ -1941,6 +2027,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2120,6 +2210,60 @@
 
                 
               
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/module-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Module interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tenant-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tenant configuration
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
             </ul>
           </nav>
         
@@ -2213,6 +2357,34 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#new-in-05" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New in 0.5
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New in 0.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-module-authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        For module authors
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#if-something-goes-wrong" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2245,7 +2417,7 @@
 
 <h1 id="update-sightpress">Update SightPress<a class="headerlink" href="#update-sightpress" title="Link to this section">&para;</a></h1>
 <p>This guide shows you how to move an installation to a newer version of SightPress, keeping every website, page,
-account, menu and setting. It covers updates up to <strong>0.4</strong>.</p>
+account, menu and setting. It covers updates up to <strong>0.5</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Make a copy first</p>
 <p>Before you update, make a copy of the <code>skeleton</code> folder, including the <code>sites</code> folder and the <code>.env</code> file, and of
@@ -2336,6 +2508,31 @@ the others; run it again for that website once the problem is fixed.</p>
 <li><code>uploads.temp_path</code> and <code>uploads.max_chunked_bytes</code>: where large files wait while their parts arrive, and the largest
   file that can be sent in parts.</li>
 </ul>
+<h2 id="new-in-05">New in 0.5<a class="headerlink" href="#new-in-05" title="Link to this section">&para;</a></h2>
+<p>Follow the same steps, including updating the websites' databases (<code>site:migrate --all</code>). After it:</p>
+<ul>
+<li><strong>Nothing changes for your websites until you choose to.</strong> Text messages are off, so nobody is asked for a mobile
+  number and the sign-in page still says "Email address". Two-step confirmation is off. No email or domain policy
+  applies. Custom roles, text messages and two-step confirmation are there to set up when you want them: see
+  <a href="../create-a-custom-role/">Create a custom role</a>, <a href="../set-up-text-messages/">Set up text messages</a> and
+  <a href="../confirm-important-changes/">Confirm important changes</a>.</li>
+<li><strong>Modules you install from now on start off</strong> on the websites that already exist; an admin turns them on. See
+  <a href="../add-a-module/">Add a module</a>.</li>
+</ul>
+<p><code>config/tenant.php</code> has new optional settings. Copy them from the new skeleton if Git can't merge them, or leave them
+out to keep the defaults. Each one is described in the <a href="../../reference/tenant-config/">tenant configuration reference</a>:</p>
+<ul>
+<li><code>domain_policy</code>, <code>email_policy</code> and <code>domain_registration</code>: keep websites and accounts to your organisation's domains
+  (see <a href="../keep-websites-to-your-organisation/">Keep websites to your organisation</a>);</li>
+<li><code>sms</code>: a text message provider every website may use, the monthly budget and the limits;</li>
+<li><code>two_step</code>: whether websites may, must or must not ask for a code before important changes.</li>
+</ul>
+<p><code>.env.example</code> names <code>SMS_API_KEY</code> and <code>ASSISTANT_API_KEY</code>, for the keys of providers you set in <code>config/tenant.php</code>.</p>
+<h3 id="for-module-authors">For module authors<a class="headerlink" href="#for-module-authors" title="Link to this section">&para;</a></h3>
+<p>Modules need <code>sightpress/module-interface</code> <code>^0.5</code>. The events a module listens to moved from core into the contract,
+under <code>SightPress\Module\Event</code> (for example <code>SightPress\Module\Event\PageTransitioned</code>), and values that were enums
+are strings there. Change the <code>use</code> lines of your subscribers and remove any dependency on <code>sightpress/core</code> outside
+<code>require-dev</code>. The <a href="../../reference/module-interface/">module interface reference</a> lists every event with its fields.</p>
 <h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Link to this section">&para;</a></h2>
 <dl>
 <dt><strong>A website shows an error page after the update</strong></dt>

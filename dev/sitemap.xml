@@ -13,6 +13,9 @@
         <loc>https://docs.sightpress.org/dev/how-to/add-a-language/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/how-to/add-a-module/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/how-to/add-captions-and-transcripts/</loc>
       </url>
       <url>
@@ -148,13 +151,22 @@
         <loc>https://docs.sightpress.org/dev/reference/command-line/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/reference/module-interface/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/reference/roles-and-permissions/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/reference/search-and-ai/</loc>
       </url>
       <url>
+        <loc>https://docs.sightpress.org/dev/reference/tenant-config/</loc>
+      </url>
+      <url>
         <loc>https://docs.sightpress.org/dev/reference/theme-contract/</loc>
+      </url>
+      <url>
+        <loc>https://docs.sightpress.org/dev/tutorials/create-a-module/</loc>
       </url>
       <url>
         <loc>https://docs.sightpress.org/dev/tutorials/create-a-theme/</loc>
