@@ -263,5 +263,28 @@ keep them elsewhere, see [Keep your files in the cloud](how-to/keep-files-in-the
 [Upload large files](how-to/upload-large-files.md) and [Import files from a folder](how-to/import-files.md). To make
 videos and recordings accessible, see [Add captions and transcripts](how-to/add-captions-and-transcripts.md).
 
+### Who can do what
+
+You are the website's first **Admin**: you can do everything. When you invite people, give each one the lowest role
+that lets them do their work: **Editor** to check and publish pages, **Contributor** to write pages that need approval,
+or **Member** to read members-only pages. If none fits, make your own under **Roles** in the admin menu: see
+[Create a custom role](how-to/create-a-custom-role.md).
+
+### Add features
+
+Under **Features**, turn the built-in features on or off for this website. To add a feature that SightPress doesn't
+have, install a module: see [Add a module](how-to/add-a-module.md). To keep every website and account to your
+organisation's email addresses, see [Keep websites to your organisation](how-to/keep-websites-to-your-organisation.md).
+
+### Sign in with your phone
+
+Text messages are off on your computer, so you sign in with your email address. Once whoever runs SightPress
+[sets up text messages](how-to/set-up-text-messages.md), you can
+[add your mobile number](how-to/add-your-mobile-number.md),
+[sign in with your phone](how-to/sign-in-with-your-phone.md), get
+[notifications by text](how-to/text-message-notifications.md) and
+[confirm important changes](how-to/confirm-important-changes.md) with a code. If you lose your phone, see
+[Lost your phone](how-to/lost-your-phone.md).
+
 The reference pages explain [roles](reference/roles-and-permissions.md), [blocks](reference/blocks.md),
 [search and AI visibility](reference/search-and-ai.md) and the [command line tool](reference/command-line.md).

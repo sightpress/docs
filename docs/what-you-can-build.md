@@ -8,8 +8,8 @@ This page explains what SightPress can do today, then gives you ideas for websit
 
 ## What you can do today
 
-SightPress is still at an early stage, and this page follows the newest documentation. Features marked **next
-release** are finished but aren't in version 0.3 yet. SightPress already gives you the following.
+SightPress is still at an early stage, and this page follows the newest documentation. It describes version 0.5.
+SightPress already gives you the following.
 
 ### Run many websites from one installation
 
@@ -19,7 +19,7 @@ See [Create a website](how-to/create-a-site.md).
 
 ### Write pages with blocks
 
-A page is a list of **blocks**, such as a heading, some text or a picture. There are ten kinds:
+A page is a list of **blocks**, such as a heading, some text or a picture. There are thirteen kinds:
 
 | Block | What it is for |
 | --- | --- |
@@ -33,6 +33,12 @@ A page is a list of **blocks**, such as a heading, some text or a picture. There
 | Call to action | A button that leads somewhere, such as "Book a visit". |
 | Columns | Two to four columns side by side on wide screens. |
 | Contact form | A form visitors use to send you a message, without a puzzle to solve. |
+| Video or map from another site | A YouTube or Vimeo video, or an OpenStreetMap map. Nothing loads from the other site until the reader asks. |
+| List of pages | The pages under a page, or the latest changed pages, as a list or as cards. It keeps itself up to date. |
+| Sign language video | A video in a sign language, such as British Sign Language, with captions. |
+
+Each block can also have its own look, such as a background, a width or the space around it. SightPress makes sure
+text stays readable on every background.
 
 Every block is described in [Blocks](reference/blocks.md).
 
@@ -45,6 +51,10 @@ Every block is described in [Blocks](reference/blocks.md).
   publish them. See [Write and publish a page](how-to/write-and-publish-a-page.md).
 - **Roles for your team.** Admins, editors, contributors and members each see and do only what they need. See
   [Roles and permissions](reference/roles-and-permissions.md).
+- **Your own roles.** Make a role with exactly the permissions someone needs, such as "Events editor". See
+  [Create a custom role](how-to/create-a-custom-role.md).
+- **Confirm important changes.** A website can ask for a code sent by text before changes such as changing someone's
+  role or deleting data. See [Confirm important changes](how-to/confirm-important-changes.md).
 - **An audit log.** Admins can see who changed what, and when.
 
 ### Look after your files and people
@@ -55,6 +65,12 @@ Every block is described in [Blocks](reference/blocks.md).
   [Codes we send you](how-to/codes-we-send-you.md).
 - **Menus.** A main menu and a footer menu, which you change in the admin panel.
 - **Site settings.** The website's name, profile, logo and other details.
+- **Keep websites to your organisation.** Allow only your organisation's email addresses, and let colleagues register
+  on members-only websites with their work email. See
+  [Keep websites to your organisation](how-to/keep-websites-to-your-organisation.md).
+- **Text messages.** Once whoever runs SightPress sets up a text message provider, people can get notifications by
+  text and [sign in with their phone](how-to/sign-in-with-your-phone.md). See
+  [Set up text messages](how-to/set-up-text-messages.md).
 
 ### Be found in search engines and AI search
 
@@ -87,6 +103,12 @@ also do many tasks with the [command line tool](reference/command-line.md).
 - **Cloud storage and a CDN.** Keep a website's files with an S3-compatible service, and deliver public
   files from near each visitor.
 
+### Add features with modules
+
+Install add-on **modules** made by others, and turn each one on only for the websites that need it. A module that
+is broken or missing never stops your websites. See [Add a module](how-to/add-a-module.md). Developers can build their
+own: see [Create a module](tutorials/create-a-module.md).
+
 ## Ideas for websites
 
 These ideas use only what SightPress can do today. Each one lists the blocks and features that help most.
@@ -108,6 +130,7 @@ A charity, a residents' association, a sports club or a support group.
 - Pages: Who we are, What we do, Get involved, Annual reports, Contact.
 - **File download** blocks for annual reports, minutes and leaflets, with their type and size shown.
 - A **Video** about your work, with captions and a transcript, so that everyone can follow it.
+- A **List of pages** on the home page that shows your latest news by itself.
 - **Roles**, so that volunteers write pages as contributors and a trustee publishes them as an editor.
 
 ### A podcast or audio project
@@ -147,6 +170,7 @@ accessible information matters most.
 - Short pages with clear **Headings**, so that screen reader users can jump from part to part.
 - **File download** blocks for forms and leaflets, plus the same information as a page, so that nobody has to open a
   PDF.
+- A **Sign language video** of the most important pages, with captions.
 - The **accessibility checks** stop common mistakes, such as a missing caption, before they reach the public.
 
 ### A personal website or blog-style journal
@@ -165,10 +189,12 @@ A web agency, a federation of clubs or an organisation with several brands.
   language, people and settings.
 - Each website keeps its own **roles**, so that each client or club looks after its own content.
 - The **command line tool** to create and list websites quickly.
+- **Domain and email policies**, so that every website and every account stays within your organisation.
 
 ## Coming later
 
-Later versions of SightPress add more, such as add-on modules and a guide to putting SightPress on a public server.
+Later versions of SightPress add more, such as tools to download or delete someone's personal data and a guide to
+putting SightPress on a public server.
 The [Getting started](getting-started.md) guide and the [how-to guides](how-to/index.md) are updated as each feature
 arrives.
 

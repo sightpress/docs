@@ -1,7 +1,7 @@
 # Blocks
 
 A page's content is a list of **blocks**, shown one after another. Each kind of block holds one kind of content, such
-as a heading, some text or a picture. SightPress comes with ten kinds. Add-on modules can add more.
+as a heading, some text or a picture. SightPress comes with thirteen kinds. Add-on modules can add more.
 
 This page lists every kind, its fields and their limits, and what SightPress checks for accessibility. To add, move
 and remove blocks, see [Write and publish a page](../how-to/write-and-publish-a-page.md).
@@ -162,6 +162,67 @@ A form visitors use to send you a message. It has fields for their name, e-mail 
 - When something is missing, the visitor comes back to the same page with a list of what to fix, which gets focus,
   and what they typed is kept. After sending, the thank-you message gets focus.
 - The form only works on a published, public page.
+
+## Video or map from another site
+
+A YouTube or Vimeo video, or an OpenStreetMap map, shown from its link.
+
+| Field | Limits |
+| --- | --- |
+| **Link to the video or map** (required) | Up to 2,000 characters. Only YouTube, Vimeo and OpenStreetMap links are accepted. |
+| **Title** (required) | Up to 200 characters. Says what it shows, for example "Map of the library". |
+
+- Nothing loads from the other site until the reader presses **Show the video** or **Show the map**. Until then the
+  block says who the provider is and links to their privacy policy and to the original. Without JavaScript, the link
+  is there.
+- YouTube videos use YouTube's privacy-enhanced address, and Vimeo is asked not to track.
+
+## List of pages
+
+A list of pages that keeps itself up to date.
+
+| Field | Limits |
+| --- | --- |
+| **Which pages** (required) | The pages under a page, or the pages changed most recently. |
+| **Under the page at** | The address of a page of this website, such as `/services`. Leave it empty for the top-level pages. |
+| **How many pages, at most** | 1 to 12. |
+| **Show each page's summary** | A tick box. |
+
+- Shown as a list or as cards (choose under the block's look). Each page has one link.
+- It only lists pages everyone may read: members-only pages never appear, not even in the Markdown version, `llms.txt`
+  or search results. On a members-only website the list stays empty for now.
+- The home page and the page the list is on are never in the list.
+
+## Sign language video
+
+A video in a sign language, such as British Sign Language (BSL), Irish Sign Language or International Sign.
+
+| Field | Limits |
+| --- | --- |
+| **Video** (required) | A video from the media library. |
+| **Title** (required) | Up to 200 characters, for example "This page in British Sign Language". |
+| **Sign language** (required) | The sign language the video is in. It is shown under the video. |
+| **Captions** (required) | A WebVTT captions file (`.vtt`), for people who don't sign or use another sign language. |
+| **Language of the captions** | A language tag such as `en-GB`. Leave it empty for the page's language. |
+| **Poster picture** | A picture shown before the video plays. |
+| **Transcript** | What is signed, as text. |
+
+## The look of a block
+
+Under **Look of block n**, each block can have its own look. A choice changes only that block.
+
+| Choice | Values | Offered on |
+| --- | --- | --- |
+| **Style** | Named looks, for example *Rounded corners* for a picture or *Card* for a form. Modules can add more. | Image, Contact form, List of pages, and module blocks |
+| **Text alignment** | Start (default), Centre, End. Start and End flip in right-to-left languages. | Heading, Text, Call to action |
+| **Background** | None (default), Surface, Muted, Accent, in the theme's colours. | Text, Columns, Contact form |
+| **Width** | Text width (default), Wide, Full width. | Text, Image, Columns, Gallery, Video |
+| **Space above and below** | Medium (default), None, Small, Large. | Every block |
+| **Form layout**, **Form size**, **Button position** | Labels above or beside the fields; small, medium or large; button at the start, the end or full width. | Contact form |
+
+- Text always has enough contrast: backgrounds come from the theme, and SightPress checks every theme's colours.
+- Labels beside the fields go back above them when there isn't room, such as on a phone or when zoomed in.
+- Centred text gets a hint, because it is harder to read over more than a few lines.
 
 ## For developers
 

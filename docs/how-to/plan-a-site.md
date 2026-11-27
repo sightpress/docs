@@ -8,8 +8,8 @@ and this guide says which ones.
 
 !!! note "Which version this guide describes"
 
-    This guide describes version 0.4. If you run 0.3, update first: it has no cloud storage, other themes, extra page
-    layouts or per-website upload limits. See [Update SightPress](update-sightpress.md).
+    This guide describes version 0.5. If you run 0.4, update first: it has no modules from others, custom roles,
+    email or domain policies, text messages or two-step confirmation. See [Update SightPress](update-sightpress.md).
 
 ## Step 1: Answer these questions
 
@@ -24,7 +24,9 @@ Write down your answers. Each one points to a choice in the next steps.
 | Will you publish large videos, audio or many files? | Decides file storage and upload limits. |
 | Do you expect a few visitors or a lot? | Decides the database and whether you need a CDN. |
 | Will you run one website or several? | Decides what to set for every website and what to set for each one. |
-| Do you want visitor figures or an AI assistant? | Decides which optional features to turn on. |
+| Do you want visitor figures, an AI assistant or features from other modules? | Decides which optional features to turn on. |
+| Should only people from your organisation join? | Decides the email policy and whether colleagues can register themselves. |
+| Will people want texts, or to sign in with their phone? | Decides whether to set up text messages, and their cost. |
 
 ## Step 2: Start from the closest kind of website
 
@@ -38,7 +40,7 @@ Pick the row closest to yours. You can change every choice later.
 | Podcast or media project | MariaDB or PostgreSQL | Cloud storage and a CDN | Public | Admin and editors | Search and analytics |
 | School, library or museum | MariaDB or PostgreSQL | Server, or cloud storage if there is a lot of media | Public | Web editor, staff as contributors | Search and analytics |
 | Public service or health information | MariaDB or PostgreSQL | Server or cloud storage | Public | Editors approve every page | Search, and analytics if your policy allows it |
-| Private club or staff website | SQLite or MariaDB | On the server | Members-only | Admin, editors, members | Search |
+| Private club or staff website | SQLite or MariaDB | On the server | Members-only, perhaps with colleagues registering by work email | Admin, editors, members | Search |
 | Agency or group of websites | MariaDB or PostgreSQL | Cloud storage per website | Set per website | Separate people per website | Defaults set for all websites |
 
 ## Step 3: Choose your options
@@ -101,6 +103,9 @@ use `site:media:import`, which applies the same safety checks.
 - **The whole website for members** hides every page from search engines and AI services.
 - **Open sign-up** suits communities. Keep new people as **Member**. See [Let people sign up](let-people-sign-up.md).
 - **Invitation only** is the default, and suits most teams and private websites.
+- **Only your organisation's email addresses** can be set for every website by whoever runs the installation. On
+  members-only websites, colleagues can then register with their work email without an invitation. See
+  [Keep websites to your organisation](keep-websites-to-your-organisation.md).
 
 ### Roles
 
@@ -114,7 +119,22 @@ that someone can cover absences.
 | **Contributor** | People who write, such as volunteers or staff, whose pages need approval. |
 | **Member** | People who only read members-only pages. |
 
-See [Roles and permissions](../reference/roles-and-permissions.md).
+If none fits, [create a custom role](create-a-custom-role.md) with exactly the permissions someone needs, such as an
+"Events editor". See [Roles and permissions](../reference/roles-and-permissions.md).
+
+### Text messages and two-step confirmation
+
+Text messages are off until whoever runs the installation sets up a provider (Twilio or Vonage). Each message costs
+money, so set a monthly budget.
+
+| Use | Good for | Think about |
+| --- | --- | --- |
+| [Notifications by text](text-message-notifications.md) | Editors who need to know at once when a page waits for review. | People choose it themselves, and can reply STOP. |
+| [Sign in with your phone](sign-in-with-your-phone.md) | People who find a mobile number easier than an email address. | Only verified numbers work. |
+| [Confirm important changes](confirm-important-changes.md) | Any website where a wrong change would do harm, such as giving someone the admin role. | Everyone who makes such changes needs a mobile number. |
+
+A mobile number is personal data: say why you ask for it in your privacy notice. See
+[Set up text messages](set-up-text-messages.md).
 
 ### Languages
 
@@ -144,6 +164,7 @@ See [Choose a page layout](choose-a-page-layout.md) and [Install and change a th
 | [Site search](search-your-website.md) | On | The website has more than a handful of pages. | Leave private or duplicate pages out of the search. |
 | [Analytics](see-who-visits-your-website.md) | On | You will act on the figures. | You can keep them for 1 to 25 months. |
 | [AI assistant](use-the-ai-assistant.md) | Off | You want help drafting, and have an API key and a budget. | Check where the service processes data. A person checks every suggestion. |
+| [Modules from others](add-a-module.md) | Off | You need a feature SightPress doesn't have, such as events. | Install only modules you trust, and turn each one on only where it is needed. |
 
 If you run several websites, set the defaults for all of them in `config/tenant.php`. See
 [Turn features on or off](turn-features-on-or-off.md).
@@ -169,10 +190,10 @@ are true for your organisation.
 | Personal website | Home, About me, Projects, CV, Contact | Text, Image, File download |
 | Portfolio | Home, Work, one page per project, About, Commissions | Gallery, Columns, Video, Contact form |
 | Small business | Home, What we offer, Prices, About us, Find us, Contact | Call to action, Gallery, Contact form |
-| Charity or community group | Home, What we do, Get involved, Donate or volunteer, Annual reports, Contact | Call to action, Video, File download |
+| Charity or community group | Home, What we do, Get involved, Donate or volunteer, Annual reports, Contact | Call to action, Video, File download, List of pages |
 | Podcast or media project | Home, Episodes, one page per episode, Guests, About | Audio with a transcript, File download |
-| School, library or museum | Home, Visit us, Opening hours, What's on, Accessibility, Policies, Contact | Video, Audio, File download |
-| Public service or health information | Home, one page per service, How to apply, Forms, Accessibility, Contact | Heading, Text, File download |
+| School, library or museum | Home, Visit us, Opening hours, What's on, Accessibility, Policies, Contact | Video, Audio, File download, Video or map from another site |
+| Public service or health information | Home, one page per service, How to apply, Forms, Accessibility, Contact | Heading, Text, File download, Sign language video |
 | Private club or staff website | Home, News, Guides, Documents, People, Contact | Text, File download |
 
 For every website, plan to:
@@ -206,9 +227,6 @@ SightPress doesn't do the following yet. If your website depends on one of them,
 - **Several web servers.** Sign-in sessions are kept in files, so servers must share them, and share the upload folder.
 - **Shops and payments, event booking, or a blog with an RSS feed.** Podcasts can publish episodes as pages, but
   SightPress doesn't produce a podcast feed.
-- **Custom roles.** Use the four built-in roles.
-- **Sign-in by phone or text message.** Sign-in uses an email address and a password.
-- **Limiting sign-up to one email domain.** Use invitations instead.
 - **Tools to download or delete someone's personal data.** If privacy law applies to you, such as UK or EU GDPR, plan
   how you will answer these requests.
 
