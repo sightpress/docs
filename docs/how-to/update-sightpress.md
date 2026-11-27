@@ -131,6 +131,19 @@ under `SightPress\Module\Event` (for example `SightPress\Module\Event\PageTransi
 are strings there. Change the `use` lines of your subscribers and remove any dependency on `sightpress/core` outside
 `require-dev`. The [module interface reference](../reference/module-interface.md) lists every event with its fields.
 
+## New in 0.6
+
+Follow the same steps, including updating the websites' databases (`site:migrate --all`): it adds the table where
+sign-ins are now kept. After it:
+
+- **Everyone is signed out once.** Sign-ins used to be files on the web server; they are now kept in each website's
+  database, so a website behind several web servers keeps people signed in whichever server answers. People sign in
+  again as usual, and nothing else is lost. To keep the files, or to use Redis, see
+  [Choose where sign-ins are kept](choose-where-sign-ins-are-kept.md).
+
+`config/tenant.php` has a new optional setting, `session.store`, and `.env.example` names `SESSION_STORE` and
+`SESSION_REDIS_DSN`.
+
 ## If something goes wrong
 
 **A website shows an error page after the update**

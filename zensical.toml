@@ -57,6 +57,7 @@ nav = [
     { "Run SightPress in the background" = "how-to/run-in-the-background.md" },
     { "Change the ports" = "how-to/change-the-ports.md" },
     { "Start a database server" = "how-to/start-a-database.md" },
+    { "Choose where sign-ins are kept" = "how-to/choose-where-sign-ins-are-kept.md" },
     { "Open the test e-mail inbox" = "how-to/open-the-test-email-inbox.md" },
     { "Open the file storage console" = "how-to/open-the-file-storage-console.md" },
     { "Try the command line tool" = "how-to/try-the-command-line-tool.md" },
