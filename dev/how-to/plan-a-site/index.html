@@ -620,6 +620,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#text-messages-and-two-step-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text messages and two-step confirmation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#languages" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2501,6 +2512,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#text-messages-and-two-step-confirmation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text messages and two-step confirmation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#languages" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2620,8 +2642,8 @@ the website needs. The guide then suggests the settings to choose and the conten
 and this guide says which ones.</p>
 <div class="admonition note">
 <p class="admonition-title">Which version this guide describes</p>
-<p>This guide describes version 0.4. If you run 0.3, update first: it has no cloud storage, other themes, extra page
-layouts or per-website upload limits. See <a href="../update-sightpress/">Update SightPress</a>.</p>
+<p>This guide describes version 0.5. If you run 0.4, update first: it has no modules from others, custom roles,
+email or domain policies, text messages or two-step confirmation. See <a href="../update-sightpress/">Update SightPress</a>.</p>
 </div>
 <h2 id="step-1-answer-these-questions">Step 1: Answer these questions<a class="headerlink" href="#step-1-answer-these-questions" title="Link to this section">&para;</a></h2>
 <p>Write down your answers. Each one points to a choice in the next steps.</p>
@@ -2662,8 +2684,16 @@ layouts or per-website upload limits. See <a href="../update-sightpress/">Update
 <td>Decides what to set for every website and what to set for each one.</td>
 </tr>
 <tr>
-<td>Do you want visitor figures or an AI assistant?</td>
+<td>Do you want visitor figures, an AI assistant or features from other modules?</td>
 <td>Decides which optional features to turn on.</td>
+</tr>
+<tr>
+<td>Should only people from your organisation join?</td>
+<td>Decides the email policy and whether colleagues can register themselves.</td>
+</tr>
+<tr>
+<td>Will people want texts, or to sign in with their phone?</td>
+<td>Decides whether to set up text messages, and their cost.</td>
 </tr>
 </tbody>
 </table>
@@ -2733,7 +2763,7 @@ layouts or per-website upload limits. See <a href="../update-sightpress/">Update
 <td>Private club or staff website</td>
 <td>SQLite or MariaDB</td>
 <td>On the server</td>
-<td>Members-only</td>
+<td>Members-only, perhaps with colleagues registering by work email</td>
 <td>Admin, editors, members</td>
 <td>Search</td>
 </tr>
@@ -2846,6 +2876,9 @@ use <code>site:media:import</code>, which applies the same safety checks.</p>
 <li><strong>The whole website for members</strong> hides every page from search engines and AI services.</li>
 <li><strong>Open sign-up</strong> suits communities. Keep new people as <strong>Member</strong>. See <a href="../let-people-sign-up/">Let people sign up</a>.</li>
 <li><strong>Invitation only</strong> is the default, and suits most teams and private websites.</li>
+<li><strong>Only your organisation's email addresses</strong> can be set for every website by whoever runs the installation. On
+  members-only websites, colleagues can then register with their work email without an invitation. See
+  <a href="../keep-websites-to-your-organisation/">Keep websites to your organisation</a>.</li>
 </ul>
 <h3 id="roles">Roles<a class="headerlink" href="#roles" title="Link to this section">&para;</a></h3>
 <p>Give each person the lowest role that lets them do their work. Try to have at least two people who can publish, so
@@ -2876,7 +2909,39 @@ that someone can cover absences.</p>
 </tr>
 </tbody>
 </table>
-<p>See <a href="../../reference/roles-and-permissions/">Roles and permissions</a>.</p>
+<p>If none fits, <a href="../create-a-custom-role/">create a custom role</a> with exactly the permissions someone needs, such as an
+"Events editor". See <a href="../../reference/roles-and-permissions/">Roles and permissions</a>.</p>
+<h3 id="text-messages-and-two-step-confirmation">Text messages and two-step confirmation<a class="headerlink" href="#text-messages-and-two-step-confirmation" title="Link to this section">&para;</a></h3>
+<p>Text messages are off until whoever runs the installation sets up a provider (Twilio or Vonage). Each message costs
+money, so set a monthly budget.</p>
+<table>
+<thead>
+<tr>
+<th>Use</th>
+<th>Good for</th>
+<th>Think about</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../text-message-notifications/">Notifications by text</a></td>
+<td>Editors who need to know at once when a page waits for review.</td>
+<td>People choose it themselves, and can reply STOP.</td>
+</tr>
+<tr>
+<td><a href="../sign-in-with-your-phone/">Sign in with your phone</a></td>
+<td>People who find a mobile number easier than an email address.</td>
+<td>Only verified numbers work.</td>
+</tr>
+<tr>
+<td><a href="../confirm-important-changes/">Confirm important changes</a></td>
+<td>Any website where a wrong change would do harm, such as giving someone the admin role.</td>
+<td>Everyone who makes such changes needs a mobile number.</td>
+</tr>
+</tbody>
+</table>
+<p>A mobile number is personal data: say why you ask for it in your privacy notice. See
+<a href="../set-up-text-messages/">Set up text messages</a>.</p>
 <h3 id="languages">Languages<a class="headerlink" href="#languages" title="Link to this section">&para;</a></h3>
 <p>Choose one main language, then add others only when someone can keep them up to date. A page without a translation is
 better than an old one. The admin panel is available in British English, Spanish and European Portuguese, and a website
@@ -2944,6 +3009,12 @@ can publish in other languages. See <a href="../add-a-language/">Add a language<
 <td>You want help drafting, and have an API key and a budget.</td>
 <td>Check where the service processes data. A person checks every suggestion.</td>
 </tr>
+<tr>
+<td><a href="../add-a-module/">Modules from others</a></td>
+<td>Off</td>
+<td>You need a feature SightPress doesn't have, such as events.</td>
+<td>Install only modules you trust, and turn each one on only where it is needed.</td>
+</tr>
 </tbody>
 </table>
 <p>If you run several websites, set the defaults for all of them in <code>config/tenant.php</code>. See
@@ -2987,7 +3058,7 @@ are true for your organisation.</p>
 <tr>
 <td>Charity or community group</td>
 <td>Home, What we do, Get involved, Donate or volunteer, Annual reports, Contact</td>
-<td>Call to action, Video, File download</td>
+<td>Call to action, Video, File download, List of pages</td>
 </tr>
 <tr>
 <td>Podcast or media project</td>
@@ -2997,12 +3068,12 @@ are true for your organisation.</p>
 <tr>
 <td>School, library or museum</td>
 <td>Home, Visit us, Opening hours, What's on, Accessibility, Policies, Contact</td>
-<td>Video, Audio, File download</td>
+<td>Video, Audio, File download, Video or map from another site</td>
 </tr>
 <tr>
 <td>Public service or health information</td>
 <td>Home, one page per service, How to apply, Forms, Accessibility, Contact</td>
-<td>Heading, Text, File download</td>
+<td>Heading, Text, File download, Sign language video</td>
 </tr>
 <tr>
 <td>Private club or staff website</td>
@@ -3041,9 +3112,6 @@ are true for your organisation.</p>
 <li><strong>Several web servers.</strong> Sign-in sessions are kept in files, so servers must share them, and share the upload folder.</li>
 <li><strong>Shops and payments, event booking, or a blog with an RSS feed.</strong> Podcasts can publish episodes as pages, but
   SightPress doesn't produce a podcast feed.</li>
-<li><strong>Custom roles.</strong> Use the four built-in roles.</li>
-<li><strong>Sign-in by phone or text message.</strong> Sign-in uses an email address and a password.</li>
-<li><strong>Limiting sign-up to one email domain.</strong> Use invitations instead.</li>
 <li><strong>Tools to download or delete someone's personal data.</strong> If privacy law applies to you, such as UK or EU GDPR, plan
   how you will answer these requests.</li>
 </ul>

@@ -2159,6 +2159,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video-or-map-from-another-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Video or map from another site
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        List of pages
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-language-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sign language video
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-look-of-a-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The look of a block
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#for-developers" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2483,6 +2527,50 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video-or-map-from-another-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Video or map from another site
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        List of pages
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-language-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sign language video
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-look-of-a-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The look of a block
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#for-developers" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
@@ -2515,7 +2603,7 @@
 
 <h1 id="blocks">Blocks<a class="headerlink" href="#blocks" title="Link to this section">&para;</a></h1>
 <p>A page's content is a list of <strong>blocks</strong>, shown one after another. Each kind of block holds one kind of content, such
-as a heading, some text or a picture. SightPress comes with ten kinds. Add-on modules can add more.</p>
+as a heading, some text or a picture. SightPress comes with thirteen kinds. Add-on modules can add more.</p>
 <p>This page lists every kind, its fields and their limits, and what SightPress checks for accessibility. To add, move
 and remove blocks, see <a href="../../how-to/write-and-publish-a-page/">Write and publish a page</a>.</p>
 <h2 id="how-blocks-are-checked">How blocks are checked<a class="headerlink" href="#how-blocks-are-checked" title="Link to this section">&para;</a></h2>
@@ -2816,6 +2904,154 @@ columns are read in order: the first column, then the second.</p>
 <li>When something is missing, the visitor comes back to the same page with a list of what to fix, which gets focus,
   and what they typed is kept. After sending, the thank-you message gets focus.</li>
 <li>The form only works on a published, public page.</li>
+</ul>
+<h2 id="video-or-map-from-another-site">Video or map from another site<a class="headerlink" href="#video-or-map-from-another-site" title="Link to this section">&para;</a></h2>
+<p>A YouTube or Vimeo video, or an OpenStreetMap map, shown from its link.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Link to the video or map</strong> (required)</td>
+<td>Up to 2,000 characters. Only YouTube, Vimeo and OpenStreetMap links are accepted.</td>
+</tr>
+<tr>
+<td><strong>Title</strong> (required)</td>
+<td>Up to 200 characters. Says what it shows, for example "Map of the library".</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Nothing loads from the other site until the reader presses <strong>Show the video</strong> or <strong>Show the map</strong>. Until then the
+  block says who the provider is and links to their privacy policy and to the original. Without JavaScript, the link
+  is there.</li>
+<li>YouTube videos use YouTube's privacy-enhanced address, and Vimeo is asked not to track.</li>
+</ul>
+<h2 id="list-of-pages">List of pages<a class="headerlink" href="#list-of-pages" title="Link to this section">&para;</a></h2>
+<p>A list of pages that keeps itself up to date.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Which pages</strong> (required)</td>
+<td>The pages under a page, or the pages changed most recently.</td>
+</tr>
+<tr>
+<td><strong>Under the page at</strong></td>
+<td>The address of a page of this website, such as <code>/services</code>. Leave it empty for the top-level pages.</td>
+</tr>
+<tr>
+<td><strong>How many pages, at most</strong></td>
+<td>1 to 12.</td>
+</tr>
+<tr>
+<td><strong>Show each page's summary</strong></td>
+<td>A tick box.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Shown as a list or as cards (choose under the block's look). Each page has one link.</li>
+<li>It only lists pages everyone may read: members-only pages never appear, not even in the Markdown version, <code>llms.txt</code>
+  or search results. On a members-only website the list stays empty for now.</li>
+<li>The home page and the page the list is on are never in the list.</li>
+</ul>
+<h2 id="sign-language-video">Sign language video<a class="headerlink" href="#sign-language-video" title="Link to this section">&para;</a></h2>
+<p>A video in a sign language, such as British Sign Language (BSL), Irish Sign Language or International Sign.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Video</strong> (required)</td>
+<td>A video from the media library.</td>
+</tr>
+<tr>
+<td><strong>Title</strong> (required)</td>
+<td>Up to 200 characters, for example "This page in British Sign Language".</td>
+</tr>
+<tr>
+<td><strong>Sign language</strong> (required)</td>
+<td>The sign language the video is in. It is shown under the video.</td>
+</tr>
+<tr>
+<td><strong>Captions</strong> (required)</td>
+<td>A WebVTT captions file (<code>.vtt</code>), for people who don't sign or use another sign language.</td>
+</tr>
+<tr>
+<td><strong>Language of the captions</strong></td>
+<td>A language tag such as <code>en-GB</code>. Leave it empty for the page's language.</td>
+</tr>
+<tr>
+<td><strong>Poster picture</strong></td>
+<td>A picture shown before the video plays.</td>
+</tr>
+<tr>
+<td><strong>Transcript</strong></td>
+<td>What is signed, as text.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-look-of-a-block">The look of a block<a class="headerlink" href="#the-look-of-a-block" title="Link to this section">&para;</a></h2>
+<p>Under <strong>Look of block n</strong>, each block can have its own look. A choice changes only that block.</p>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Values</th>
+<th>Offered on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Style</strong></td>
+<td>Named looks, for example <em>Rounded corners</em> for a picture or <em>Card</em> for a form. Modules can add more.</td>
+<td>Image, Contact form, List of pages, and module blocks</td>
+</tr>
+<tr>
+<td><strong>Text alignment</strong></td>
+<td>Start (default), Centre, End. Start and End flip in right-to-left languages.</td>
+<td>Heading, Text, Call to action</td>
+</tr>
+<tr>
+<td><strong>Background</strong></td>
+<td>None (default), Surface, Muted, Accent, in the theme's colours.</td>
+<td>Text, Columns, Contact form</td>
+</tr>
+<tr>
+<td><strong>Width</strong></td>
+<td>Text width (default), Wide, Full width.</td>
+<td>Text, Image, Columns, Gallery, Video</td>
+</tr>
+<tr>
+<td><strong>Space above and below</strong></td>
+<td>Medium (default), None, Small, Large.</td>
+<td>Every block</td>
+</tr>
+<tr>
+<td><strong>Form layout</strong>, <strong>Form size</strong>, <strong>Button position</strong></td>
+<td>Labels above or beside the fields; small, medium or large; button at the start, the end or full width.</td>
+<td>Contact form</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Text always has enough contrast: backgrounds come from the theme, and SightPress checks every theme's colours.</li>
+<li>Labels beside the fields go back above them when there isn't room, such as on a phone or when zoomed in.</li>
+<li>Centred text gets a hint, because it is harder to read over more than a few lines.</li>
 </ul>
 <h2 id="for-developers">For developers<a class="headerlink" href="#for-developers" title="Link to this section">&para;</a></h2>
 <p>A module adds a kind of block with <code>$registrar-&gt;blockTypes()-&gt;add(MyBlock::class)</code>, a class that implements

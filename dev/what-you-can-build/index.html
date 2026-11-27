@@ -430,6 +430,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-features-with-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Add features with modules
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2559,6 +2570,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#add-features-with-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Add features with modules
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2717,14 +2739,14 @@ You write pages in an admin panel, and SightPress turns them into a website that
 who use a screen reader, a keyboard alone or screen magnification.</p>
 <p>This page explains what SightPress can do today, then gives you ideas for websites you could build with it.</p>
 <h2 id="what-you-can-do-today">What you can do today<a class="headerlink" href="#what-you-can-do-today" title="Link to this section">&para;</a></h2>
-<p>SightPress is still at an early stage, and this page follows the newest documentation. Features marked <strong>next
-release</strong> are finished but aren't in version 0.3 yet. SightPress already gives you the following.</p>
+<p>SightPress is still at an early stage, and this page follows the newest documentation. It describes version 0.5.
+SightPress already gives you the following.</p>
 <h3 id="run-many-websites-from-one-installation">Run many websites from one installation<a class="headerlink" href="#run-many-websites-from-one-installation" title="Link to this section">&para;</a></h3>
 <p>One installation of SightPress can run as many websites as you need. Each website has its own pages, people, files,
 menus and settings, and its own main language. A person can be an editor on one website and a contributor on another.
 See <a href="../how-to/create-a-site/">Create a website</a>.</p>
 <h3 id="write-pages-with-blocks">Write pages with blocks<a class="headerlink" href="#write-pages-with-blocks" title="Link to this section">&para;</a></h3>
-<p>A page is a list of <strong>blocks</strong>, such as a heading, some text or a picture. There are ten kinds:</p>
+<p>A page is a list of <strong>blocks</strong>, such as a heading, some text or a picture. There are thirteen kinds:</p>
 <table>
 <thead>
 <tr>
@@ -2773,8 +2795,22 @@ See <a href="../how-to/create-a-site/">Create a website</a>.</p>
 <td>Contact form</td>
 <td>A form visitors use to send you a message, without a puzzle to solve.</td>
 </tr>
+<tr>
+<td>Video or map from another site</td>
+<td>A YouTube or Vimeo video, or an OpenStreetMap map. Nothing loads from the other site until the reader asks.</td>
+</tr>
+<tr>
+<td>List of pages</td>
+<td>The pages under a page, or the latest changed pages, as a list or as cards. It keeps itself up to date.</td>
+</tr>
+<tr>
+<td>Sign language video</td>
+<td>A video in a sign language, such as British Sign Language, with captions.</td>
+</tr>
 </tbody>
 </table>
+<p>Each block can also have its own look, such as a background, a width or the space around it. SightPress makes sure
+text stays readable on every background.</p>
 <p>Every block is described in <a href="../reference/blocks/">Blocks</a>.</p>
 <h3 id="publish-with-confidence">Publish with confidence<a class="headerlink" href="#publish-with-confidence" title="Link to this section">&para;</a></h3>
 <ul>
@@ -2785,6 +2821,10 @@ See <a href="../how-to/create-a-site/">Create a website</a>.</p>
   publish them. See <a href="../how-to/write-and-publish-a-page/">Write and publish a page</a>.</li>
 <li><strong>Roles for your team.</strong> Admins, editors, contributors and members each see and do only what they need. See
   <a href="../reference/roles-and-permissions/">Roles and permissions</a>.</li>
+<li><strong>Your own roles.</strong> Make a role with exactly the permissions someone needs, such as "Events editor". See
+  <a href="../how-to/create-a-custom-role/">Create a custom role</a>.</li>
+<li><strong>Confirm important changes.</strong> A website can ask for a code sent by text before changes such as changing someone's
+  role or deleting data. See <a href="../how-to/confirm-important-changes/">Confirm important changes</a>.</li>
 <li><strong>An audit log.</strong> Admins can see who changed what, and when.</li>
 </ul>
 <h3 id="look-after-your-files-and-people">Look after your files and people<a class="headerlink" href="#look-after-your-files-and-people" title="Link to this section">&para;</a></h3>
@@ -2795,6 +2835,12 @@ See <a href="../how-to/create-a-site/">Create a website</a>.</p>
   <a href="../how-to/codes-we-send-you/">Codes we send you</a>.</li>
 <li><strong>Menus.</strong> A main menu and a footer menu, which you change in the admin panel.</li>
 <li><strong>Site settings.</strong> The website's name, profile, logo and other details.</li>
+<li><strong>Keep websites to your organisation.</strong> Allow only your organisation's email addresses, and let colleagues register
+  on members-only websites with their work email. See
+  <a href="../how-to/keep-websites-to-your-organisation/">Keep websites to your organisation</a>.</li>
+<li><strong>Text messages.</strong> Once whoever runs SightPress sets up a text message provider, people can get notifications by
+  text and <a href="../how-to/sign-in-with-your-phone/">sign in with their phone</a>. See
+  <a href="../how-to/set-up-text-messages/">Set up text messages</a>.</li>
 </ul>
 <h3 id="be-found-in-search-engines-and-ai-search">Be found in search engines and AI search<a class="headerlink" href="#be-found-in-search-engines-and-ai-search" title="Link to this section">&para;</a></h3>
 <p>Every public page is ready for search engines and for AI search engines and assistants, with nothing to set up: a
@@ -2823,6 +2869,10 @@ also do many tasks with the <a href="../reference/command-line/">command line to
 <li><strong>Cloud storage and a CDN.</strong> Keep a website's files with an S3-compatible service, and deliver public
   files from near each visitor.</li>
 </ul>
+<h3 id="add-features-with-modules">Add features with modules<a class="headerlink" href="#add-features-with-modules" title="Link to this section">&para;</a></h3>
+<p>Install add-on <strong>modules</strong> made by others, and turn each one on only for the websites that need it. A module that
+is broken or missing never stops your websites. See <a href="../how-to/add-a-module/">Add a module</a>. Developers can build their
+own: see <a href="../tutorials/create-a-module/">Create a module</a>.</p>
 <h2 id="ideas-for-websites">Ideas for websites<a class="headerlink" href="#ideas-for-websites" title="Link to this section">&para;</a></h2>
 <p>These ideas use only what SightPress can do today. Each one lists the blocks and features that help most.</p>
 <h3 id="a-website-for-a-small-business">A website for a small business<a class="headerlink" href="#a-website-for-a-small-business" title="Link to this section">&para;</a></h3>
@@ -2840,6 +2890,7 @@ also do many tasks with the <a href="../reference/command-line/">command line to
 <li>Pages: Who we are, What we do, Get involved, Annual reports, Contact.</li>
 <li><strong>File download</strong> blocks for annual reports, minutes and leaflets, with their type and size shown.</li>
 <li>A <strong>Video</strong> about your work, with captions and a transcript, so that everyone can follow it.</li>
+<li>A <strong>List of pages</strong> on the home page that shows your latest news by itself.</li>
 <li><strong>Roles</strong>, so that volunteers write pages as contributors and a trustee publishes them as an editor.</li>
 </ul>
 <h3 id="a-podcast-or-audio-project">A podcast or audio project<a class="headerlink" href="#a-podcast-or-audio-project" title="Link to this section">&para;</a></h3>
@@ -2875,6 +2926,7 @@ accessible information matters most.</p>
 <li>Short pages with clear <strong>Headings</strong>, so that screen reader users can jump from part to part.</li>
 <li><strong>File download</strong> blocks for forms and leaflets, plus the same information as a page, so that nobody has to open a
   PDF.</li>
+<li>A <strong>Sign language video</strong> of the most important pages, with captions.</li>
 <li>The <strong>accessibility checks</strong> stop common mistakes, such as a missing caption, before they reach the public.</li>
 </ul>
 <h3 id="a-personal-website-or-blog-style-journal">A personal website or blog-style journal<a class="headerlink" href="#a-personal-website-or-blog-style-journal" title="Link to this section">&para;</a></h3>
@@ -2891,9 +2943,11 @@ accessible information matters most.</p>
   language, people and settings.</li>
 <li>Each website keeps its own <strong>roles</strong>, so that each client or club looks after its own content.</li>
 <li>The <strong>command line tool</strong> to create and list websites quickly.</li>
+<li><strong>Domain and email policies</strong>, so that every website and every account stays within your organisation.</li>
 </ul>
 <h2 id="coming-later">Coming later<a class="headerlink" href="#coming-later" title="Link to this section">&para;</a></h2>
-<p>Later versions of SightPress add more, such as add-on modules and a guide to putting SightPress on a public server.
+<p>Later versions of SightPress add more, such as tools to download or delete someone's personal data and a guide to
+putting SightPress on a public server.
 The <a href="../getting-started/">Getting started</a> guide and the <a href="../how-to/">how-to guides</a> are updated as each feature
 arrives.</p>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Link to this section">&para;</a></h2>
