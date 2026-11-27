@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.5.0](https://github.com/sightpress/docs/compare/0.4.0...0.5.0) (2026-11-27)
+
+
+### Bug fixes
+
+* serve the 404 page with a 404 status on Amplify ([#40](https://github.com/sightpress/docs/issues/40)) ([7c935b2](https://github.com/sightpress/docs/commit/7c935b2866e7ada80819e87ba709dad1fe0ce7be))
+
+
+### Documentation
+
+* add a how-to for creating a custom role, and the site:role commands to the reference (X-4) ([#35](https://github.com/sightpress/docs/issues/35)) ([525253a](https://github.com/sightpress/docs/commit/525253aa6415aa0aefe990f1989ca7b111632275))
+* add a how-to for keeping websites to your organisation: domain and email policies, domain registration (X-5, X-7) ([#37](https://github.com/sightpress/docs/issues/37)) ([3fbb8bb](https://github.com/sightpress/docs/commit/3fbb8bbb3def128db59cbae1024ba47173395226))
+* add a module how-to, the module interface and tenant configuration references, and the 0.5 update notes (Q-3) ([#39](https://github.com/sightpress/docs/issues/39)) ([00ff031](https://github.com/sightpress/docs/commit/00ff031e61843a2a3702e1a2fd02614fc2a6321b))
+* add the Create a module tutorial and check it on a fresh module template (X-3) ([#41](https://github.com/sightpress/docs/issues/41)) ([329c7f0](https://github.com/sightpress/docs/commit/329c7f024a3349084c40c42fb4762bf37772ab9b))
+* bring getting started, plan your website and what you can build up to 0.5, and add the new blocks to the reference ([#43](https://github.com/sightpress/docs/issues/43)) ([3774229](https://github.com/sightpress/docs/commit/377422926876caa9227834e02d23c687a2f0743c))
+* guides for text messages, mobile numbers, phone sign-in and two-step confirmation (N-2 to N-6) ([#38](https://github.com/sightpress/docs/issues/38)) ([6e05b1f](https://github.com/sightpress/docs/commit/6e05b1f3edf0287e9cc10245186e173bac2c7078))
+
+
+### Miscellaneous
+
+* release docs 0.5.0 with core and the skeleton ([e17e647](https://github.com/sightpress/docs/commit/e17e6474f450839cd6886016cfbde8c44b9e1c4e))
+
 ## [0.4.0](https://github.com/sightpress/docs/compare/0.3.0...0.4.0) (2026-11-24)
 
 
