@@ -16,7 +16,8 @@ Keys and passwords never go in this file. They come from environment variables (
 | `cache_dir` | `var/cache/<APP_ENV>` | The cache. `bin/sightpress cache:clear` empties it. |
 | `log.path` | `var/log/<APP_ENV>.log` | The log file. A stream such as `php://stderr` also works. |
 | `log.level` | `notice` | The least important messages that are written: `debug`, `info`, `notice`, `warning`, `error` … |
-| `session.path` | `var/sessions` | Where sign-in sessions are kept. |
+| `session.store` | `database` | Where sign-ins (sessions) are kept: `database` (each website's own database, shared by every web server), `redis` (a Redis server, set with `SESSION_REDIS_DSN`), `files` (in `session.path`, one web server only) or the name of a PHP class implementing `SightPress\Core\Http\Session\SessionStore`. Changing it signs everyone out once. See [Choose where sign-ins are kept](../how-to/choose-where-sign-ins-are-kept.md). |
+| `session.path` | `var/sessions` | The folder for sign-ins when `session.store` is `files`. |
 | `session.idle_timeout` | `7200` | Seconds without a request after which someone is signed out (at least 60). |
 
 ## Language, time and email
@@ -104,6 +105,7 @@ See [Set up text messages](../how-to/set-up-text-messages.md) and
 | `MAILER_DSN` | How emails are sent, for example `smtp://mail.example.org:25`. Without it no email is sent. |
 | `ASSISTANT_API_KEY` | The key of `assistant.provider`. |
 | `SMS_API_KEY` | The key of `sms.provider`. |
+| `SESSION_REDIS_DSN` | The Redis server of `session.store` = `redis`: `redis://host:6379`, `rediss://user:password@host:6380/1` (with TLS) or `unix:///path/to/redis.sock`. Needs PHP's redis extension. |
 
 ## An example
 

@@ -48,6 +48,8 @@ followed [Getting started](../getting-started.md), so SightPress is downloaded a
 - [Run SightPress in the background](run-in-the-background.md), so that you can close the terminal.
 - [Change the ports SightPress uses](change-the-ports.md), if another program already uses them.
 - [Start a database server](start-a-database.md): MySQL, MariaDB or PostgreSQL.
+- [Choose where sign-ins are kept](choose-where-sign-ins-are-kept.md): the website's database, Redis or files, and
+  what changes when you run more than one web server.
 
 ## Checking the built-in tools
 
